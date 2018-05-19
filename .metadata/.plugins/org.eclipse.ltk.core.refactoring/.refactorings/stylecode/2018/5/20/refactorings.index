@@ -3,3 +3,12 @@
 1526696915834	Delete element
 1526697075436	Rename resource 'sampleMappers.xml'
 1526697339503	Delete elements
+1526699313101	Rename package 'stylecode.kosta180.Dto'
+1526700059933	Move folder
+1526700581116	Rename resource 'sampleMapper.xml'
+1526700696830	Rename type 'SampleVO'
+1526701106302	Rename type 'SampleDAO'
+1526701120316	Rename type 'SampleService'
+1526706269156	Rename type 'ProductImpl'
+1526706400524	Rename type 'ProductDaoImpl'
+1526707469343	Delete elements

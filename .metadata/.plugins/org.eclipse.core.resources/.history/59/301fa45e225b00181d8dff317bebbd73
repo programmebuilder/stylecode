@@ -1,0 +1,18 @@
+package stylecode.kosta180.persistence;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import stylecode.kosta180.domain.ProductVO;
+
+@Repository
+public class ProductDaoImpl implements ProductDAO {
+
+	@Override
+	public List<ProductVO> productlist() throws Exception {
+		
+		return null;
+	}
+
+}

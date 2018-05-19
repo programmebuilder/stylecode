@@ -1,0 +1,4 @@
+
+5월 19, 2018 11:23:32.03 NEW SESSION
+5월 19, 2018 11:23:32.03 [756:920:0519/112332.032:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 19, 2018 11:32:55.16 Unable to read VR Path Registry from C:\Users\evert\AppData\Local\openvr\openvrpaths.vrpath

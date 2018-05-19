@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+	<insert id="create" parameterType="org.zerock.domain.BoardVO">
+		INSERT
+		  INTO tbl_board (bno, title, content, writer)
+		VALUES (seq_board.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		SELECT bno, title, content, writer, regdate, viewcnt
+		  FROM tbl_board
+		 WHERE bno = #{bno}
+	</select>
+	
+	
+	<update id="update" parameterType="org.zerock.domain.BoardVO">
+		UPDATE tbl_board
+		   SET title = #{title}, content = #{content}
+		 WHERE bno = #{bno}
+	</update>
+	
+	
+	<delete id="delete">
+		DELETE
+		  FROM tbl_board
+		 WHERE bno = #{bno}
+	</delete>
+	
+	
+	<select id="listAll" resultType="org.zerock.domain.BoardVO">
+		<![CDATA[
+			SELECT bno, title, content, writer, regdate, viewcnt
+			  FROM tbl_board
+			 WHERE bno > 0
+		  ORDER BY bno DESC, regdate DESC
+		]]>
+	</select>
+	
+	<select id="listPage" resultType="org.zerock.domain.BoardVO">
+		<![CDATA[
+			SELECT bno, title, content, writer, viewcnt, regdate
+			  FROM (SELECT /*+INDEX_DESC(tbl_board, pk_board)*/
+			  			   rownum rn, bno, title, content, writer, viewcnt, regdate
+			  	      FROM tbl_board
+			  	     WHERE rownum <= #{page} * #{perPageNum}
+			  	       AND bno > 0)
+			 WHERE rn > (#{page} - 1) * #{perPageNum}
+		]]>
+	</select>
+	
+	<select id="listCriteria" resultType="org.zerock.domain.BoardVO">
+		<![CDATA[
+			SELECT bno, title, content, writer, viewcnt, regdate, replycnt
+			  FROM (SELECT /*+INDEX_DESC(tbl_board, pk_board)*/
+			  			   rownum rn, bno, title, content, writer, viewcnt, regdate, replycnt
+			  	      FROM tbl_board
+			  	     WHERE rownum <= #{page} * #{perPageNum}
+			  	       AND bno > 0)
+			 WHERE rn > (#{page} - 1) * #{perPageNum}
+		]]>
+	</select>
+	
+	<select id="countPaging" resultType="int">
+		<![CDATA[
+			SELECT count(bno)
+			  FROM tbl_board
+			 WHERE bno > 0
+		]]>
+	</select>
+	
+	<sql id="search">
+	
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">
+				AND title LIKE '%'||#{keyword}||'%'
+			</if>
+			
+			<if test="searchType == 'c'.toString()">
+				AND content LIKE '%'||#{keyword}||'%'
+			</if>
+			
+			<if test="searchType == 'w'.toString()">
+				AND writer LIKE '%'||#{keyword}||'%'
+			</if>
+			
+			<if test="searchType == 'tc'.toString()">
+				AND (title LIKE '%'||#{keyword}||'%' OR content LIKE '%'||{keyword}'%')
+			</if>
+			
+			<if test="searchType == 'cw'.toString()">
+				AND (content LIKE '%'||#{keyword}||'%' OR writer LIKE '%'||{keyword}'%')
+			</if>
+			
+			<if test="searchType == 'tcw'.toString()">
+				AND (title LIKE '%'||#{keyword}||'%' OR content LIKE '%'||{keyword}'%' OR writer LIKE '%'||#{keyword}||'%'
+			</if>
+		</if>
+	
+	</sql>
+	
+	<select id="listSearch" resultType="org.zerock.domain.BoardVO">
+		<![CDATA[
+			SELECT bno, title, content, writer, viewcnt, regdate, replycnt
+			  FROM (SELECT /*+INDEX_DESC(tbl_board, pk_board)*/
+			  			   rownum rn, bno, title, content, writer, viewcnt, regdate, replycnt
+			  	      FROM tbl_board
+			  	     WHERE 1 = 1
+		]]>
+					   <include refid="search" />
+		<![CDATA[
+					   AND rownum <= #{page} * #{perPageNum}
+					   AND bno > 0)
+			 WHERE rn > (#{page} - 1) * #{perPageNum}
+		]]>
+	</select>
+	
+	<select id="listSearchCount" resultType="int">
+		<![CDATA[
+			SELECT count(bno)
+			  FROM tbl_board
+			 WHERE 1 = 1
+		]]>
+			   <include refid="search" />
+		<![CDATA[
+			   AND bno > 0
+		]]>
+	</select>
+	
+	<update id="updateReplyCnt">
+		UPDATE tbl_board
+		   SET replycnt = replycnt + #{amount}
+		 WHERE bno = #{bno}
+	</update>
+	
+	<update id="updateViewCnt">
+		UPDATE tbl_board
+		   SET viewcnt = viewcnt + 1
+		 WHERE bno = #{bno}
+	</update>
+	
+	<insert id="addAttach">
+		INSERT
+		  INTO tbl_attach (fullname, bno)
+		VALUES (#{fullname}, seq_board.currval)
+	</insert>
+
+	<select id="getAttach" resultType="String">
+		SELECT fullname
+		  FROM tbl_attach
+		 WHERE bno = #{bno}
+	  ORDER BY regdate
+	</select>
+	
+	<delete id="deleteAttach">
+		DELETE
+		  FROM tbl_attach
+		 WHERE bno = #{bno}
+	</delete>
+	
+	<insert id="replaceAttach">
+		INSERT
+		  INTO tbl_attach (fullname, bno)
+		VALUES (#{funllName}, #{bno})
+	</insert>
+
+</mapper>

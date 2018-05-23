@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd 
+	">
+
+	<!--http 태그는 접근 권한설정하는 부분이고,계정으로 로그인 하면 ROLE_USER 라는 권한을 부여받게 된다 -->
+	<!-- IS_AUTHENTICATED_ANONYMOUSLY 익명 사용자 IS_AUTHENTICATED_REMEMBERED REMEMBERED 
+		사용자 IS_AUTHENTICATED_FULLY 인증된 사용자 security-context.xml 파일은 공통적인 보안에 대한 설정을 
+		담당하는 파일이라고 생각하면 될 것 같다. -->
+
+	<!--확장자를 이용해 패턴을 걸떄는 /**/*. 으로 하며 pattern에 맞는 부분은 시큐리티를 적용하지 않겠다. -->
+	<!-- <http pattern="/**/*.js" security="none" />
+	<http pattern="/**/*.css" security="none" />
+	<http pattern="/images/*" security="none" />
+
+	/admin/**로 들어가는건 관리자 타입으로 들어가고 나머지는 user로 기본타입이들어간다
+	intercept-url => 시큐리티가 감시해야 할 URL과 URL이 접근 가능한 권한을 정의하는 태그 설정할떄는 구체적인 
+		부분을 먼저 선언하고 덜 구체적인 부분을 나중에 선언한다.
+	<http auto-config="true">
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+	</http>
+
+
+		authentication-manager 읹ㅇ과 관련된 정보를 설정 정보를 제공하는 제공자(authentication-provider)에게 지정
+		authentication-provider 하위태그인 user-service는 사용자정보를 넣음 그리고 권한 지정 
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="user1" password="user1password" authorities="ROLE_USER" />
+				<user name="admin1" password="admin1password" authorities="ROLE_ADMIN" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+ -->
+
+	<http auto-config="true">
+		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/**" access="ROLE_USER" />
+
+	</http>
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="user" password="user" authorities="ROLE_USER" />
+				<user name="admin" password="admin" authorities="ROLE_ADMIN" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+
+ 
+</beans:beans>

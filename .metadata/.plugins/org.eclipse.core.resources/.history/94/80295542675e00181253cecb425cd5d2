@@ -1,0 +1,13 @@
+package stylecode.kosta180.service;
+
+import stylecode.kosta180.domain.SecurityMemberVO;
+
+public class MemberServiceImpl implements MemberService {
+
+	@Override
+	public void join(SecurityMemberVO memberVo) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -15,17 +15,13 @@ import stylecode.kosta180.service.ProductService;
 
 @Controller
 public class ProductListController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	/*private static final Logger logger = LoggerFactory.getLogger(SecurityController.class);*/
 	@Inject
 	private ProductService service;
 	
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public String productlist(Model model) throws Exception{
 		model.addAttribute("list", service.listAll());
-		String subString = "substring(12)";
-		model.addAttribute("subString",subString);
-		
-		
 		return "product/productlist";
 	}
 	@RequestMapping(value = "/productlistLow", method = RequestMethod.GET)

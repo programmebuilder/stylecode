@@ -4,9 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-
 	<typeAliases>
-		<package name="stylecode.kosta180.domain" />
+	<package name="stylecode.kosta180.domain"/>
 	</typeAliases>
 
 </configuration>

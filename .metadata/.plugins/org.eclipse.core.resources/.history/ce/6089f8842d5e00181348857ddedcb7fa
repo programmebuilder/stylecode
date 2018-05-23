@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd 
+	">
+
+	<!--http 태그는 접근 권한설정하는 부분이고,계정으로 로그인 하면 ROLE_USER 라는 권한을 부여받게 된다 -->
+	<!-- IS_AUTHENTICATED_ANONYMOUSLY 익명 사용자 IS_AUTHENTICATED_REMEMBERED REMEMBERED 
+		사용자 IS_AUTHENTICATED_FULLY 인증된 사용자 security-context.xml 파일은 공통적인 보안에 대한 설정을 
+		담당하는 파일이라고 생각하면 될 것 같다. -->
+
+
+
+
+	

@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>4 Col Portfolio - Start Bootstrap Template</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../resources/dist/css/HgCss/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" type="text/css"
+	href="../resources/dist/css/HgCss/4-col-portfolio.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="my-4">&ensp; &ensp;</h1>
+		<div class="row" style="margin-top: 5%;">
+			<!--상품 뿌리기위한 foreach문  -->
+			<c:forEach var="i" items="${list }">
+				<div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+					<div class="card h-100">
+						<a href="#"><img class="card-img-top"
+							src=../resources/dist/img/credit/cirrus.png alt="" width="253px"
+							height="375px"></a>
+						<div class="card-body">
+							<h4 class="card-title">
+								<a href="#">${i.pNm }</a>
+							</h4>
+
+							<p class="card-text">${i.mPrice }</p>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+			<!--foreach 끝 -->
+		</div>
+	</div> <!--container 끝  -->
+	<!-- /.row -->
+
+
+
+	<!-- Pagination -->
+	<ul class="pagination justify-content-center">
+		<li class="page-item"><a class="page-link" href="#"
+			aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span
+				class="sr-only">Previous</span>
+		</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#"
+			aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
+				class="sr-only">Next</span>
+		</a></li>
+	</ul>
+
+	<!-- Footer -->
+	<footer class="py-5 bg-dark">
+	<div class="container">
+		<p class="m-0 text-center text-white">Copyright &copy; Your
+			Website 2018</p>
+	</div>
+	<!-- /.container --> </footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="../resources/dist/js/Hgjs/jquery.min.js"></script>
+	<script src="../resources/dist/js/Hgjs/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

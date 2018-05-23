@@ -1,0 +1,21 @@
+package stylecode.kosta180.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.stereotype.Service;
+
+import stylecode.kosta180.domain.SecurityMemberVO;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+	@Override
+	public void join(SecurityMemberVO memberVo) {
+
+		@Autowired 
+		private UserDetailsManager userDetailManager;
+		
+
+	}
+
+}

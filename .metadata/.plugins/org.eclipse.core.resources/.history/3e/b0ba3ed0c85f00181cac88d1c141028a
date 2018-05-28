@@ -1,0 +1,5 @@
+package stylecode.sns.domain;
+
+public class MemberVO {
+
+}

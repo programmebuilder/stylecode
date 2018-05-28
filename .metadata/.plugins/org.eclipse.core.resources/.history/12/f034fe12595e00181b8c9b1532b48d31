@@ -1,0 +1,13 @@
+package stylecode.sns.persistence;
+
+import stylecode.sns.domain.BoardVO;
+
+public interface BoardDAO {
+
+	public void create(BoardVO vo) throws Exception;
+	
+	public BoardVO read(Integer bdno) throws Exception;
+	
+	
+	
+}

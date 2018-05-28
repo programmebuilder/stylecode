@@ -1,0 +1,23 @@
+1527046463108	Delete element
+1527052116688	Rename resource 'sampleMapper.xml'
+1527052151393	Rename package 'stylecode.kosta180.controller'
+1527052156046	Rename package 'stylecode.kosta180.domain'
+1527052161651	Rename package 'stylecode.kosta180.util'
+1527052168706	Rename package 'stylecode.kosta180.service'
+1527052172288	Rename package 'stylecode.kosta180.persistence'
+1527059527879	Rename type 'SampleDAO'
+1527217866962	Rename type 'SampleService'
+1527218273455	Rename type 'HomeController'
+1527226173914	Delete element
+1527226392492	Delete element
+1527226410181	Rename resource 'hyun.css'
+1527227212581	Rename resource 'hyun.js'
+1527229017434	Move file
+1527229021351	Rename resource 'board.jsp'
+1527232540474	Move file
+1527232544451	Delete element
+1527232556594	Move file
+1527232558629	Delete element
+1527232585986	Delete element
+1527232628851	Rename resource 'board.js'
+1527232638184	Rename resource 'board.css'

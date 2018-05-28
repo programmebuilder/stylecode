@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="stylecode.sns.mapper.boardMapper">
+	
+	<!-- 게시물 작성  -->
+	<insert id="create">
+		INSERT
+		  INTO board (bdno, bdcontent, mid)
+		VALUES (board_seq.nextval, #{bdcontent}, #{mid})
+	</insert>
+	
+	<!-- 게시물 출력 -->
+	<select id="read" resultType="stylecode.sns.domain.BoardVO">
+		SELECT *
+		  FROM board
+		 WHERE bdno = #{bdno}
+	</select>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="delete">
+		DELETE
+		  FROM board
+		 WHERE bdno = #{bdno}
+	</delete>
+	
+	<!-- 게시물 수정 -->
+	<update id="update">
+		UPDATE
+		  FROM board
+		   SET bdcontent = #{bdcontent},
+		       update = SYSDATE
+		 WHERE bdno = #{bdno}
+	</update>
+	
+</mapper>

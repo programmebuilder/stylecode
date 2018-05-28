@@ -1,0 +1,5 @@
+package stylecode.sns.persistence;
+
+public interface BoardDAO {
+
+}

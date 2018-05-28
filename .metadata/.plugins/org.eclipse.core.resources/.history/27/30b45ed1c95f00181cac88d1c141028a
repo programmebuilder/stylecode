@@ -1,0 +1,5 @@
+package stylecode.sns.service;
+
+public interface BoardService {
+
+}

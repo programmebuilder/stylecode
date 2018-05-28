@@ -1,0 +1,51 @@
+package stylecode.sns.controller;
+
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import stylecode.sns.domain.BoardVO;
+import stylecode.sns.service.BoardService;
+
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	
+	@Inject
+	private BoardService service;
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registerGET(BoardVO vo, Model model) throws Exception {
+		logger.info("register get ......");
+	}
+	
+	// 게시물 작성
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerPOST(BoardVO vo, Model model) throws Exception {
+		
+		logger.info("register post ......");
+		logger.info(vo.toString());
+		
+		service.regist(vo);
+		
+		model.addAttribute("result", "success");
+		
+		return "redirect:/board/list";
+	}
+	
+	// 게시물 전체 출력(최신순)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model) throws Exception {
+		
+		logger.info("list get ......");
+		
+		return "/board/list";
+	}
+}

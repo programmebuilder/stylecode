@@ -1,0 +1,182 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initail-scale=1">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/hyun.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="../resources/dist/css/board/board.css">
+
+<title>SNS</title>
+
+</head>
+<body>
+	<header>
+		<form class="search-form" action="" method="">
+			<input class="search-bar" type="text" name="search" placeholder="검색">
+			<ul class="ul">
+				<li class="li-list">안태현</li>
+				<li class="li-list">이규민</li>
+				<li class="li-list">허건</li>
+				<li class="li-list">배진영</li>
+			</ul>
+		</form>
+	</header>
+
+	<nav>
+		<div class="nav">
+			<div class="nav-img">
+				<img class="nav-profile" src="./images2/side-profile.jpg" alt="">
+			</div>
+			<div class="nav-content">
+				<h2>my user</h2>
+				<span>Lorem ipsum dolor sit amet, consectetur adipisicing
+					elit. Quod, laudantium!</span>
+			</div>
+		</div>
+	</nav>
+
+	<section class="main">
+		<article>
+			<div class="card-post">
+				<div class="card-header">
+					<div class="card-profile-frame">
+
+
+						<img class="card-profile" src="./images2/side-profile.jpg" alt="">
+					</div>
+					<div class="card-content">
+
+
+						<a href="#">My User</a><br> <i>2h</i>
+					</div>
+
+				</div>
+				<div class="card-body">
+					<input class="user-input" type="text" name="user_input"
+						placeholder="">
+				</div>
+			</div>
+
+			<div class="card-post2">
+				<div class="card-header">
+					<div class="card-profile-frame">
+
+
+						<img class="card-profile" src="./images2/side-profile.jpg" alt="">
+					</div>
+					<div class="card-content">
+
+
+						<a href="#">My User</a><br> <i>2h</i>
+					</div>
+
+				</div>
+				<div class="card-body">
+					<div class="card-body-text">
+						<h5>안녕하세요</h5>
+						<span>Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit. Eaque, similique.</span>
+					</div>
+					<div class="card-body-img">
+						<img class="card-profile2" src="./images2/profile2.jpg" alt="">
+					</div>
+					<div class="card-body-reply">
+						<span class="reply">Lorem ipsum dolor sit amet.</span><br> <span
+							class="reply">Lorem ipsum dolor sit amet.</span><br> <input
+							class="reply-input" type="text" name="reply"
+							placeholder="Add a comment">
+					</div>
+				</div>
+			</div>
+		</article>
+		<aside>
+			<div class="card-post3">
+				<i class="aside-text">card posts</i> <img class="card-profile3"
+					src="./images2/hyun2.jpg" alt="">
+
+
+
+			</div>
+			<div class="card-post4">
+				<span class="popular-users">Popular users</span>
+				<div class="grid">
+					<div class="grid-item">
+						<img class="popular-profile" src="./images2/profile2.jpg" alt="">
+					</div>
+					<div class="grid-item">
+						<img class="popular-profile" src="./images2/side-profile.jpg"
+							alt="">
+					</div>
+					<div class="grid-item">
+						<div class="grid-item">
+							<img class="popular-profile" src="./images2/side-profile.jpg"
+								alt="">
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="grid-item">
+							<img class="popular-profile" src="./images2/side-profile.jpg"
+								alt="">
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="grid-item">
+							<img class="popular-profile" src="./images2/side-profile.jpg"
+								alt="">
+						</div>
+					</div>
+					<div class="grid-item">
+						<img class="popular-profile" src="./images2/profile2.jpg" alt="">
+					</div>
+				</div>
+
+			</div>
+			<div class="card-post4">
+				<span class="popular-users">Popular photos</span>
+				<div class="grid">
+					<div class="grid-item">
+						<img class="popular-photos" src="./images2/profile2.jpg" alt="">
+					</div>
+					<div class="grid-item">
+						<img class="popular-photos" src="./images2/side-profile.jpg"
+							alt="">
+					</div>
+					<div class="grid-item">
+						<div class="grid-item">
+							<img class="popular-photos" src="./images2/side-profile.jpg"
+								alt="">
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="grid-item">
+							<img class="popular-photos" src="./images2/side-profile.jpg"
+								alt="">
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="grid-item">
+							<img class="popular-photos" src="./images2/side-profile.jpg"
+								alt="">
+						</div>
+					</div>
+					<div class="grid-item">
+						<img class="popular-photos" src="./images2/profile2.jpg" alt="">
+					</div>
+				</div>
+
+			</div>
+		</aside>
+
+	</section>
+	<footer>
+		<img src="./images2/arrow.PNG" alt="">
+	</footer>
+
+</body>
+
+</html>

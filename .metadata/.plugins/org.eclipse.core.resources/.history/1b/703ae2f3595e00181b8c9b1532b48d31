@@ -1,0 +1,37 @@
+package stylecode.sns.persistence;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import stylecode.sns.domain.BoardVO;
+
+@Repository
+public class BoardDAOImpl implements BoardDAO {
+
+	@Autowired
+	private SqlSession session;
+	
+	private static String namespace = "stylecode.sns.mapper.boardMapper";
+	
+	@Override
+	public void create(BoardVO vo) throws Exception {
+
+		session.insert(namespace + ".create", vo);
+	}
+
+	@Override
+	public List<BoardVO> read(Integer bdno) throws Exception {
+
+		return session.selectList(namespace + ".read", bdno);
+	}
+
+	@Override
+	public void delete(Integer bdno) throws Exception {
+		
+		session.delete(namespace + ".delete", bdno);
+	}
+
+}

@@ -27,5 +27,8 @@
 		<property name="configLocation" value="classpath:/mybatis-config.xml" />
 		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml" />
 	</bean>
+	
+	<context:component-scan base-package="stylecode.sns.service" />
+	<context:component-scan base-package="stylecode.sns.persistence" />
 
 </beans>

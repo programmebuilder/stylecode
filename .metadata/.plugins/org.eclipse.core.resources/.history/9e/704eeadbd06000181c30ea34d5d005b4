@@ -1,0 +1,50 @@
+package stylecode.kosta180.domain;
+
+import java.io.Serializable;
+
+public class SpmBmVO implements Serializable {
+	private Integer spmBmNo;
+	private Integer bmEnrollNo;
+	private String mId;
+	
+	public SpmBmVO(){}
+	
+	
+
+	public SpmBmVO(int spmBmNo, int bmEnrollNo, String mId) {
+		super();
+		this.spmBmNo = spmBmNo;
+		this.bmEnrollNo = bmEnrollNo;
+		this.mId = mId;
+	}
+
+
+
+	public Integer getSpmBmNo() {
+		return spmBmNo;
+	}
+
+	public void setSpmBmNo(int spmBmNo) {
+		this.spmBmNo = spmBmNo;
+	}
+
+	public Integer getBmEnrollNo() {
+		return bmEnrollNo;
+	}
+
+	public void setBmEnrollNo(int bmEnrollNo) {
+		this.bmEnrollNo = bmEnrollNo;
+	}
+
+	public String getmId() {
+		return mId;
+	}
+
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
+	
+	
+
+
+}

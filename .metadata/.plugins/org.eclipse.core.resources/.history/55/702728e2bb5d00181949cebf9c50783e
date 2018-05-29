@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="stylecode.kosta180.mapper.spmDetailMapper"> <!--mapper방식일 때 / namespace를 반드시 -->
+	<cache />
+	
+	
+	<!-- 쇼핑몰 리스트 출력  -->
+	<select id="spmList" resultType="ShoppingMall">
+		select * from SPM
+	</select>
+	
+	
+	
+	<!-- 쇼핑몰 필터 -->
+	<select id="spmFilter" parameterType="ShopFilter" resultType="Integer">
+
+		SELECT DISTINCT spm.SPMENROLLNO FROM SPM
+		 INNER JOIN SPMSTYLE st ON SPM.SPMENROLLNO=st.SPMENROLLNO
+		 WHERE SPMCLASSIFCN = #{category}
+		<if test="age != null || style != null">			
+			AND(
+			<choose>
+
+				<!-- 필터 항목이 두개 다 일 때 -->
+				<when test="age != null and style != null"> 
+					<foreach collection="age" item="item" separator="OR">
+						SPMAGES = #{item} 
+					</foreach>				
+					OR
+					<foreach collection="style" item="item" separator="OR">
+						STYLE = #{item} 
+					</foreach>
+				
+				</when>
+				<!-- 필터 항목이 하나만 있을 때 -->
+				<otherwise>
+
+					<if test="age != null">					
+						<foreach collection="age" item="item" separator="OR">
+							SPMAGES = #{item} 
+						</foreach>
+					</if>
+					<if test="style != null">					
+						<foreach collection="style" item="item" separator="OR">
+							STYLE = #{item} 
+						</foreach>
+					</if>
+				</otherwise>
+			</choose>
+			) <!-- age와 style 괄호로 묶어서 처리 -->
+
+		</if>
+	</select>
+	
+	<!-- 쇼핑몰 1개 -->
+	<select id="selectedSPM" parameterType="int" resultType="ShoppingMall">
+		SELECT * FROM SPM 
+		 WHERE SPMENROLLNO =#{SPMENROLLNO}
+	</select>
+	<!-- 쇼핑몰 1개에 대한 상품 리스트 -->
+	<select id="selectedProduct" parameterType="int" resultType="Product">
+		SELECT * FROM PRODUCT
+		 WHERE SPMENROLLNO = #{SPMENROLLNO}
+	</select>
+	
+	<select id="SpmStyle" parameterType="int" resultType="String">
+		Select STYLE from SPMStyle
+		 WHERE SPMENROLLNO = #{SPMENROLLNO}
+	</select>
+	
+	<!-- enrollNo맥스값 받아오기.. -->
+	<select id="selectspmBmNo" resultType="int">
+		select max(spmBmNo) from SPMBM
+	</select>
+	<!-- 즐겨찾기 추가 -->
+	<insert id="insertBookMark" parameterType="BookMark">
+		INSERT INTO SPMBM VALUES( ${spmBmNo},${bmEnrollNo},${pEnrollNo},'${mId}' )	
+	</insert>
+	
+	<!-- 즐겨찾기 삭제  -->
+	<delete id="deleteBm" parameterType="map">
+	  Delete From SPMBM
+	   WHERE MID='${mId}'
+		 AND BMENROLLNO = ${spmEnrollNo}
+	  
+	</delete>
+	<!-- 즐겨찾기 여부 확인 -->
+	<select id="checkBM" parameterType="map" resultType="int">
+		SELECT SPMBMNO from  SPMBM
+		 WHERE MID='${mId}'
+		   AND BMENROLLNO = ${spmEnrollNo}
+	</select>
+	
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

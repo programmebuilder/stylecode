@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../resources/bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="../resources/bootstrap/css/bootstrap.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+			 <button  id="bookedIcon" style="margin-left: 80%; border: none; background-color: white;"> <img id="like1" alt="" src="logo/like2.png"></button>	
+	<h3>글목록보기</h3>
+	<table width="500", border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<th>쇼핑몰 이름</th>
+			<th>쇼핑몰 내용</th>
+		</tr>			
+		<tr>
+			<c:forEach var="SPM" items="${list}">
+				<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
+					<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="${SPM.spmTn}">
+						<a class="btn spmNm" href="../spmDetail/Spmdetail.do?spmEnrollNo=${SPM.spmEnrollNo}"> 
+						<span>&emsp;</span><b style="color: black;">${SPM.spmNm}</b></a>
+						<span class="spmInfo">&emsp;${SPM.spmInfo}</span>
+				</p>
+			</c:forEach>
+			
+		</tr>
+
+	</table>
+</body>
+</html>

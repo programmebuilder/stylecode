@@ -1,0 +1,12 @@
+package stylecode.kosta180.domain;
+
+import java.io.Serializable;
+
+public class SpmBmVO implements Serializable {
+	int spmBmNo;
+	int bmEnrollNo;
+	int pEnrollNo;
+	String mId;
+
+
+}

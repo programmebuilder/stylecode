@@ -1,0 +1,94 @@
+package stylecode.kosta180.domain;
+
+public class Manager_spmVO {
+
+	private int spmEnrollNo;
+	private String spmNm;
+	private String spmURL;
+	private String spmTn;
+	private String spmInfo;	
+	private String spmClassifcn;
+	private String spmAges;
+	private String spmDate;
+	private String mId;
+	private String mngLineNo;
+	
+	public Manager_spmVO(){}
+	public Manager_spmVO(int spmEnrollNo, String spmNm, String spmURL, String spmTn, String spmInfo,
+			String spmClassifcn, String spmAges, String spmDate, String mId, String mngLineNo) {
+		super();
+		this.spmEnrollNo = spmEnrollNo;
+		this.spmNm = spmNm;
+		this.spmURL = spmURL;
+		this.spmTn = spmTn;
+		this.spmInfo = spmInfo;
+		this.spmClassifcn = spmClassifcn;
+		this.spmAges = spmAges;
+		this.spmDate = spmDate;
+		this.mId = mId;
+		this.mngLineNo = mngLineNo;
+	}
+	public int getSpmEnrollNo() {
+		return spmEnrollNo;
+	}
+	public void setSpmEnrollNo(int spmEnrollNo) {
+		this.spmEnrollNo = spmEnrollNo;
+	}
+	public String getSpmNm() {
+		return spmNm;
+	}
+	public void setSpmNm(String spmNm) {
+		this.spmNm = spmNm;
+	}
+	public String getSpmURL() {
+		return spmURL;
+	}
+	public void setSpmURL(String spmURL) {
+		this.spmURL = spmURL;
+	}
+	public String getSpmTn() {
+		return spmTn;
+	}
+	public void setSpmTn(String spmTn) {
+		this.spmTn = spmTn;
+	}
+	public String getSpmInfo() {
+		return spmInfo;
+	}
+	public void setSpmInfo(String spmInfo) {
+		this.spmInfo = spmInfo;
+	}
+	public String getSpmClassifcn() {
+		return spmClassifcn;
+	}
+	public void setSpmClassifcn(String spmClassifcn) {
+		this.spmClassifcn = spmClassifcn;
+	}
+	public String getSpmAges() {
+		return spmAges;
+	}
+	public void setSpmAges(String spmAges) {
+		this.spmAges = spmAges;
+	}
+	public String getSpmDate() {
+		return spmDate;
+	}
+	public void setSpmDate(String spmDate) {
+		this.spmDate = spmDate;
+	}
+	public String getmId() {
+		return mId;
+	}
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
+	public String getMngLineNo() {
+		return mngLineNo;
+	}
+	public void setMngLineNo(String mngLineNo) {
+		this.mngLineNo = mngLineNo;
+	}
+	
+	
+	
+}

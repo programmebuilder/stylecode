@@ -1,0 +1,62 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true"%>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../resources/bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/bootstrap/css/bootstrap.css">
+<html>
+<head>
+<title>Home</title>
+<%
+	String mId = "aaaa@NAVER.COM";
+	session.setAttribute("mId", mId);
+%>
+
+
+</head>
+<body>
+
+	<button id="bookedIcon"
+		style="margin-left: 80%; border: none; background-color: white;">
+		<img id="like1" alt="" src="logo/like2.png">
+	</button>
+	<h3>관리자 페이지</h3>
+	<div>
+	<form action="">
+<div> 
+
+				<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
+	<input type="checkbox">
+ <img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="../resources/MH/images/lip.png"> 
+					<a class="btn spmNm" href="../spmDetail/Spmdetail.do?spmEnrollNo=${SPM.spmEnrollNo}">
+					<span>&emsp;</span><b style="color: black;">스타일난다</b>
+					</a> 
+					<span class="spmInfo">&emsp;스타일난다 입니다.</span>
+				</p>
+
+
+</div>			
+			
+<div>
+
+				<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
+					<label class="form-check-label"> 
+					<input class="form-check-input" type="checkbox">
+					</label> <img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="../resources/MH/images/lip.png"> 
+					<a class="btn spmNm" href="../spmDetail/Spmdetail.do?spmEnrollNo=${SPM.spmEnrollNo}">
+					<span>&emsp;</span><b style="color: black;">스타일난다</b>
+					</a> 
+					<span class="spmInfo">&emsp;스타일난다 입니다.</span>
+				</p>
+
+</div>
+
+		<button type="submit" class="btn btn-primary">승인</button>
+	</form>
+	</div>
+</body>
+</html>

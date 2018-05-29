@@ -1,0 +1,67 @@
+package stylecode.kosta180.domain;
+
+public class Manager_spmVO {
+
+	
+	private String mId;
+	private String mngLineNo;
+	private int spmEnrollNo;
+	private ShoppingMallVO spm;
+	
+	public Manager_spmVO(){}
+	
+
+	public Manager_spmVO(String mId, String mngLineNo, int spmEnrollNo, ShoppingMallVO spm) {
+		super();
+		this.mId = mId;
+		this.mngLineNo = mngLineNo;
+		this.spmEnrollNo = spmEnrollNo;
+		this.spm = spm;
+	}
+
+
+	public String getmId() {
+		return mId;
+	}
+
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
+
+	public String getMngLineNo() {
+		return mngLineNo;
+	}
+
+	public void setMngLineNo(String mngLineNo) {
+		this.mngLineNo = mngLineNo;
+	}
+
+	public int getSpmEnrollNo() {
+		return spmEnrollNo;
+	}
+
+	public void setSpmEnrollNo(int spmEnrollNo) {
+		this.spmEnrollNo = spmEnrollNo;
+	}
+
+	public ShoppingMallVO getSpm() {
+		return spm;
+	}
+
+	public void setSpm(ShoppingMallVO spm) {
+		this.spm = spm;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Manager_spmVO [mId=" + mId + ", mngLineNo=" + mngLineNo + ", spmEnrollNo=" + spmEnrollNo + ", spm="
+				+ spm + "]";
+	}
+	
+	
+
+	
+	
+	
+}

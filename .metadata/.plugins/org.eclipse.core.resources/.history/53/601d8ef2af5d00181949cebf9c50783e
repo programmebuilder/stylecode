@@ -1,0 +1,28 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.domain.ShoppingMallVO;
+
+public class SpmDetailServiceImpl implements SpmDetailService {
+
+	@Override
+	public ShoppingMallVO selectedSPM(int spmEnrollNo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> SpmStyle(int spmEnrollNo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ProductVO> selectedProduct(int spmEnrollNo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,19 @@
+package stylecode.kosta180.persistence;
+
+
+import java.util.List;
+
+import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.domain.ShoppingMallVO;
+
+public interface SpmDetailDAO {
+
+	public ShoppingMallVO selectedSPM(int spmEnrollNo) throws Exception;
+	public List<String> SpmStyle(int spmEnrollNo)throws Exception;
+	public List<ProductVO> selectedProduct(int spmEnrollNo) throws Exception;
+	
+	//즐겨찾기 처리하는 부분
+	public void insertBm() throws Exception;
+	public void deleteBm() throws Exception;
+	
+}

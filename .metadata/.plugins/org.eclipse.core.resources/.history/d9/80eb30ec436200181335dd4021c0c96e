@@ -1,0 +1,17 @@
+package stylecode.kosta180.domain;
+
+public class Manager_spmVO {
+
+	
+	private String mId;
+	private String mngLineNo;
+	private int spmEnrollNo;
+	private ShoppingMallVO spm;
+	
+	public Manager_spmVO(){}
+	
+
+	
+	
+	
+}

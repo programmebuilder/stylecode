@@ -1,0 +1,15 @@
+package shop.shoppingmall.model;
+
+import java.util.List;
+
+public class SpmFilterList {
+	private List<Integer> filterList;
+
+	public List<Integer> getFilterList() {
+		return filterList;
+	}
+
+	public void setFilterList(List<Integer> filterList) {
+		this.filterList = filterList;
+	}
+}

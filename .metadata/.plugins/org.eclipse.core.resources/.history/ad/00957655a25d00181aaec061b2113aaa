@@ -1,0 +1,13 @@
+package shop.shoppingmall.model;
+
+public class ShoppingMallSearch {
+	private String searchKey;
+	
+	public String getSearchKey() {
+		return searchKey;
+	}
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+
+}

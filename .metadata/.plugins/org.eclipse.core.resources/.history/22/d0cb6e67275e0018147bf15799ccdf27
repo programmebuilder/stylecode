@@ -1,0 +1,30 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+import stylecode.kosta180.domain.ShoppingMallSearchVO;
+import stylecode.kosta180.domain.ShoppingmallVO;
+import stylecode.kosta180.domain.SpmFilterListVO;
+import stylecode.kosta180.domain.SpmFilterVO;
+
+public class ShoppingmallServiceImpl implements ShoppingmallService {
+
+	@Override
+	public List<ShoppingmallVO> listShoppingMall(ShoppingMallSearchVO search) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Integer> SPMfiter(SpmFilterVO filter) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ShoppingmallVO> listShoppingMallFilter(SpmFilterListVO filterList) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package stylecode.kosta180.domain;
+
+public class SpmRequestVO {
+	private String mId;
+}

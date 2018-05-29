@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="stylecode.kosta180.controller" />
-	
+	<context:component-scan base-package="stylecode.kosta180.domain"/>
 	
 	
 </beans:beans>

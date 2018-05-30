@@ -78,6 +78,8 @@
 </html>
 
  --%>
+<%@page import="java.util.Random"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -92,6 +94,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<script type="text/javascript">
+	
+</script>
 <title>4 Col Portfolio - Start Bootstrap Template</title>
 
 <!-- Bootstrap core CSS -->
@@ -115,40 +120,93 @@
 				style="margin-top: 2%; margin-left: 1%;">낮은 가격순</button>
 			<button type="submit" class="btn btn-primary"
 				style="margin-top: 2%; margin-left: 1%;">높은 가격순</button>
-		</div>
-
-
-		<!--검색바 생성  -->
-		<div style="margin-right: 20px; margin-top: 3%">
-			<form class="form-search form-inline"
-				style="position: absolute; right: 10%;">
-				<div class="input-append">
-					<input type="text" class="search-query" name="searchKey"
-						placeholder="Search..." />
-					<button type="submit" class="btn btn-outline-dark">Search</button>
-				</div>
-			</form>
+			<button type="button" class="btn btn-lg" data-toggle="modal"
+				style="margin-top: 2%; margin-left: 1%;" data-target="#myModal2">상품추천</button>
 		</div>
 	</div>
+	<!--검색바 생성  -->
+	<div style="margin-right: 20px; margin-top: 3%">
+		<form class="form-search form-inline"
+			style="position: absolute; right: 10%;">
+			<div class="input-append">
+				<input type="text" class="search-query" name="searchKey"
+					placeholder="Search..." />
+				<button type="submit" class="btn btn-outline-dark">Search</button>
+			</div>
+		</form>
+	</div>
+	</div>
+	</div>
+
+
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">나에게맞는 스타일찾기</h4>
+				</div>
+				<div class="modal-body">
+					<form action="/recommendCheakBox" method="get"
+						entype="multipart/form-data">
+						<h1 class="my-4">&ensp; &ensp;</h1>
+						<div class="row" style="margin-top: 5%;">
+							<c:forEach var="i" items="${list }">
+								<c:if test="${i.penRollNo >=5000 && i.penRollNo<=5030}">
+									<div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+										<div class="card h-100">
+											<a href="#"><img class="card-img-top" src=${i.pImg }
+												alt="" width="150px" height="150px"></a>
+											<div class="card-body">
+												<h4 class="card-title">
+													<a href="#">${i.pNm }</a>
+												</h4>
+												<p>${i.penRollNo }</p>
+												<p class="card-text">${i.mPrice }
+													<input type="checkbox" name="chk" value="${i.penRollNo }">
+												</p>
+											</div>
+										</div>
+									</div>
+								</c:if>
+							</c:forEach>
+						</div>
+
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Save
+								changes</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 	<div class="container">
 		<h1 class="my-4">&ensp; &ensp;</h1>
 		<div class="row" style="margin-top: 5%;">
-			<c:forEach var="i" items="${list }">
-
+			<c:forEach var="i" items="${list }" begin="0" end="20">
 				<div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
 					<div class="card h-100">
-						<a href="#"><img class="card-img-top"
-							src=../resources/dist/img/credit/cirrus.png alt="" width="253px"
-							height="375px"></a>
+						<a href="#"><img class="card-img-top" src=${i.pImg } alt=""
+							width="253px" height="375px"></a>
 						<div class="card-body">
 							<h4 class="card-title">
 								<a href="#">${i.pNm }</a>
 							</h4>
-
 							<p class="card-text">${i.mPrice }</p>
 						</div>
 					</div>
 				</div>
+
 			</c:forEach>
 		</div>
 	</div>

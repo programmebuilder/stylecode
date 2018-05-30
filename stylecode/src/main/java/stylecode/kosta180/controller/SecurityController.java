@@ -4,23 +4,21 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import stylecode.kosta180.domain.SecurityMemberVO;
-import stylecode.kosta180.security.CustomUserDetails;
-import stylecode.kosta180.security.LoginReq;
-import stylecode.kosta180.security.service.MemberService;
+import stylecode.kosta180.domain.MemberVO;
+
+
+
 
 /**
  * Handles requests for the application home page.
@@ -28,66 +26,57 @@ import stylecode.kosta180.security.service.MemberService;
 @Controller
 public class SecurityController {
 	private static final Logger logger = LoggerFactory.getLogger(SecurityController.class);
+		
+	/*@Inject
+	private SignUpService signUpService;*/
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(HttpSession session) {
-		logger.info("Welcome login! {}", session.getId()); 
-		return "signin/login";
-	}
 	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) {
-		CustomUserDetails userDetails = (CustomUserDetails)session.getAttribute("userLoginInfo");
-		
-		logger.info("Welcome logout! {}, {}", session.getId(), userDetails.getUsername());
-		
-		
-		session.invalidate();
-		return "signin/logout";
-	}
-	
-	@RequestMapping(value = "/login_success", method = RequestMethod.GET)
-	public String login_success(HttpSession session) {
-		CustomUserDetails userDetails = (CustomUserDetails)SecurityContextHolder.getContext().getAuthentication().getDetails();
-		
-		logger.info("Welcome login_success! {}, {}", session.getId(), userDetails.getUsername() + "/" + userDetails.getPassword());
-		session.setAttribute("userLoginInfo", userDetails);
-		
-		return "signin/login_success";
-	}
-	
-	@RequestMapping(value = "/page1", method = RequestMethod.GET)
-	public String page1(HttpSession session) {	
-		
-		CustomUserDetails userDetails = (CustomUserDetails)session.getAttribute("userLoginInfo");
-		logger.info("Welcome logout! {}, {}", session.getId(), userDetails.getUsername());
-		
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		@RequestMapping(value = "/loginform", method = { RequestMethod.GET, RequestMethod.POST })
+		public String loginform() {
+			System.out.println("loginform 메소드 호출입니다.");
+			return "signin/loginform";// "/WEB-INF/views/loginform.jsp"
 		}
-		return "signin/page1";
+
+		// 로그인실패 페이지 요청
+		@RequestMapping(value = "/loginfail", method = RequestMethod.GET)
+		public String loginfail() {
+
+			/* View 정보를 반환하는 부분 */
+			return "signin/loginfail"; // "/WEB-INF/views/loginfail.jsp"
+		}
+
+		// 로그아웃폼 페이지 요청
+		@RequestMapping(value = "/logoutform", method = RequestMethod.GET)
+		public String logoutform() {
+
+			/* View 정보를 반환하는 부분 */
+			return "signin/logoutform"; // "/WEB-INF/views/logoutform.jsp"
+		}
+
+		// 계정별 로그인
+		@RequestMapping(value = "/loginsuccess", method = RequestMethod.GET)
+		public String loginresult() {
+
+			return "signin/loginsuccess";// "/WEB-INF/views/loginsuccess.jsp"
+		}
+		
+		//회원가입
+		/*@RequestMapping(value="/SignUpInsert")
+		public String SignUpInsert(@RequestParam("mId") String mId,@RequestParam("mPassword") String password ,@RequestParam("mNm") String mNm, @RequestParam("birth1") String bir1, @RequestParam("birth2") String bir2, @RequestParam("birth3") String bir3){
+			String birth=bir1+"."+bir2+"."+bir3;
+			MemberVO memberVo=new MemberVO();
+			memberVo.setmBirth(birth);
+			memberVo.setmId(mId);
+			memberVo.setmNm(mNm);
+			memberVo.setmPassword(password);
+			
+		 return signUpService.insertMember(memberVo);
+			
+		}*/
 	}
-	
-	@RequestMapping(value = "/login_duplicate", method = RequestMethod.GET)
-	public String login_duplicate() {		
-		logger.info("Welcome login_duplicate!");
-		return "signin/login_duplicate";
-	}
-	
-	/*@RequestMapping(value = "/register", method=RequestMethod.POST)
-	public String register(SecurityMemberVO securitymember,Model model){
-		logger.info("register에 도착함");
-		memberService.join(securitymember);
-		return "redirect:/productlist";
-	}*/
+
 	
 	
 	
 	
-}
+

@@ -22,7 +22,9 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="stylecode.kosta180.controller" />
-	<context:component-scan base-package="stylecode.kosta180.security" />
-	
+	<context:component-scan base-package="stylecode.kosta180.security.Service" />
+	<context:component-scan base-package="stylecode.kosta180.domain"/>
+	<context:component-scan base-package="stylecode.kosta180.persistence"></context:component-scan>
+	<context:component-scan base-package="stylecode.kosta180.service"></context:component-scan>
 	
 </beans:beans>

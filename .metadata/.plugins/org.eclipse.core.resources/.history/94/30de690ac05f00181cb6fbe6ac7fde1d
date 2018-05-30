@@ -1,0 +1,9 @@
+package stylecode.kosta180.security;
+
+import org.apache.log4j.Logger;
+
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
+public class UserLoginSuccessHandler implements AuthenticationSuccessHandler{
+private
+}

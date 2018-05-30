@@ -8,6 +8,8 @@
 		$(".btn-primary").on("click", function() {
 			self.location = "/productlistHigh"
 		});
+		
+	
 	});
 	
 	

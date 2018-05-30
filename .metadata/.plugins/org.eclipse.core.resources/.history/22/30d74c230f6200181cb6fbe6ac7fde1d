@@ -1,0 +1,164 @@
+package stylecode.kosta180.controller;
+/*
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.common.LongPrimitiveArrayIterator;
+import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
+import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.TanimotoCoefficientSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class TestRecommend {
+
+	@RequestMapping(value="/test")
+	public void tanimotoCoefficientSimilarity_GET()throws Exception{
+		
+		try {
+			DataModel dm=new FileDataModel(new File("C:\\data\\movies_info.csv"));
+			
+			TanimotoCoefficientSimilarity sim = new TanimotoCoefficientSimilarity(dm);
+			System.out.println("sim:="+sim);
+			GenericItemBasedRecommender recommender= new GenericItemBasedRecommender(dm, sim);
+			int x= 1;
+			
+			System.out.println("타니모토사용합니더어~~");
+			
+			for(LongPrimitiveIterator items=dm.getItemIDs(); items.hasNext();){
+				long itemId=items.nextLong();
+				System.out.println("itemId:"+itemId);
+				List<RecommendedItem> recommendations=recommender.mostSimilarItems(itemId, 5);
+				System.out.println("recommendations:="+recommendations);
+				for(RecommendedItem recommendation:recommendations){
+					System.out.println(itemId+","+recommendation.getItemID()+","+recommendation.getValue());
+					
+					x++;
+					if(x>10)System.exit(1);
+				}
+			}
+		} catch (IOException e) {
+			System.out.println("에러떳습뉘다에러에러");
+		}catch (TasteException e) {
+			System.out.println("Taste 에러에연");
+			e.printStackTrace();
+		}
+	}
+}
+*/
+
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
+
+import org.apache.mahout.cf.taste.common.Refreshable;
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
+import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
+import org.apache.mahout.cf.taste.impl.eval.AverageAbsoluteDifferenceRecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.Recommender;
+import org.apache.mahout.cf.taste.similarity.PreferenceInferrer;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+ 
+@Controller
+@RequestMapping("/test")
+public class TestRecommend {
+   
+   // 처음 동행 페이지 클릭 시 실행되는 컨트롤러
+   @RequestMapping(value = "/recommend", method = RequestMethod.GET)
+   public void create_CSV_GET() throws IOException {
+      BufferedReader br = new BufferedReader(new FileReader("C:\\data2\\exam_data.csv"));
+      BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\data2\\exam_proceed.csv"));
+      
+      String line;
+      while ((line = br.readLine()) != null) {
+         String[] values = line.split(",");
+         bw.write(values[0] + "," +values[1] + "," + Double.parseDouble(values[2])+"\n");
+      }
+      
+      br.close();
+      bw.close();
+   }
+
+   
+   @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public void UserSimilarity_GET() throws Exception {
+        DataModel dm;
+        try {
+            // 데이터 모델 생성
+            dm = new FileDataModel(new File("C:\\data2\\exam_proceed.csv"));
+            
+            // 유사도 모델 선택
+            UserSimilarity sim = new EuclideanDistanceSimilarity(dm);
+            
+            PreferenceInferrer prefer = new PreferenceInferrer() {
+            
+            @Override
+            public void refresh(Collection<Refreshable> arg0) {
+               // TODO Auto-generated method stub
+               
+            }
+            
+            @Override
+            public float inferPreference(long arg0, long arg1) throws TasteException {
+               // TODO Auto-generated method stub
+               return 0;
+            }
+         };
+            prefer.inferPreference(10012, 8);
+            System.out.println("**prefer = "+prefer.toString());
+            sim.setPreferenceInferrer(prefer);
+            
+            System.out.println("**sim = "+sim.toString());
+            
+//            System.out.println(sim);
+            
+            //유사한 사용자 2명 찾기
+            UserNeighborhood neighborhood = new NearestNUserNeighborhood(2, sim, dm);
+            System.out.println(neighborhood.toString());
+
+            // 추천기 선택 : UserBased
+            GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(dm, neighborhood, sim);
+            System.out.println(recommender.toString());
+          
+            List<RecommendedItem> recommendations = recommender.recommend(10012, 3); 
+            System.out.println(recommendations);
+            
+            
+//            System.out.println(recommendations);
+           
+            for(RecommendedItem recommendation : recommendations){
+               System.out.println(recommendation);
+            }
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }

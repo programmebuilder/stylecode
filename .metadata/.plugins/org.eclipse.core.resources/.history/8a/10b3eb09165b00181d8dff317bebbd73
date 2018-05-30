@@ -1,6 +1,0 @@
-package stylecode.kosta180.domain;
-
-public class ProductSearchVO {
-	private String[] area;
-	private String searchKey;
-}

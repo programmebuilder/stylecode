@@ -26,7 +26,7 @@
 
 		<!-- 회원가입 폼 START -->
 		<div class="card-body">
-			<form class="form-signin">
+			<form class="form-signin" action="/SignUpInsert">
 
 				<!--회원가입 이메일 주소 적기 -->
 				<label for="inputEmail" class="sr-only">Email을 입력해주세요</label> <input

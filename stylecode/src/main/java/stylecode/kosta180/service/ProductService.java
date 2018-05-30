@@ -1,6 +1,7 @@
 package stylecode.kosta180.service;
 
 import java.util.List;
+import java.util.Map;
 
 import stylecode.kosta180.domain.ProductVO;
 
@@ -9,4 +10,5 @@ public List<ProductVO> listAll() throws Exception;
 public List<ProductVO> listAllLow() throws Exception;
 public List<ProductVO> listAllHigh()throws Exception;
 
+public List<ProductVO> recommendList(List<Integer> recommend) throws Exception;
 }

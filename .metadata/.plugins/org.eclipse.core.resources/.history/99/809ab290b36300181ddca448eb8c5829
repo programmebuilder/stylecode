@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stylecode.kosta180.mappers.productMapper">
+
+
+	<select id="productlist" resultType="ProductVO">
+		select *from product
+	</select>
+	
+	<select id="productlistLow" resultType="ProductVO">
+	select*from product order by mprice asc
+	</select>
+	
+	<select id="productlistHigh" resultType="ProductVO">
+	select*from product order by mprice desc
+	</select>
+	
+	<select id="recommendItem" resultType="java.util.HashMap">
+	SELECT 	m.MID, 
+			pr.PENROLLNO
+			
+	FROM	MEMBER m,
+			RECOMMENDBUY REB,
+			RECOMMENDBUYDETAIL REBD,
+			PRODUCT PR
+			
+	WHERE 	m.MID=REB.MID AND
+			REB.RECOMMENDBUYNO=REBD.RECOMMENDBUYNO AND
+			REBD.PENROLLNO=PR.PENROLLNO
+			
+	ORDER
+	BY		m.MID
+	</select>
+	<select id="recommendList" parameterType="java.util.ArrayList" resultType="ProductVO">
+		select *from product where penrollno IN
+		<foreach collection= "list" item="list2	" separator="," open="(" close=")">
+		#{list2}
+		</foreach>
+	</select>
+	
+	
+</mapper>

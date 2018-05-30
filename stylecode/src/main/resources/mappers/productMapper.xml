@@ -17,4 +17,29 @@
 	<select id="productlistHigh" resultType="ProductVO">
 	select*from product order by mprice desc
 	</select>
+	
+	<select id="recommendItem" resultType="java.util.HashMap">
+	SELECT 	m.MID, 
+			pr.PENROLLNO
+			
+	FROM	MEMBER m,
+			RECOMMENDBUY REB,
+			RECOMMENDBUYDETAIL REBD,
+			PRODUCT PR
+			
+	WHERE 	m.MID=REB.MID AND
+			REB.RECOMMENDBUYNO=REBD.RECOMMENDBUYNO AND
+			REBD.PENROLLNO=PR.PENROLLNO
+			
+	ORDER
+	BY		m.MID
+	</select>
+	<select id="recommendList" parameterType="java.util.ArrayList" resultType="ProductVO">
+		select *from product where penrollno IN
+		<foreach collection= "list" item="list" separator="," open="(" close=")">
+		#{list}
+		</foreach>
+	</select>
+	
+	
 </mapper>

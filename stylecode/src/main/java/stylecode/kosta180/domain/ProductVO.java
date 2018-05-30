@@ -1,5 +1,9 @@
 package stylecode.kosta180.domain;
 
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+@Repository
 public class ProductVO {
 	private int penRollNo;
 	private String pNm;
@@ -7,6 +11,7 @@ public class ProductVO {
 	private int mPrice;
 	private int spemnRollNo;
 	private int cGno;
+	
 	public int getPenRollNo() {
 		return penRollNo;
 	}

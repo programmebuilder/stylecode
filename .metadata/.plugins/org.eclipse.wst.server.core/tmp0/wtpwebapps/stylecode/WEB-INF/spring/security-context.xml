@@ -6,49 +6,34 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-
-	<!--http 태그는 접근 권한설정하는 부분이고,계정으로 로그인 하면 ROLE_USER 라는 권한을 부여받게 된다 -->
-	<!-- IS_AUTHENTICATED_ANONYMOUSLY 익명 사용자 IS_AUTHENTICATED_REMEMBERED REMEMBERED 
-		사용자 IS_AUTHENTICATED_FULLY 인증된 사용자 security-context.xml 파일은 공통적인 보안에 대한 설정을 
-		담당하는 파일이라고 생각하면 될 것 같다. -->
-	<http auto-config='true'>
-		<intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<intercept-url pattern="/login_duplicate" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<intercept-url pattern="/**" access="ROLE_USER" />
-
-		<!-- 전체를 인터셉트하면 에러가남 ! ????왱??ㅇ? <intercept-url pattern="/resources/**" 
-			access="permitAll" /> -->
-		<!--로그인 페이지로 넘어가는것을 정의해준다 username-parameter ->loginpage 에 있는 form에 들어가있는 
-			id이름이 id password-parameter -> loginpage 에 있는 form에 들어가있는 password이름이 pw -->
-		<form-login login-page="/login"
-		 username-parameter="id"
-			password-parameter="pw" 
-			login-processing-url="/loginProcess"
-			default-target-url="/login_success"
-			 authentication-failure-url="/login"
-			always-use-default-target='true' />
-
-		<session-management>
-			<concurrency-control max-sessions="1"
-				expired-url="/login_duplicate" />
-		</session-management>
-		<!-- <logout logout-url="/logout" logout-success-url="/welcome" /> -->
-
+	<!-- login-processing-url="/signin/login" always-use-default-target="true" --><!-- authentication-success-handler-ref="userLoginSuccessHandler" authentication-failure-handler-ref="userLoginFailureHandler" -->
+	<!-- 인터셉트 부분 첫시작을 항상 인터셉트함 /**로 모든 URL에 접속하기 위해선 ROLE_USER의 권한이있어야함 -->
+	<!-- <http auto-config="true" use-expressions="true"> <intercept-url pattern="/signin/**" 
+		access="permitAll"/> <intercept-url pattern="/resources/**" access="permitAll" 
+		/> <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/> -->
+	<!-- "/productlist" -->
+	<http auto-config="true" use-expressions="true">
+		<form-login login-page="/loginform"
+		default-target-url="/productlist" 
+		authentication-failure-url="/loginfail" />
+		<logout logout-success-url="/logoutform" />
+		 <intercept-url pattern="/resources/*" access="permitAll"/> 
+		
 	</http>
-
-
-<authentication-manager>
-		<authentication-provider ref="customAuthenticationProvider" />
+	<!--Role_MANAGER , Role_ADMIN, Role_USER  -->
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT 
+		MID as userName, MPASSWD as password, ENABLED FROM member where mid=?"
+				authorities-by-username-query="SELECT 
+		MID as userName, authority  FROM member WHERE mid=?" />
+		</authentication-provider>
 	</authentication-manager>
+	
+	
+	<!-- Permission MethodInvocation Expression : 소스 레벨에서 제어되는 옵션 -->    
 
-	<beans:bean
-		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
-	<!-- <authentication-manager> <authentication-provider ref="customAuthenticationProvider" 
-		/> </authentication-manager> -->
-	<beans:bean id="customAuthenticationProvider"
-		class="stylecode.kosta180.security.CustomAuthenticationProvider" />
-
-
-
+<beans:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder"></beans:bean>
 
 </beans:beans>

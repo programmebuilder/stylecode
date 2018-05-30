@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<!-- login-processing-url="/signin/login" always-use-default-target="true" --><!-- authentication-success-handler-ref="userLoginSuccessHandler" authentication-failure-handler-ref="userLoginFailureHandler" -->
+	<!-- 인터셉트 부분 첫시작을 항상 인터셉트함 /**로 모든 URL에 접속하기 위해선 ROLE_USER의 권한이있어야함 -->
+	<!-- <http auto-config="true" use-expressions="true"> <intercept-url pattern="/signin/**" 
+		access="permitAll"/> <intercept-url pattern="/resources/**" access="permitAll" 
+		/> <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/> -->
+	<!-- "/productlist" -->
+	<http auto-config="true" use-expressions="true">
+		<form-login login-page="/loginform"
+		default-target-url="/loginsuccess" 
+		authentication-failure-url="/loginfail" />
+		<logout logout-success-url="/logoutform" />
+		 <intercept-url pattern="/resources/*" access="permitAll"/> 
+		<intercept-url pattern="/product*" access="hasRole('ROLE_MANAGER')"/> 
+	</http>
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT 
+		EMAIL as userName, PASSWD as password, ENABLED FROM userA where EMAIL=?"
+				authorities-by-username-query="SELECT 
+		EMAIL as userName, authority  FROM userA WHERE EMAIL=?" />
+		</authentication-provider>
+	</authentication-manager>
+	
+	
+	<!-- Permission MethodInvocation Expression : 소스 레벨에서 제어되는 옵션 -->    
+
+
+</beans:beans>

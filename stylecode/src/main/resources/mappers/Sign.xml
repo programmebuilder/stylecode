@@ -5,5 +5,9 @@
 
 <mapper namespace="stylecode.kosta180.mappers.SignMapper">
 
-<insert id="Signup" parameterType=""></insert>
+	<insert id="insertMember" parameterType="MemberVO">
+		insert into
+		member(MID,MPASSWD,MNM,MPHONE,MBIRTH,enabled,authority)
+		values(#{MID},#{MPASSWD},#{MNM},#{MPHONE},#{MBIRTH},1,'ROLE_USER')
+	</insert>
 </mapper>

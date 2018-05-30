@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.persistence{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1527036361755"/>
-<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.service{ProductService.java[ProductService" modifiers="513" timestamp="1527036361783"/>
-<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.persistence{SignDAO.java[SignDAO" modifiers="513" timestamp="1526715575156"/>
-<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.service{SignService.java[SignService" modifiers="513" timestamp="1526715602118"/>
+<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.persistence{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1527472530947"/>
+<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.service{ProductService.java[ProductService" modifiers="513" timestamp="1527483548485"/>
+<typeInfo handle="=stylecode/src\/main\/java&lt;stylecode.kosta180.persistence{SignUpDAO.java[SignUpDAO" modifiers="513" timestamp="1527241873578"/>
 </typeInfoHistroy>

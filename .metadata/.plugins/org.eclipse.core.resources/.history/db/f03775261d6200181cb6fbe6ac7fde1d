@@ -1,0 +1,13 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+public class RecommendServiceImpl implements RecommenService {
+
+	@Override
+	public List<Integer> recommendServiceItem(int m_no) {
+		
+		return null;
+	}
+
+}

@@ -32,8 +32,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		<!-- 시큐리티 -->
 
+		<!-- 시큐리티 -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
@@ -49,6 +49,14 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>3.2.3.RELEASE</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.2.3.RELEASE</version>
+		</dependency>
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

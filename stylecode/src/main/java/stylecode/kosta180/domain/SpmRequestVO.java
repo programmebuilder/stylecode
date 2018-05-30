@@ -9,9 +9,12 @@ public class SpmRequestVO {
 	private String mName; //쇼핑몰 담당자 이름
 	private String mPhone; //쇼핑몰 담당자 휴대폰
 	private String mCall; //쇼핑몰 담당자 유선전화
+	private int mSpmEnrollNo;
+	
+	public SpmRequestVO() {}
 	
 	public SpmRequestVO(String mId, String mPasswd, String spmNm, String spmURL, String spmClassifcn, int spmRegistNo,
-			String mName, String mPhone, String mCall) {
+			String mName, String mPhone, String mCall, int mSpmEnrollNo) {
 		super();
 		this.mId = mId;
 		this.mPasswd = mPasswd;
@@ -21,6 +24,7 @@ public class SpmRequestVO {
 		this.mName = mName;
 		this.mPhone = mPhone;
 		this.mCall = mCall;
+		this.mSpmEnrollNo = mSpmEnrollNo;
 	}
 
 	public String getmId() {
@@ -85,5 +89,13 @@ public class SpmRequestVO {
 
 	public void setmCall(String mCall) {
 		this.mCall = mCall;
+	}
+
+	public int getmSpmEnrollNo() {
+		return mSpmEnrollNo;
+	}
+
+	public void setmSpmEnrollNo(int mSpmEnrollNo) {
+		this.mSpmEnrollNo = mSpmEnrollNo;
 	}
 }

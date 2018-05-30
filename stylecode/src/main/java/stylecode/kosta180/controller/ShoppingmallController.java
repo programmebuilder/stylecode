@@ -56,6 +56,8 @@ public class ShoppingmallController {
 			pageMaker.setCri(filter);
 			pageMaker.setTotalCount(service.getFilterListCount(filter));
 			
+			System.out.println(filter+"  qqq "+ffList+ "  ee  "+ filterList);
+			
 			model.addAttribute("pageMaker", pageMaker);
 			
 			return;
@@ -65,15 +67,5 @@ public class ShoppingmallController {
 		pageMaker.setTotalCount(service.getListCount(search));
 		
 		model.addAttribute("pageMaker", pageMaker);
-	}
-	
-	@RequestMapping(value="/shoppingmallRequest", method=RequestMethod.GET)
-	public void shoppingmallRequestGET(Model model) throws Exception {
-
-	}
-	
-	@RequestMapping(value="/shoppingmallRequest", method=RequestMethod.POST)
-	public String shoppingmallRequestPOST(Model model) throws Exception {
-		return "redirect:/shoppingmall/.....";
 	}
 }

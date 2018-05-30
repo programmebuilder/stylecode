@@ -34,9 +34,18 @@
 	
 	<select id="getFilterListCount" resultType="int" parameterType="SpmFilterVO">
 	select 	count(*)
-	from 	SPM INNER JOIN SPMSTYLE st ON SPM.SPMENROLLNO=st.SPMENROLLNO
+	from 	SPM
+	where
+		<choose>
+			<when test="category == '의류' ">
+				NOT SPMCLASSIFCN LIKE '%'|| '슈즈' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '패션잡화' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '쥬얼리' ||'%'
+			</when>
+			<otherwise>
+				SPMCLASSIFCN=#{category}
+			</otherwise>
+		</choose>
 	<if test="age != null || style != null">
-		<where>
+		AND(
 			<choose>
 				<!-- 필터 항목이 두개 다 일 때 -->
 				<when test="age != null and style != null"> 
@@ -45,7 +54,7 @@
 					</foreach>				
 					OR
 					<foreach collection="style" item="item" separator="OR">
-						STYLE = #{item} 
+						SPMCLASSIFCN LIKE '%' || #{item} ||'%' 
 					</foreach>
 				
 				</when>
@@ -60,31 +69,46 @@
 					</if>
 					<if test="style != null">					
 						<foreach collection="style" item="item" separator="OR">
-							STYLE = #{item} 
+							SPMCLASSIFCN LIKE '%' || #{item} ||'%' 
 						</foreach>
 					</if>
 				</otherwise>
 			</choose>
-		</where>
+		) <!-- age와 style 괄호로 묶어서 처리 -->
 	</if> 
 	</select>
 	
 	<!-- 필터 시 리스트 -->
  	<select id="listShoppingMallFilter" resultType="ShoppingmallVO" parameterType="SpmFilterListVO">
-		SELECT distinct sp.spmNm, sp.spmInfo, sp.spmEnrollNo, sp.spmTn
-			FROM SPM sp, SPMSTYLE st
-		WHERE sp.spmEnrollNo=st.spmEnrollNo AND
-		<foreach collection="filterList" item="item" separator="OR">
-				sp.spmEnrollNo=${item}
-		</foreach>
+		SELECT distinct spmNm, spmInfo, spmEnrollNo, spmTn
+		FROM SPM
+		WHERE spmEnrollNo in
+		<choose>
+		<when test="filterList.size ==0">
+		(99999999999)
+		</when>
+		<otherwise>
+		<foreach collection="filterList" item="item" separator="," open="(" close=")"> 
+				#{item}
+		</foreach>	
+		</otherwise>
+		</choose>
 	</select> 
 	
 	<!-- 쇼핑몰 필터 -->
 	<select id="spmFilter" parameterType="SpmFilterVO" resultType="Integer">
 
-		SELECT DISTINCT spm.SPMENROLLNO FROM SPM
-		 INNER JOIN SPMSTYLE st ON SPM.SPMENROLLNO=st.SPMENROLLNO
-		 WHERE SPMCLASSIFCN = #{category}
+		SELECT 	DISTINCT SPMENROLLNO 
+		FROM 	SPM
+		WHERE 	
+		<choose>
+			<when test="category == '의류' ">
+				NOT SPMCLASSIFCN LIKE '%'|| '슈즈' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '패션잡화' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '쥬얼리' ||'%'
+			</when>
+			<otherwise>
+				SPMCLASSIFCN= #{category}
+			</otherwise>
+		</choose>
 		<if test="age != null || style != null">			
 			AND(
 			<choose>
@@ -96,7 +120,7 @@
 					</foreach>				
 					OR
 					<foreach collection="style" item="item" separator="OR">
-						STYLE = #{item} 
+						SPMCLASSIFCN LIKE '%' || #{item} ||'%' 
 					</foreach>
 				
 				</when>
@@ -111,7 +135,7 @@
 					</if>
 					<if test="style != null">					
 						<foreach collection="style" item="item" separator="OR">
-							STYLE = #{item} 
+							SPMCLASSIFCN LIKE '%' || #{item} ||'%'  
 						</foreach>
 					</if>
 				</otherwise>
@@ -135,7 +159,21 @@
 	</select>
 	
 	<!-- 쇼핑몰 담당자 신청서 작성 -->
-	<insert id="requestSPM">
-		Insert Into SPMMN Values (#{mId}, spmmn_enrollno.nextval, #{mCall})
+	<insert id="requestSPM" parameterType="SpmRequestVO">
+		Insert Into SPMMN Values (#{mId}, #{mSpmEnrollNo}, #{mCall})
 	</insert>
+	
+	<!-- 입점신청 편의를 위해 사용하는  쇼핑몰 리스트 -->
+	<select id="listShoppingMallR" resultType="ShoppingmallVO">
+		SELECT	*
+		FROM	SPM
+		ORDER BY 	SPMENROLLNO
+	</select>
+	
+	
+	<select id="listRequestSPM" parameterType="SpmRequestVO">
+		SELECT 	*
+		FROM 	SPM s, SPMMN sm, MEMBER m
+		WHERE 	s.SPMENROLLNO=sm.SPMENROLLNO AND s.SPMNM=#{spmNm}
+	</select>
 </mapper>

@@ -1,6 +1,7 @@
 package stylecode.kosta180.persistence;
 
 import java.sql.SQLSyntaxErrorException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -13,6 +14,7 @@ import stylecode.kosta180.domain.ShoppingMallSearchVO;
 import stylecode.kosta180.domain.ShoppingmallVO;
 import stylecode.kosta180.domain.SpmFilterListVO;
 import stylecode.kosta180.domain.SpmFilterVO;
+import stylecode.kosta180.domain.SpmRequestVO;
 
 @Repository
 public class ShoppingmallDAOImpl implements ShoppingmallDAO {
@@ -36,6 +38,7 @@ public class ShoppingmallDAOImpl implements ShoppingmallDAO {
 	@Override
 	public List<ShoppingmallVO> listShoppingMallFilter(SpmFilterListVO filterList) throws Exception {
 		//필터 사용 시 출력 메소드
+		System.out.println(filterList.getFilterList());
 		return session.selectList(namespace+".listShoppingMallFilter", filterList);
 	}
 	
@@ -65,5 +68,15 @@ public class ShoppingmallDAOImpl implements ShoppingmallDAO {
 	@Override
 	public int getFilterListCount(SpmFilterVO filter) throws Exception {
 		return session.selectOne(namespace+".getFilterListCount", filter);
+	}
+
+	@Override
+	public void requestSPM(SpmRequestVO spmRequest) throws Exception {
+		session.insert(namespace+".requestSPM", spmRequest);
+	}
+
+	@Override
+	public List<ShoppingmallVO> listShoppingMallR() throws Exception {
+		return session.selectList(namespace+".listShoppingMallR");
 	}
 }

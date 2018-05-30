@@ -112,7 +112,6 @@ public class PageMaker {
 		
 		if (((SpmFilterVO) cri).getAge()!=null) {
 			for (int i = 0; i < ((SpmFilterVO) cri).getAge().length; i++) {
-				System.out.println(((SpmFilterVO) cri).getAge()[i]);
 				if (i == 0) {
 					ageParam =((SpmFilterVO) cri).getAge()[i];
 				} else {
@@ -120,15 +119,44 @@ public class PageMaker {
 				}
 			}
 		}
-	    
-	    UriComponents uriComponents=
+		
+		UriComponents uriComponents=null;
+		
+		if(styleParam=="" || ageParam=="") {
+			if(styleParam=="" && ageParam=="") {
+			    uriComponents=
+		                UriComponentsBuilder.newInstance()
+		                .queryParam("page", page)
+		                .queryParam("perPageNum", cri.getPerPageNum())
+		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
+		                .build(); 
+			} else if(styleParam=="") {
+	    		uriComponents=
+		                UriComponentsBuilder.newInstance()
+		                .queryParam("page", page)
+		                .queryParam("perPageNum", cri.getPerPageNum())
+		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
+		                .queryParam("age", ageParam)
+		                .build();
+			} else if(ageParam=="") {
+				uriComponents=
+		                UriComponentsBuilder.newInstance()
+		                .queryParam("page", page)
+		                .queryParam("perPageNum", cri.getPerPageNum())
+		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
+		                .queryParam("style", styleParam)
+		                .build(); 
+			}
+		} else {
+    		uriComponents=
 	                UriComponentsBuilder.newInstance()
 	                .queryParam("page", page)
 	                .queryParam("perPageNum", cri.getPerPageNum())
 	                .queryParam("category", ((SpmFilterVO)cri).getCategory())
-	                .queryParam("style", styleParam==""?"=":styleParam)
-	                .queryParam("age", ageParam==""?"=":ageParam)
-	                .build(); 
+	                .queryParam("style", styleParam)
+	                .queryParam("age", ageParam)
+	                .build();
+		}
 	   
 	    return uriComponents.toUriString();
   }

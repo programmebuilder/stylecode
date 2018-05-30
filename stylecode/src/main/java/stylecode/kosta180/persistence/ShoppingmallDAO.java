@@ -7,6 +7,7 @@ import stylecode.kosta180.domain.ProductVO;
 import stylecode.kosta180.domain.ShoppingMallSearchVO;
 import stylecode.kosta180.domain.ShoppingmallVO;
 import stylecode.kosta180.domain.SpmFilterVO;
+import stylecode.kosta180.domain.SpmRequestVO;
 import stylecode.kosta180.domain.SpmFilterListVO;
 
 public interface ShoppingmallDAO {
@@ -21,7 +22,13 @@ public interface ShoppingmallDAO {
 	public ShoppingmallVO selectedSPM(int spmEnrollNo) throws Exception;	
 	//페이징 처리
 	public int getListCount(ShoppingMallSearchVO search) throws Exception;
+	//필터 페이징 처리
 	public int getFilterListCount(SpmFilterVO filter) throws Exception;
+	//입점신청 생성
+	public void requestSPM(SpmRequestVO spmRequest) throws Exception;
+	//입점신청 편의를 위한 리스트
+	public List<ShoppingmallVO> listShoppingMallR() throws Exception;
+
 	/*//쇼핑몰에 대한 상품
 	public List<ProductVO> selectedProduct(int SpmEnrollNo) throws Exception;	
 	//쇼핑몰에 대한 스타일	

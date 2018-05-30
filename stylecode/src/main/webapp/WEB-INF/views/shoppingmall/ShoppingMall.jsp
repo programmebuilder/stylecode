@@ -85,13 +85,13 @@
 											<input name="category" type="radio" id="clothes" value="의류" checked="checked">의류
 										</label>
 										<label class="btn btn-secondary">
-											<input name="category" type="radio" id="accessories" value="액세서리">액세서리 
+											<input name="category" type="radio" id="accessories" value="패션잡화">패션잡화 
 										</label>
 										<label class="btn btn-secondary">
-											<input name="category" type="radio" id="shoese" value="신발">신발
+											<input name="category" type="radio" id="shoese" value="슈즈">슈즈
 										</label>
 										<label class="btn btn-secondary">
-											<input name="category" type="radio" id="bag" value="가방">가방
+											<input name="category" type="radio" id="bag" value="쥬얼리">쥬얼리
 										</label>
 									</div><br>
 									<div class="row">
@@ -138,6 +138,9 @@
 										</label>
 										<label class="btn btn-secondary">
 											<input class="style-check" name="style" type="checkbox" id="big_size" value="빅사이즈">빅사이즈
+										</label>
+										<label class="btn btn-secondary">
+											<input class="style-check" name="style" type="checkbox" id="teen" value="십대쇼핑몰">십대쇼핑몰
 										</label>
 									</div><br><br>
 									<input type="submit" value="선택완료" class="btn" id="filterBtn">

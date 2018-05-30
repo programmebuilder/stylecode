@@ -14,14 +14,14 @@
 
 <form class="text-center" id='requestForm' role="form" method="post">
 		<div id="user-info">계정 정보 입력<br>
-			이메일 &nbsp;<input type="text" name="email" size="30" id="emailInput"><br>
-			비밀번호 &nbsp;<input type="text" name="passwd" size="30" id="passwdInput"><br>
+			이메일 &nbsp;<input type="text" name="mId" size="30" id="emailInput"><br>
+			비밀번호 &nbsp;<input type="text" name="mPasswd" size="30" id="passwdInput"><br>
 		</div><br>
 		<div id="shop-info">쇼핑몰 정보 입력<br>
 			쇼핑몰명 &nbsp;<input type="text" name="spmNm" size="30" id="spmNmInput"><br>
 			사이트URL &nbsp;<input type="text" name="spmURL" size="30" id="spmURLInput"><br>
 			쇼핑몰 분류지정
-			<select>
+			<select name="spmClassifcn">
 				<option value="의류">의류</option>
 				<option value="액세서리">액세서리</option>
 				<option value="신발">신발</option>
@@ -29,9 +29,9 @@
 			</select> <br>
 		</div><br>
 		<div id="shopmanager-info">쇼핑몰 담당자 정보 입력<br>
-			이름 &nbsp;<input type="text" name="spmMNm" size="30" id="spmMNmInput"><br>
-			휴대폰 &nbsp;<input type="text" name="spmMPhone" size="30" id="spmMPhoneInput"><br>
-			유선전화 &nbsp;<input type="text" name="spmMCall" size="30" id="spmMCallInput"><br>
+			이름 &nbsp;<input type="text" name="mName" size="30" id="spmMNmInput"><br>
+			휴대폰 &nbsp;<input type="text" name="mPhone" size="30" id="spmMPhoneInput"><br>
+			유선전화 &nbsp;<input type="text" name="mCall" size="30" id="spmMCallInput"><br>
 		</div><br>			
 		<button type="submit" class="btn btn-primary">신청하기</button>
 </form>
@@ -41,13 +41,6 @@ $("#requestForm").submit(function(event){
 	event.preventDefault();
 	
 	var that = $(this);
-	
-	var str ="";
-	$(".uploadedList .delbtn").each(function(index){
-		 str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'> ";
-	});
-	
-	that.append(str);
 
 	that.get(0).submit();
 });

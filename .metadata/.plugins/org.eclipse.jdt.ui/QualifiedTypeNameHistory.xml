@@ -32,4 +32,6 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.session.RowBounds"/>
 <fullyQualifiedTypeName name="stylecode.kosta180.domain.SpmFilterVO"/>
 <fullyQualifiedTypeName name="org.springframework.web.util.UriComponentsBuilder"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="java.sql.SQLSyntaxErrorException"/>
 </qualifiedTypeNameHistroy>

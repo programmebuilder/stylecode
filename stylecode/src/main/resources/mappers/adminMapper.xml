@@ -51,11 +51,17 @@
 
 	<!-- 입점 승인 해주기 => 쇼핑몰에  spmdata 주기 -->
 
-	<update id="spmAccept" parameterType="int">
+	<update id="spmAccept" parameterType="java.util.HashMap">
 		UPDATE spm 
 		   SET spmdate=sysdate 
-		 WHERE spmEnrollno = #{spmEnrollNo}
+		 WHERE spmEnrollno IN
+		 <foreach collection="Num" item="type" 
+		 index="index" open="(" close=")" separator=",">
+		  #{type}
+		  </foreach>
 	</update>
+	
+	<!-- 이메일 뽑기 -->
 	
 	
 	<!-- 입점 거절  => delete : spm정보, spmManager정보 -->

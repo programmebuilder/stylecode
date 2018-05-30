@@ -1,5 +1,6 @@
 package stylecode.kosta180.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -28,8 +29,10 @@ public class AdminDAOImpl implements AdminDAO {
 
 	/*       승인 시               */
 	@Override
-	public void spmAccept(int spmEnrollNo) throws Exception {
-		session.update(namespace+".spmAccept");
+	public void spmAccept(HashMap spmEnrollNo) throws Exception {
+		
+		System.out.println(spmEnrollNo);
+		session.update(namespace+".spmAccept",spmEnrollNo);
 		
 	}
 
@@ -45,6 +48,14 @@ public class AdminDAOImpl implements AdminDAO {
 	public void deleteSpmManager(int spmEnrollNo) throws Exception {
 		session.delete(namespace+".deleteSpmManager");
 		
+	}
+
+	
+	//메일 주소 받아오기
+	@Override
+	public List<String> emailAdd(HashMap spmEnrollNo) throws Exception {
+		
+		return session.selectList(namespace+".ㄸ");
 	}
 
 }

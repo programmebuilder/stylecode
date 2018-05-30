@@ -50,9 +50,25 @@
 		SELECT SPMBMNO 
 		from SPMBM
 		WHERE MID= #{mId}
-		AND BMENROLLNO = #{spmEnrollNo}
+		AND spmEnrollNo = #{spmEnrollNo}
 		
 	</select>
+	
+	
+	<select id="detailBookMark" parameterType="String" resultType="ShoppingMallVO">
+		SELECT *
+		FROM SPM
+		WHERE SPMENROLLNO
+		IN (SELECT SPMENROLLNO FROM SPMBM WHERE MID = #{MID})
+	</select>
+
+
+	<delete id="deleteBookMark" parameterType="int">
+		DELETE FROM SPMBM
+		WHERE spmEnrollNo = #{spmEnrollNo}
+	</delete>
+
+
 
 
 

@@ -20,7 +20,7 @@
 	
 	
 		<div>
-		<form action="">
+		<form action="admin/accept">
 		<!--  버튼 -->
 
 			<div class="container" style="margin: 10px;">
@@ -32,8 +32,8 @@
 					      
 				</div>
 				 <div class="col-sm">
-					<button type="button" class="btn btn-outline-dark">승인</button>
-					<button type="button" class="btn btn-outline-dark">거절</button>
+					<button type="button" class="btn btn-outline-dark" id="accept">승인</button>
+					<button type="button" class="btn btn-outline-dark" id="refuse">거절</button>
 				</div>
 			 </div>
 		</div>
@@ -41,25 +41,48 @@
 		
 		<!--           쇼핑몰 리스트                      -->
 		<div id="spmList">
+		
+		
+		
 			<c:forEach var="SPM" items="${list}">
 				<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
-					<input type="checkbox"  name="checkRow" value="${content.IDX}"> 
+					<input type="checkbox"  name="checkRow" value="${spmEnrollNo}"> 
 					<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="${style.tm }"> 
 					<span>&emsp;</span><b style="color: black;">스타일난다</b> 					
 					<span class="spmInfo">&emsp;관리자 이름</span>
 					<span class="spmInfo">&emsp;스타일난다 입니다.</span>
 				</p>
 			</c:forEach>
+			
+			
+			
+			
 		</div>
 		
 		</form>
 	</div>
 </body>
+
+<script type="text/javascript">
+
+		<!-- 체크박스 전체체크/해제 하는 js -->
+		$("#th_checkAll").on("click", function(){
+			
+			    if( $("#th_checkAll").is(':checked') ){
+			      $("input[name=checkRow]").prop("checked", true);
+			    }else{
+			      $("input[name=checkRow]").prop("checked", false);
+			    };
+		});
+		
+
+</script>
+
 <!-- 템플릿 -->
 <script id="template" type="text/x-handlebars-template">
 	{{#each .}}
 	<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
-			<input type="checkbox"  name="checkRow" value="{{spmEnrollNo}}">
+			<input type="checkbox" id="checkRow" name="checkRow" value="{{spmEnrollNo}}">
 			<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="{{shoppingmallVO.smpTn}}"> 
 			<span>&emsp;</span>
 			<a class="btn spmNm" href={{spmURL}}><b style="color: black;">{{shoppingMallVO.spmNm}}</b></a>		
@@ -73,14 +96,92 @@
 
 <script type="text/javascript">
 
-
+/*           쇼핑몰 리스트                  */
 var template = Handlebars.compile($("#template").html());
 
+function spmList() {
 	$.getJSON("/admin/all",function(data){
 		console.log(data.length);
 		$("#spmList").html(template(data));
 	});
-	
+};
+
+spmList();
+
+//체크박스 속에 val를 받을 배열 선언
+//var array = new Array();
+	var array = [];
+/*                 승인                                   */
+ $("#accept").on("click", function(){
+	   
+	 $('#checkRow:checked').each(function() { 	      
+		   array.push($(this).val());	       
+	   });
+	   if(array.length == 0){
+		  alert("체크해주세요");
+	   }else{
+		   $.ajax({
+			   url :'/admin/accept',
+			   type : 'post',
+			   dataType: 'json',
+			   data:{array : array},
+			   success : function() {
+					alert("승인 되었습니다.");
+					spmList();	
+					if(result == "SUCCESS"){
+						alert("SUCCESS");
+					};	
+					}	   
+		   });
+			alert("승인 되었습니다.");
+			spmList();	
+	   }
+
+	   
+	   
+	   
+	   
+	   
+	   
+ });
+
+
+/* $("#accept").on("click", function(){
+		//체크박스에 체크된 val를 받아온다.
+	   $('#checkRow:checked').each(function() { 	      
+		   array.push($(this).val());	       
+	   });
+		
+		
+		if(array.length == 0){
+			alert("선택해 주세요.");
+		}else{
+		}
+		
+		
+		)}; */
+
+		
+/* 			   $.ajax({
+				   type : 'post',
+				   url : '/admin/accept',
+				   data :{array : array} ,
+				   dataType:'json',
+				   traditional : true,
+				   success : function(result) {
+						if(result == "SUCCESS"){
+							alert("승인 되었습니다.");
+							spmList();	
+						};
+						array = new Array();
+					
+				   }
+			   }); */
+
+			   
+
+/*                  거절                                */
+ 
 	
 </script>
 
@@ -100,18 +201,5 @@ var template = Handlebars.compile($("#template").html());
 }
 
  </script> -->
-<script type="text/javascript">
 
-		<!-- 체크박스 전체체크/해제 하는 js -->
-		$("#th_checkAll").on("click", function(){
-			
-			    if( $("#th_checkAll").is(':checked') ){
-			      $("input[name=checkRow]").prop("checked", true);
-			    }else{
-			      $("input[name=checkRow]").prop("checked", false);
-			    };
-		});
-		
-
-</script>
 </html>

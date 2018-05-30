@@ -30,4 +30,12 @@
 
 	<context:component-scan base-package="stylecode.kosta180.persistence" />
 	<context:component-scan base-package="stylecode.kosta180.service" />
+	
+<!-- 	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSencerImpl">
+		<property name="host" value="smtp.gmail.com"/>
+	
+	</bean> -->
+	
+	
 </beans>

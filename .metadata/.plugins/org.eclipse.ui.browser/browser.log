@@ -725,3 +725,16 @@
 5월 29, 2018 15:38:38.21 Unable to read VR Path Registry from C:\Users\Administrator\AppData\Local\openvr\openvrpaths.vrpath
 5월 29, 2018 15:38:38.21 [1176:512:0529/153838.210:ERROR:CONSOLE(32)] "Uncaught TypeError: Cannot read property 'displayName' of undefined", source: chrome://settings/lazy_load.crisper.js (32)
 5월 29, 2018 15:38:38.21 [1176:512:0529/153838.211:ERROR:CONSOLE(32)] "Uncaught TypeError: Cannot read property 'displayName' of undefined", source: chrome://settings/lazy_load.crisper.js (32)
+5월 29, 2018 17:44:46.65 [1176:512:0529/174446.649:ERROR:CONSOLE(961)] "TypeError: Cannot read property 'Symbol(Bindings.NetworkProject._frameAttributionSymbol)' of null TypeError: Cannot read property 'Symbol(Bindings.NetworkProject._frameAttributionSymbol)' of null
+5월 29, 2018 17:44:46.65     at Function.removeFrameAttribution (chrome-devtools://devtools/bundled/shell.js:6821:88)
+5월 29, 2018 17:44:46.65     at Bindings.SASSSourceMapping._sourceMapDetached (chrome-devtools://devtools/bundled/shell.js:6395:318)
+5월 29, 2018 17:44:46.65     at SDK.SourceMapManager.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)
+5월 29, 2018 17:44:46.65     at SDK.SourceMapManager.detachSourceMap (chrome-devtools://devtools/bundled/shell.js:5587:48)
+5월 29, 2018 17:44:46.66     at SDK.CSSModel._styleSheetRemoved (chrome-devtools://devtools/bundled/shell.js:3870:68)
+5월 29, 2018 17:44:46.66     at SDK.CSSDispatcher.styleSheetRemoved (chrome-devtools://devtools/bundled/shell.js:3893:38)
+5월 29, 2018 17:44:46.66     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3381:26)
+5월 29, 2018 17:44:46.66     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3334:31)
+5월 29, 2018 17:44:46.66     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3479:41)
+5월 29, 2018 17:44:46.66     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)", source: chrome-devtools://devtools/bundled/shell.js (961)
+5월 29, 2018 17:50:56.77 
+5월 29, 2018 17:50:56.77 KLIB_SelfTest return : KLR_OK

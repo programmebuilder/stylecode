@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="stylecode.kosta180.mapper.admin"> <!--mapper방식일 때 / namespace를 반드시 -->
+	<cache />
+	
+
+
+
+
+	<!--        입점신청 대기중인 쇼핑몰 리스트 뽑기                -->
+	
+	<resultMap type="ShoppingMallVO" id="ShoppingMallVO">
+		<result column="spmEnrollNo" property="spmEnrollNo"/>
+		<result column="spmNm" property="spmNm"/>
+		<result column="spmURL" property="spmURL"/>
+		<result column="spmTn" property="spmTn"/>
+		<result column="spmInfo" property="spmInfo"/>
+		<result column="spmViews" property="spmViews"/>
+		<result column="spmClassifcn" property="spmClassifcn"/>
+		<result column="spmAges" property="spmAges"/>
+		<result column="spmDate" property="spmDate"/>
+	</resultMap>
+	
+	<resultMap type="Manager_spmVO" id="Manager_spmVO">
+		<result column="mId" property="mId"/>
+		<result column="mngLineNo" property="mngLineNo"/>
+		<result column="spmEnrollNo" property="spmEnrollNo"/>
+		<collection property="shoppingMallVO" resultMap="ShoppingMallVO"/>		
+	</resultMap>
+
+	
+	
+	
+	<select id="selectedSPM" resultMap="Manager_spmVO">
+		
+ 		SELECT  s.spmEnrollNo, s.spmNm , s.spmURL, s.spmTn, s.spmInfo,s.spmViews, s.spmClassifcn, s.spmAges, s.spmDate,
+				m.spmEnrollNO ,m.mId, m.mngLineNo 
+		  FROM  spm s, SPMMANAGER m
+		 WHERE  s.spmenrollNo = m.spmEnrollNo
+		   AND  s.spmdate IS NULL
+		   
+<!-- 		   SELECT  s.spmEnrollNo, spmNm , spmURL, spmTn, spmInfo, SPMCLASSIFCN, spmAges, spmDate, mId, mngLineNo
+		    FROM  spm INNER JOIN spmmanager m ON spm.spmEnrollNo=m.spmEnrollNo
+		   WHERE -->
+	</select>
+	
+
+	<!-- 입점 승인 해주기 => 쇼핑몰에  spmdata 주기 -->
+
+	<update id="spmAccept" parameterType="hashmap">
+		UPDATE spm 
+		   SET spmdate=sysdate 
+		 WHERE spmEnrollno IN
+		 <foreach collection="num" item="type" 
+		 index="index" open="(" close=")" separator=",">
+		  #{spmEnrollNo}
+		  </foreach>
+	</update>
+	
+	
+	<!-- 입점 거절  => delete : spm정보, spmManager정보 -->
+	<delete id="deleteSpm" parameterType="int">
+ 		DELETE * FROM spm WHERE spmEnrollNo = #{spmEnrollNo};
+	</delete>
+	<delete id="deleteSpmManager" parameterType="int">
+ 		DELETE * FROM spmManager WHERE spmEnrollNo = #{spmEnrollNo};
+	</delete>
+	
+    
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

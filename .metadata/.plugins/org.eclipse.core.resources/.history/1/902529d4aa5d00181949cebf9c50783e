@@ -1,8 +1,0 @@
-package stylecode.kosta180.persistence;
-
-import stylecode.kosta180.domain.ShoppingMallVO;
-
-public interface SpmDetailDAO {
-
-	public ShoppingMallVO selectedSPM(int spmEnrollNo) throws Exception;
-}

@@ -1,9 +1,0 @@
-package stylecode.kosta180.service;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public interface SpmDetailService {
-
-	public 
-}

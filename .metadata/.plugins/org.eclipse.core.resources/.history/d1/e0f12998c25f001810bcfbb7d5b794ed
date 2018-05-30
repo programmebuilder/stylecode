@@ -1,0 +1,7 @@
+package stylecode.kosta180.service;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+
+public interface CrollService {
+	public void insertShopDataService(CrollSPMVO spmVO) throws Exception;	
+}

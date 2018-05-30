@@ -1,0 +1,15 @@
+package stylecode.kosta180.domain;
+
+public class RcPaging {
+
+	private int totalCount;
+	private int startPage;
+	private int endPage;
+	private int prev;
+	private int next;
+	
+	private int displayPageNum=10;
+	
+	
+	
+}

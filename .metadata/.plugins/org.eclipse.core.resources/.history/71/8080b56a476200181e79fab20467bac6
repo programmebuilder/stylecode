@@ -1,0 +1,10 @@
+package stylecode.kosta180.persistence;
+
+import java.util.List;
+
+import stylecode.kosta180.domain.ProductVO;
+
+public interface RcDAO {
+	public List<ProductVO> selectProductData() throws Exception; //전체 상품목록 가져오기.
+	public List<ProductVO> productList() throws Exception; //해당 카테고리 상품목록 가져오기.
+}

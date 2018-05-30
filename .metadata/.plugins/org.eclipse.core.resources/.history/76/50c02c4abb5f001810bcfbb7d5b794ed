@@ -1,0 +1,104 @@
+package stylecode.kosta180.domain;
+
+import java.sql.Date;
+
+public class CrollSPMVO {
+
+	//	SPM Ω∫≈∞∏∂	
+	//	SPMENROLLNO	NUMBER	No
+	//	SPMNM	VARCHAR2(100 BYTE)	Yes
+	//	SPMURL	VARCHAR2(500 BYTE)	Yes
+	//	SPMTN	VARCHAR2(500 BYTE)	Yes
+	//	SPMINFO	VARCHAR2(2000 BYTE)	Yes
+	//	SPMVIEWS	NUMBER	Yes
+	//	SPMCLASSIFCN	VARCHAR2(200 BYTE)	Yes
+	//	SPMAGES	VARCHAR2(100 BYTE)	Yes
+	//	SPMDATE	DATE	Yes
+	
+		private int SPMENROLLNO; //ºÓ«Œ∏ÙµÓ∑œπ¯»£
+		private String SPMNM; //ºÓ«Œ∏Ù∏Ì
+		private long SPMURL; //ºÓ«Œ∏ÙURL
+		private String SPMTN; //ºÓ«Œ∏Ù ThumbNail
+		private String SPMINFO; //ºÓ«Œ∏Ù INFO
+		private String SPMVIEWS; //ºÓ«Œ∏Ù VIEWS
+		private String SPMCLASSIFCN; //ºÓ«Œ∏Ù ∫–∑˘
+		private String SPMAGES; //ºÓ«Œ∏Ù ≥™¿Ã¥Î
+		private Date SPMDATE; //ºÓ«Œ∏Ù µÓ∑œ¿œ
+	
+		//getter, setter
+		public int getSPMENROLLNO() {
+			return SPMENROLLNO;
+		}
+		public void setSPMENROLLNO(int sPMENROLLNO) {
+			SPMENROLLNO = sPMENROLLNO;
+		}
+		public String getSPMNM() {
+			return SPMNM;
+		}
+		public void setSPMNM(String sPMNM) {
+			SPMNM = sPMNM;
+		}
+		public long getSPMURL() {
+			return SPMURL;
+		}
+		public void setSPMURL(long sPMURL) {
+			SPMURL = sPMURL;
+		}
+		public String getSPMTN() {
+			return SPMTN;
+		}
+		public void setSPMTN(String sPMTN) {
+			SPMTN = sPMTN;
+		}
+		public String getSPMINFO() {
+			return SPMINFO;
+		}
+		public void setSPMINFO(String sPMINFO) {
+			SPMINFO = sPMINFO;
+		}
+		public String getSPMVIEWS() {
+			return SPMVIEWS;
+		}
+		public void setSPMVIEWS(String sPMVIEWS) {
+			SPMVIEWS = sPMVIEWS;
+		}
+		public String getSPMCLASSIFCN() {
+			return SPMCLASSIFCN;
+		}
+		public void setSPMCLASSIFCN(String sPMCLASSIFCN) {
+			SPMCLASSIFCN = sPMCLASSIFCN;
+		}
+		public String getSPMAGES() {
+			return SPMAGES;
+		}
+		public void setSPMAGES(String sPMAGES) {
+			SPMAGES = sPMAGES;
+		}
+		public Date getSPMDATE() {
+			return SPMDATE;
+		}
+		public void setSPMDATE(Date sPMDATE) {
+			SPMDATE = sPMDATE;
+		}
+		
+		//ª˝º∫¿⁄
+		public CrollSPMVO(){}
+		public CrollSPMVO(int sPMENROLLNO, String sPMNM, long sPMURL, String sPMTN, String sPMINFO, String sPMVIEWS,
+				String sPMCLASSIFCN, String sPMAGES, Date sPMDATE) {
+			super();
+			SPMENROLLNO = sPMENROLLNO;
+			SPMNM = sPMNM;
+			SPMURL = sPMURL;
+			SPMTN = sPMTN;
+			SPMINFO = sPMINFO;
+			SPMVIEWS = sPMVIEWS;
+			SPMCLASSIFCN = sPMCLASSIFCN;
+			SPMAGES = sPMAGES;
+			SPMDATE = sPMDATE;
+		}
+	
+		
+	
+	
+	
+}

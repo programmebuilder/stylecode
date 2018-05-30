@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="stylecode.kosta180.mapper.CrollMapper">
+	 
+
+
+
+	<insert id="insertShopData" parameterClass="java.util.List">
+		INSERT ALL
+		<dynamic>
+			<iterate conjunction=" ">
+				INTO t (pid, fname, lname)
+				VALUES (#[].pid#, #[].fname#, #[].lname#)
+			</iterate>
+		</dynamic>
+		SELECT * FROM dual
+	</insert>
+ 
+</mapper>

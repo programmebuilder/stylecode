@@ -1,0 +1,19 @@
+package stylecode.kosta180.service;
+
+import javax.inject.Inject;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+import stylecode.kosta180.persistence.CrollDAO;
+import stylecode.kosta180.persistence.CrollDAOImpl;
+
+public class CrollServiceImpl implements CrollService {
+
+	@Inject
+	private CrollDAOImpl;
+	
+	@Override
+	public void insertShopDataService(CrollSPMVO spmVO) throws Exception {
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+import stylecode.kosta180.domain.ProductVO;
+
+public interface RcService {
+	public List<ProductVO> selectProductDataService() throws Exception; //전체 상품목록 가져오기.
+	public List<ProductVO> selectProductCategoryService(int cgno) throws Exception; //전체 상품목록 가져오기.
+}

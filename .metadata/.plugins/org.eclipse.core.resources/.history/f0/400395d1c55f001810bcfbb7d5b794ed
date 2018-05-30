@@ -1,0 +1,12 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+
+@Service
+public interface CrollService {
+	public void insertShopDataService(List<CrollSPMVO> crollSPMList) throws Exception;	
+}

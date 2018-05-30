@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stylecode.kosta180.mapper.CrollMapper">
+
+	<insert id="insertShopData" parameterType="java.util.List">
+		INSERT ALL
+		<foreach collection="list" item="item" index="index">
+			INTO SPM (SPMENROLLNO, SPMNM, SPMURL,
+			SPMINFO, SPMVIEWS, SPMAGES, SPMDATE)
+			VALUES (
+			#{item.spmEnrollNo}, #{item.spmNm}, #{item.spmURL},
+			#{item.spmInfo}, 0, #{item.spmAges}, SYSDATE)
+		</foreach>
+		SELECT * FROM dual
+	</insert>
+	
+	<insert id="insertProductData" parameterType="java.util.List">
+		INSERT ALL
+		<foreach collection="list" item="item" index="index">
+			INTO PRODUCT (PENROLLNO, PNM, PIMG,
+			MPRICE, CGNO,PRODURL)
+			VALUES (
+			#{item.pEnrollNo}, #{item.pNm},
+			#{item.pImg}, #{item.mPrice}, #{item.cgNo},#{item.prodURL})
+		</foreach>
+		SELECT * FROM dual
+	</insert>
+	
+</mapper>

@@ -1,0 +1,101 @@
+package stylecode.kosta180.domain;
+
+import java.sql.Date;
+
+public class CrollSPMVO {
+
+	//	SPM ≈◊¿Ã∫Ì Ω∫≈∞∏∂	
+	//	SPMENROLLNO	NUMBER	No
+	//	SPMNM	VARCHAR2(100 BYTE)	Yes
+	//	SPMURL	VARCHAR2(500 BYTE)	Yes
+	//	SPMTN	VARCHAR2(500 BYTE)	Yes
+	//	SPMINFO	VARCHAR2(2000 BYTE)	Yes
+	//	SPMVIEWS	NUMBER	Yes
+	//	SPMCLASSIFCN	VARCHAR2(200 BYTE)	Yes
+	//	SPMAGES	VARCHAR2(100 BYTE)	Yes
+	//	SPMDATE	DATE	Yes
+	
+	private int spmEnrollNo; //ºÓ«Œ∏ÙµÓ∑œπ¯»£
+	private String spmNm; //ºÓ«Œ∏Ù∏Ì
+	private long spmURL; //ºÓ«Œ∏ÙURL
+	private String spmTN; //ºÓ«Œ∏Ù ThumbNail
+	private String spmInfo; //ºÓ«Œ∏Ù INFO
+	private int spmViews; //ºÓ«Œ∏Ù VIEWS
+	private String spmClassifCn; //ºÓ«Œ∏Ù ∫–∑˘
+	private String spmAges; //ºÓ«Œ∏Ù ≥™¿Ã¥Î
+	private Date spmDate; //ºÓ«Œ∏Ù µÓ∑œ¿œ
+		
+	//ª˝º∫¿⁄
+	public CrollSPMVO(){}
+	public CrollSPMVO(int spmENROLLNO, String spmNM, long spmURL, String spmTN, String spmINFO, int spmVIEWS,
+			String spmCLASSIFCN, String spmAGES, Date spmDATE) {
+		super();
+		this.spmENROLLNO = spmENROLLNO;
+		this.spmNM = spmNM;
+		this.spmURL = spmURL;
+		this.spmTN = spmTN;
+		this.spmINFO = spmINFO;
+		this.spmVIEWS = spmVIEWS;
+		this.spmCLASSIFCN = spmCLASSIFCN;
+		this.spmAGES = spmAGES;
+		this.spmDATE = spmDATE;
+	}
+
+
+	//getter, setter
+	public int getSpmENROLLNO() {
+		return spmENROLLNO;
+	}
+	public void setSpmENROLLNO(int spmENROLLNO) {
+		this.spmENROLLNO = spmENROLLNO;
+	}
+	public String getSpmNM() {
+		return spmNM;
+	}
+	public void setSpmNM(String spmNM) {
+		this.spmNM = spmNM;
+	}
+	public long getSpmURL() {
+		return spmURL;
+	}
+	public void setSpmURL(long spmURL) {
+		this.spmURL = spmURL;
+	}
+	public String getSpmTN() {
+		return spmTN;
+	}
+	public void setSpmTN(String spmTN) {
+		this.spmTN = spmTN;
+	}
+	public String getSpmINFO() {
+		return spmINFO;
+	}
+	public void setSpmINFO(String spmINFO) {
+		this.spmINFO = spmINFO;
+	}
+	public int getSpmVIEWS() {
+		return spmVIEWS;
+	}
+	public void setSpmVIEWS(int spmVIEWS) {
+		this.spmVIEWS = spmVIEWS;
+	}
+	public String getSpmCLASSIFCN() {
+		return spmCLASSIFCN;
+	}
+	public void setSpmCLASSIFCN(String spmCLASSIFCN) {
+		this.spmCLASSIFCN = spmCLASSIFCN;
+	}
+	public String getSpmAGES() {
+		return spmAGES;
+	}
+	public void setSpmAGES(String spmAGES) {
+		this.spmAGES = spmAGES;
+	}
+	public Date getSpmDATE() {
+		return spmDATE;
+	}
+	public void setSpmDATE(Date spmDATE) {
+		this.spmDATE = spmDATE;
+	}
+
+}

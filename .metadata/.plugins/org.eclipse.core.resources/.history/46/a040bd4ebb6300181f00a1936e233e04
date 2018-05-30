@@ -1,0 +1,15 @@
+package stylecode.kosta180.domain;
+
+public class RecommendCriteria {
+	
+	private int page;
+	private int perPageNum;
+	private int totalCount;
+	private int startPage;
+	private int endPage;
+	
+	private int prev;
+	private int next;
+	
+	
+}

@@ -1,0 +1,7 @@
+package stylecode.kosta180.persistence;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+
+public interface CrollDAO {
+	public void insertShopData(CrollSPMVO spmVO) throws Exception;   
+}

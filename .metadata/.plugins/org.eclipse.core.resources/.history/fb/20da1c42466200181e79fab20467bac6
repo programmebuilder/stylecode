@@ -1,0 +1,35 @@
+package stylecode.kosta180.controller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.service.RcServiceImpl;
+
+@Controller
+@RequestMapping(value="/recommend/*")
+public class RecommendController {
+	
+	@Inject
+	private RcServiceImpl service;
+	
+	@RequestMapping(value="/")
+	public String rcInitialize(Model model){
+		try {
+			List<ProductVO> prodList = service.selectProductDataService();
+			model.addAttribute("prodList", prodList);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "recommend/rcMain";
+	}
+	
+	@RequestMapping(value="/cgno/{cgno}")
+}

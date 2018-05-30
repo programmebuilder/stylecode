@@ -1,0 +1,40 @@
+package stylecode.kosta180.util;
+
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import stylecode.kosta180.domain.CrollVO;
+
+public class CrollStyleInfo {
+
+	// 상품 정보를 담기위한 VO
+	//CrollVO crollVO;
+
+	public void crollInfo(){	
+		JSONParser parser = new JSONParser();
+
+		try {
+			Object obj = parser.parse(new FileReader("C:\\json\\shopList.json")); 
+			JSONArray jsonArray = (JSONArray) obj;
+			
+			Iterator it = jsonArray.iterator();
+			while(it.hasNext()){
+				JSONObject o = (JSONObject) it.next();
+			}
+			
+			System.out.println(jsonArray);
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("crollInfo 실행...");
+		 
+	 }//end of crollInfo()
+
+}

@@ -1,0 +1,13 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+import stylecode.kosta180.domain.PageMaker;
+import stylecode.kosta180.domain.ProductVO;
+
+public interface RcService {
+	public List<ProductVO> selectProductDataService() throws Exception;
+	public List<ProductVO> productList(int cgno) throws Exception;
+	public List<ProductVO> productList(PageMaker pageMaker) throws Exception;
+	public int selectTotalPaging(PageMaker pageMaker) throws Exception;
+}

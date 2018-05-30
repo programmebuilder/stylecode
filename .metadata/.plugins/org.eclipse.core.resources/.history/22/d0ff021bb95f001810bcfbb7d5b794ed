@@ -1,0 +1,12 @@
+package stylecode.kosta180.domain;
+
+public class CrollSPMVO {
+	
+	private String productName; //상품명
+	private String productURL; //상품사진URL
+	private long productPrice; //상품가격
+	private String category; //카테고리명
+	private String detailCategory; //상세카테고리명
+	private String shoppingmallName; //쇼핑몰명
+	private String shoppingmallURL; //쇼핑몰URL
+}

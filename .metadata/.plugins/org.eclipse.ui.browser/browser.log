@@ -2,3 +2,200 @@
 5월 19, 2018 11:23:32.03 NEW SESSION
 5월 19, 2018 11:23:32.03 [756:920:0519/112332.032:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 5월 19, 2018 11:32:55.16 Unable to read VR Path Registry from C:\Users\evert\AppData\Local\openvr\openvrpaths.vrpath
+
+5월 23, 2018 17:48:54.95 NEW SESSION
+5월 23, 2018 17:48:54.95 [8988:1096:0523/174854.947:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 23, 2018 17:50:05.85 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 23, 2018 17:50:05.85 [8988:9180:0523/175005.852:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 23, 2018 17:53:41.30 [8988:9180:0523/175341.303:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+
+5월 25, 2018 09:13:38.97 NEW SESSION
+5월 25, 2018 09:13:38.98 [10152:6268:0525/091338.974:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 25, 2018 09:13:41.61 [10152:10156:0525/091341.615:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 09:13:41.61 [10152:10156:0525/091341.615:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 09:13:41.61 [10152:10156:0525/091341.615:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 09:13:41.61 [10152:10156:0525/091341.615:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 09:13:41.61 [10152:10156:0525/091341.615:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 09:13:41.61 [10152:10156:0525/091341.615:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 09:43:33.85 
+5월 25, 2018 09:43:33.85 KLIB_SelfTest return : KLR_OK
+5월 25, 2018 09:44:20.52 [12084:9376:0525/094420.525:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 25, 2018 09:46:12.01 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 25, 2018 09:46:12.01 [12084:12088:0525/094612.015:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 12:37:55.77 
+5월 25, 2018 12:37:55.77 KLIB_SelfTest return : KLR_OK
+5월 25, 2018 16:01:39.65 [9752:12712:0525/160139.656:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:01:41.75 [9752:14532:0525/160141.746:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 16:29:03.98 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 25, 2018 16:29:03.98 [9752:14532:0525/162903.983:ERROR:CONSOLE(143)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.naver.com') does not match the recipient window's origin ('https://www.google.co.kr').", source: chrome-search://most-visited/single.js (143)
+5월 25, 2018 16:42:22.67 [9752:14532:0525/164222.671:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 16:43:30.80 [9752:12736:0525/164330.802:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.80 [9752:12736:0525/164330.802:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.80 [9752:12736:0525/164330.802:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.80 [9752:12736:0525/164330.804:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.80 [9752:12736:0525/164330.804:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.80 [9752:12736:0525/164330.804:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.81 [9752:12736:0525/164330.810:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.81 [9752:12736:0525/164330.810:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.81 [9752:12736:0525/164330.810:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.81 [9752:12736:0525/164330.810:ERROR:service_manager_context.cc(258)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\66.0.3359.181\content_browser.service.exe
+5월 25, 2018 16:43:30.94 
+5월 25, 2018 16:43:30.94 KLIB_SelfTest return : KLR_OK
+
+5월 25, 2018 16:50:37.12 NEW SESSION
+5월 25, 2018 16:50:37.12 [9464:9596:0525/165037.115:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 25, 2018 16:52:27.83 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 25, 2018 16:52:27.83 [9464:9468:0525/165227.838:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 16:59:54.56 [9464:9468:0525/165954.560:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+
+5월 25, 2018 17:42:34.17 NEW SESSION
+5월 25, 2018 17:42:34.17 [940:3796:0525/174234.161:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 25, 2018 17:44:31.60 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 25, 2018 17:44:31.60 [940:9288:0525/174431.600:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:08:24.82 [940:9288:0525/180824.828:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:10:16.79 [940:9288:0525/181016.791:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:11:41.42 [940:9288:0525/181141.425:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:16:16.78 [940:9288:0525/181616.783:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:16:48.13 [940:9288:0525/181648.132:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:17:15.68 [940:9288:0525/181715.687:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:17:37.15 [940:9288:0525/181737.155:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 25, 2018 18:39:48.94 
+5월 25, 2018 18:39:48.95 KLIB_SelfTest return : KLR_OK
+5월 25, 2018 18:40:10.00 [11952:11848:0525/184010.002:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.88 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:40:12.89 [11952:9396:0525/184012.880:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 25, 2018 18:48:59.44 
+5월 25, 2018 18:48:59.45 KLIB_SelfTest return : KLR_OK
+
+5월 28, 2018 09:09:39.53 NEW SESSION
+5월 28, 2018 09:09:39.53 [8000:9372:0528/090939.527:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 09:11:40.26 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 28, 2018 09:11:40.26 [8000:9364:0528/091140.266:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 28, 2018 09:44:52.32 [8000:9364:0528/094452.322:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 28, 2018 09:46:50.70 [8000:9364:0528/094650.702:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+
+5월 28, 2018 10:10:47.05 NEW SESSION
+5월 28, 2018 10:10:47.05 [9848:5276:0528/101047.050:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 10:15:19.65 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 28, 2018 10:15:19.65 [9848:9896:0528/101519.650:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 28, 2018 10:21:32.52 [9848:9896:0528/102132.520:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 28, 2018 11:12:51.63 [9772:11548:0528/111251.635:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 11:20:29.29 
+5월 28, 2018 11:20:29.29 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 11:20:49.68 [12016:12044:0528/112049.687:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 11:24:23.22 
+5월 28, 2018 11:24:23.23 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 11:24:46.47 [1328:11788:0528/112446.470:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:24:48.82 [1328:10244:0528/112448.825:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:26:05.02 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 28, 2018 11:26:05.02 [1328:10244:0528/112605.027:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 28, 2018 11:27:41.25 
+5월 28, 2018 11:27:41.25 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 11:28:09.84 [10892:11912:0528/112809.843:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 11:29:22.04 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 28, 2018 11:29:22.04 [10892:3784:0528/112922.040:ERROR:CONSOLE(143)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('http://www.sta1.com') does not match the recipient window's origin ('https://www.google.co.kr').", source: chrome-search://most-visited/single.js (143)
+5월 28, 2018 11:32:52.28 
+5월 28, 2018 11:32:52.28 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 11:36:26.86 [11932:11600:0528/113626.860:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 11:37:59.00 
+5월 28, 2018 11:37:59.01 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 11:57:16.68 [11028:11288:0528/115716.685:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 11:57:22.23 [11028:11548:0528/115722.238:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.238:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.238:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.239:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.239:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.239:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.239:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.239:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:22.24 [11028:11548:0528/115722.239:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 28, 2018 11:57:44.01 [444:3736:0528/115744.012:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 12:16:33.49 
+5월 28, 2018 12:16:33.49 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 12:16:53.16 [5000:9528:0528/121653.163:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 13:22:41.06 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 28, 2018 13:22:41.06 [5000:8588:0528/132241.064:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+5월 28, 2018 16:21:46.77 [5000:8588:0528/162146.776:ERROR:CONSOLE(4334)] "No document", source: chrome-devtools://devtools/bundled/shell.js (4334)
+5월 28, 2018 16:51:11.82 [5000:8588:0528/165111.822:ERROR:CONSOLE(506)] "Uncaught TypeError: Cannot read property 'nodeType' of null", source: chrome-devtools://devtools/bundled/elements/elements_module.js (506)
+5월 28, 2018 16:52:59.96 [5000:8588:0528/165259.963:ERROR:CONSOLE(961)] "TypeError: Cannot read property '_setChildrenPayload' of undefined TypeError: Cannot read property '_setChildrenPayload' of undefined
+5월 28, 2018 16:52:59.96     at SDK.DOMModel._setChildNodes (chrome-devtools://devtools/bundled/shell.js:4370:49)
+5월 28, 2018 16:52:59.96     at SDK.DOMDispatcher.setChildNodes (chrome-devtools://devtools/bundled/shell.js:4413:49)
+5월 28, 2018 16:52:59.96     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3381:26)
+5월 28, 2018 16:52:59.96     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3334:31)
+5월 28, 2018 16:52:59.96     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3479:41)
+5월 28, 2018 16:52:59.96     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)
+5월 28, 2018 16:52:59.96     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:961:98)
+5월 28, 2018 16:52:59.96     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:961:1)
+5월 28, 2018 16:52:59.96     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)
+5월 28, 2018 16:52:59.96     at DevToolsAPIImpl.dispatchMessage (chrome-devtools://devtools/bundled/devtools_compatibility.js:134:12)", source: chrome-devtools://devtools/bundled/shell.js (961)
+5월 28, 2018 16:52:59.96 [5000:8588:0528/165259.963:ERROR:CONSOLE(961)] "TypeError: Cannot read property '_setChildrenPayload' of undefined TypeError: Cannot read property '_setChildrenPayload' of undefined
+5월 28, 2018 16:52:59.96     at SDK.DOMModel._setChildNodes (chrome-devtools://devtools/bundled/shell.js:4370:49)
+5월 28, 2018 16:52:59.96     at SDK.DOMDispatcher.setChildNodes (chrome-devtools://devtools/bundled/shell.js:4413:49)
+5월 28, 2018 16:52:59.96     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3381:26)
+5월 28, 2018 16:52:59.96     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3334:31)
+5월 28, 2018 16:52:59.97     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3479:41)
+5월 28, 2018 16:52:59.97     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)
+5월 28, 2018 16:52:59.97     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:961:98)
+5월 28, 2018 16:52:59.97     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:961:1)
+5월 28, 2018 16:52:59.97     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)
+5월 28, 2018 16:52:59.97     at DevToolsAPIImpl.dispatchMessage (chrome-devtools://devtools/bundled/devtools_compatibility.js:134:12)", source: chrome-devtools://devtools/bundled/shell.js (961)
+5월 28, 2018 16:52:59.97 [5000:8588:0528/165259.972:ERROR:CONSOLE(961)] "TypeError: Cannot read property '_setChildrenPayload' of undefined TypeError: Cannot read property '_setChildrenPayload' of undefined
+5월 28, 2018 16:52:59.97     at SDK.DOMModel._setChildNodes (chrome-devtools://devtools/bundled/shell.js:4370:49)
+5월 28, 2018 16:52:59.97     at SDK.DOMDispatcher.setChildNodes (chrome-devtools://devtools/bundled/shell.js:4413:49)
+5월 28, 2018 16:52:59.97     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3381:26)
+5월 28, 2018 16:52:59.97     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3334:31)
+5월 28, 2018 16:52:59.97     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3479:41)
+5월 28, 2018 16:52:59.97     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)
+5월 28, 2018 16:52:59.97     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:961:98)
+5월 28, 2018 16:52:59.97     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:961:1)
+5월 28, 2018 16:52:59.97     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)
+5월 28, 2018 16:52:59.97     at DevToolsAPIImpl.dispatchMessage (chrome-devtools://devtools/bundled/devtools_compatibility.js:134:12)", source: chrome-devtools://devtools/bundled/shell.js (961)
+5월 28, 2018 16:52:59.98 [5000:8588:0528/165259.973:ERROR:CONSOLE(961)] "TypeError: Cannot read property '_setChildrenPayload' of undefined TypeError: Cannot read property '_setChildrenPayload' of undefined
+5월 28, 2018 16:52:59.98     at SDK.DOMModel._setChildNodes (chrome-devtools://devtools/bundled/shell.js:4370:49)
+5월 28, 2018 16:52:59.98     at SDK.DOMDispatcher.setChildNodes (chrome-devtools://devtools/bundled/shell.js:4413:49)
+5월 28, 2018 16:52:59.98     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3381:26)
+5월 28, 2018 16:52:59.98     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3334:31)
+5월 28, 2018 16:52:59.98     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3479:41)
+5월 28, 2018 16:52:59.98     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)
+5월 28, 2018 16:52:59.98     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:961:98)
+5월 28, 2018 16:52:59.98     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:961:1)
+5월 28, 2018 16:52:59.98     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)
+5월 28, 2018 16:52:59.98     at DevToolsAPIImpl.dispatchMessage (chrome-devtools://devtools/bundled/devtools_compatibility.js:134:12)", source: chrome-devtools://devtools/bundled/shell.js (961)
+5월 28, 2018 16:52:59.98 [5000:8588:0528/165259.976:ERROR:CONSOLE(961)] "TypeError: Cannot read property '_setChildrenPayload' of undefined TypeError: Cannot read property '_setChildrenPayload' of undefined
+5월 28, 2018 16:52:59.98     at SDK.DOMModel._setChildNodes (chrome-devtools://devtools/bundled/shell.js:4370:49)
+5월 28, 2018 16:52:59.98     at SDK.DOMDispatcher.setChildNodes (chrome-devtools://devtools/bundled/shell.js:4413:49)
+5월 28, 2018 16:52:59.98     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3381:26)
+5월 28, 2018 16:52:59.98     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3334:31)
+5월 28, 2018 16:52:59.98     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3479:41)
+5월 28, 2018 16:52:59.98     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:486:23)
+5월 28, 2018 16:52:59.98     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:961:98)
+5월 28, 2018 16:52:59.98     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:961:1)
+5월 28, 2018 16:52:59.98     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)
+5월 28, 2018 16:52:59.98     at DevToolsAPIImpl.dispatchMessage (chrome-devtools://devtools/bundled/devtools_compatibility.js:134:12)", source: chrome-devtools://devtools/bundled/shell.js (961)
+5월 28, 2018 16:53:36.74 [5000:8588:0528/165336.745:ERROR:CONSOLE(506)] "Uncaught TypeError: Cannot read property 'nodeType' of null", source: chrome-devtools://devtools/bundled/elements/elements_module.js (506)
+5월 28, 2018 16:56:30.69 
+5월 28, 2018 16:56:30.69 KLIB_SelfTest return : KLR_OK
+5월 28, 2018 16:57:10.59 [12736:8624:0528/165710.598:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 28, 2018 17:00:51.55 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
+5월 28, 2018 17:00:51.55 [12736:644:0528/170051.557:ERROR:CONSOLE(506)] "Uncaught TypeError: Cannot read property 'nodeType' of null", source: chrome-devtools://devtools/bundled/elements/elements_module.js (506)

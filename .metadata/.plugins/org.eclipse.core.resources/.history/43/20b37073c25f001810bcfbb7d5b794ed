@@ -1,0 +1,21 @@
+package stylecode.kosta180.persistence;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+
+public class CrollDAOImpl implements CrollDAO{
+
+	@Inject
+	SqlSession sqlSession;
+	
+	private static final String namespace = "stylecode.kosta180.mapper.CrollMapper";
+	
+	@Override
+	public void insertShopData(CrollSPMVO spmVO) throws Exception {
+		sqlSession.insert(namespace+".insertShopData", spmVO);
+	}
+
+}

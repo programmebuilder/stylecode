@@ -22,7 +22,4 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="stylecode.kosta180.controller" />
-	
-	
-	
 </beans:beans>

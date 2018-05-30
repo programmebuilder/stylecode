@@ -1,0 +1,11 @@
+package stylecode.kosta180.persistence;
+
+import java.util.List;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+import stylecode.kosta180.domain.ProductVO;
+
+public interface RcDAO {
+	public List<ProductVO> selectProductData() throws Exception;
+	
+}

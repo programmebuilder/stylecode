@@ -1,0 +1,26 @@
+package stylecode.kosta180.domain;
+
+public class CrollSPMVO {
+
+	//	SPM Ω∫≈∞∏∂	
+	//	SPMENROLLNO	NUMBER	No
+	//	SPMNM	VARCHAR2(100 BYTE)	Yes
+	//	SPMURL	VARCHAR2(500 BYTE)	Yes
+	//	SPMTN	VARCHAR2(500 BYTE)	Yes
+	//	SPMINFO	VARCHAR2(2000 BYTE)	Yes
+	//	SPMVIEWS	NUMBER	Yes
+	//	SPMCLASSIFCN	VARCHAR2(200 BYTE)	Yes
+	//	SPMAGES	VARCHAR2(100 BYTE)	Yes
+	//	SPMDATE	DATE	Yes
+	
+	private int SPMENROLLNO; //ºÓ«Œ∏ÙµÓ∑œπ¯»£
+	private String SPMNM; //ºÓ«Œ∏Ù∏Ì
+	private long SPMURL; //ºÓ«Œ∏ÙURL
+	private String SPMTN; //ºÓ«Œ∏Ù ThumbNail
+	private String SPMINFO; //ºÓ«Œ∏Ù INFO
+	private String SPMVIEWS; //ºÓ«Œ∏Ù VIEWS
+	private String SPMCLASSIFCN; //ºÓ«Œ∏Ù ∫–∑˘
+	private String SPMAGES; //ºÓ«Œ∏Ù ≥™¿Ã¥Î
+	private String SPMDATE; //ºÓ«Œ∏Ù µÓ∑œ¿œ
+	
+}

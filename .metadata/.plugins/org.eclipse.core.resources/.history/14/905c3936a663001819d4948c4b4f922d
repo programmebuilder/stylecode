@@ -1,0 +1,123 @@
+package stylecode.kosta180.util;
+
+import java.io.FileReader;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import stylecode.kosta180.domain.CrollProductVO;
+import stylecode.kosta180.domain.CrollSPMVO;
+import stylecode.kosta180.service.CrollServiceImpl;
+
+@Repository
+public class CrollStyleInfo {
+	
+	@Inject
+	CrollServiceImpl service = new CrollServiceImpl();
+	
+	public void crollInfo(){	
+		JSONParser parser = new JSONParser();
+		
+		//���θ� ����� ������� ����Ʈ
+		List<CrollSPMVO> crollSPMList = new ArrayList<CrollSPMVO>();
+		List<CrollProductVO> crollProductList = new ArrayList<CrollProductVO>();
+		
+		//���θ� ũ�Ѹ�.
+		try {
+			Object shopListobj = parser.parse(new FileReader("C:\\json\\prodList.json")); 
+			Object prodListobj = parser.parse(new FileReader("C:\\json\\prodList.json")); 
+			
+			JSONArray shopListJsonArray = (JSONArray) shopListobj;
+			JSONArray prodListJsonArray = (JSONArray) prodListobj;
+			
+			Iterator shopListIT = shopListJsonArray.iterator();
+			Iterator prodListIT = prodListJsonArray.iterator();
+
+			while(shopListIT.hasNext()){
+				//JSON Array���� JSONObject�� ������.
+				JSONObject shopObj = (JSONObject) shopListIT.next();
+				CrollSPMVO spmVO = new CrollSPMVO();
+
+				int spmEnrollNo = Math.toIntExact((long) shopObj.get("shopSeq")); //���θ� ��Ϲ�ȣ
+				String spmNm = (String) shopObj.get("shopName"); //���θ���
+				String spmURL = (String) shopObj.get("webUrl"); //���θ�URL
+				String spmInfo = (String) shopObj.get("shopDescription"); //���θ� INFO
+				String spmAges = (String) shopObj.get("ageNames"); //���θ� ���̴�
+				String spmClassifCn = (String) shopObj.get("cateNames"); //���θ� ��Ÿ��
+				String spmTN = "http://www.sta1.com" + (String) shopObj.get("spmTN"); //���θ� �����
+				
+				spmVO.setSpmEnrollNo(spmEnrollNo);
+				spmVO.setSpmNm(spmNm);
+				spmVO.setSpmURL(spmURL);
+				spmVO.setSpmInfo(spmInfo);
+				spmVO.setSpmAges(spmAges);
+				spmVO.setSpmClassifCn(spmClassifCn);
+				spmVO.setSpmTN(spmTN);
+				
+				crollSPMList.add(spmVO);
+			}
+			
+			while(prodListIT.hasNext()){
+				//JSON Array���� JSONObject�� ������.
+				JSONObject prodObj = (JSONObject) prodListIT.next();
+				CrollProductVO prodVO = new CrollProductVO();
+				
+				long pEnrollNo = (long) prodObj.get("rowNumber"); //��ǰ��ȣ
+				String productName = (String) prodObj.get("prodName"); //��ǰ��
+				String productImgURL =  "http://www.sta1.com" + (String) prodObj.get("webImgPath"); //��ǰ����URL
+				String productURL = "http://www.sta1.com/cp/"
+										  + prodObj.get("shopSeq") + "/" + prodObj.get("prodSeq"); //��ǰURL
+				int productPrice = Math.toIntExact((long) prodObj.get("dcPrice")); //��ǰ����
+				int cateSeq = Math.toIntExact((long) prodObj.get("cateSeq")); //ī�װ� �з���ȣ
+				int spmEnrollNo = Math.toIntExact((long) prodObj.get("shopSeq")); //���θ� ��Ϲ�ȣ
+				
+
+				//				String category; //ī�װ�
+				//				
+				//				if(cateSeq == 101){
+				//					category = "�ƿ���";
+				//				} else if(cateSeq == 102) {
+				//					category = "����";
+				//				} else if(cateSeq == 103) {
+				//					category = "����";
+				//				} else if(cateSeq == 104) {
+				//					category = "���ǽ�";
+				//				} else if(cateSeq == 105) {
+				//					category = "����";
+				//				} else {
+				//					category = "��Ÿ";
+				//				} 
+				
+				prodVO.setpEnrollNo(pEnrollNo);
+				prodVO.setpNm(productName);
+				prodVO.setpImg(productImgURL);
+				prodVO.setProdURL(productURL);
+				prodVO.setmPrice(productPrice);
+				prodVO.setCgNo(cateSeq);
+				prodVO.setSpmEnrollNo(spmEnrollNo);
+				
+				crollProductList.add(prodVO);
+			}
+			
+			service.insertShopDataService(crollSPMList); //���θ� ����Ʈ
+			
+			service.insertProductDataService(crollProductList); //��ǰ ����Ʈ
+			
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		 
+	 }//end of crollInfo()
+
+}

@@ -1,0 +1,23 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Repository;
+
+import stylecode.kosta180.domain.CrollSPMVO;
+import stylecode.kosta180.persistence.CrollDAOImpl;
+
+@Repository
+public class CrollServiceImpl implements CrollService {
+
+	@Inject
+	private CrollDAOImpl dao;
+	
+	@Override
+	public void insertShopDataService(List<CrollSPMVO> crollSPMList) throws Exception {
+		dao.insertShopData(crollSPMList);
+	}
+
+}

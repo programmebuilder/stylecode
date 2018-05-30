@@ -1,0 +1,21 @@
+package stylecode.kosta180.domain;
+
+public class CrollProductVO {
+	
+	private int pEnrollNo; //상품 등록번호
+	private String pNm; //상품 명
+	private String pImg; //상품 이미지주소
+	private long mPrice; //상품 가격
+	private int spmEnrollNo; //쇼핑몰 등록 번호
+	private int cgNo; // 카테고리 번호
+	private int cgDtNo; // 상세 카테고리 번호
+	private String prodURL; //상품 URL
+	
+	
+	//생성자
+	public CrollProductVO(){}
+
+	
+	//getter,setter
+	
+}

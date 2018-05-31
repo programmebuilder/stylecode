@@ -36,4 +36,11 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="/admin")
+	public String admin()throws Exception{
+		
+		
+		return "/admin/spmList";
+	}
+	
 }

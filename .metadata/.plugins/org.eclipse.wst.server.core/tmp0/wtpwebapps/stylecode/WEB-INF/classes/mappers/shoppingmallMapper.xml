@@ -16,11 +16,6 @@
 	ORDER BY	spmViews desc 
 	</select>
 	
-<!-- 	<select id="SpmStyle" parameterType="int" resultType="String">
-		Select STYLE from SPMStyle
-		 WHERE SPMENROLLNO = #{SPMENROLLNO}
-	</select> -->
-	
 	<!-- 페이징 처리 -->	
 	<select id="getListCount" resultType="int" parameterType="ShoppingMallSearchVO">
 	select 	count(*)
@@ -32,6 +27,7 @@
 	</if> 
 	</select>
 	
+	<!-- 필터 페이징 처리 -->
 	<select id="getFilterListCount" resultType="int" parameterType="SpmFilterVO">
 	select 	count(*)
 	from 	SPM
@@ -103,7 +99,8 @@
 		WHERE 	
 		<choose>
 			<when test="category == '의류' ">
-				NOT SPMCLASSIFCN LIKE '%'|| '슈즈' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '패션잡화' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '쥬얼리' ||'%'
+				NOT SPMCLASSIFCN LIKE '%'|| '슈즈' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '패션잡화' ||'%' AND 
+				NOT SPMCLASSIFCN LIKE '%'|| '쥬얼리' ||'%' AND NOT SPMCLASSIFCN LIKE '%'|| '가방'
 			</when>
 			<otherwise>
 				SPMCLASSIFCN= #{category}
@@ -150,13 +147,6 @@
         SET      SPMVIEWS=SPMVIEWS+1 
         WHERE   SPMENROLLNO=#{SPMENROLLNO}
     </update> 
-    
-	<!-- 쇼핑몰 1개 -->
-	<select id="selectedSPM" parameterType="int" resultType="ShoppingmallVO">
-		SELECT 	*
-		FROM 	SPM 
-		WHERE 	SPMENROLLNO =#{SPMENROLLNO}
-	</select>
 	
 	<!-- 쇼핑몰 담당자 신청서 작성 -->
 	<insert id="requestSPM" parameterType="SpmRequestVO">

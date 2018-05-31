@@ -82,7 +82,7 @@ public class PageMaker {
     return uriComponents.toUriString();
   }
   
-  
+  //검색 후 페이지 번호를 클릭했을 때 URL
   public String makeSearch(int page){
     
     UriComponents uriComponents=
@@ -95,21 +95,25 @@ public class PageMaker {
     return uriComponents.toUriString();
   } 
   
+//필터링 후 페이지 번호를 클릭했을 때 URL
   public String makeFilter(int page) {
+	  	
+	  	//스타일과 나이대는 리스트 형태로 가지고 있으므로 String으로 풀어서 써주기 위해 만든 변수
 	    String styleParam="";
 	    String ageParam="";
 	    
-	  //배열인 스타일과 나이대를 처리해주기 위한 for문 
+	    //배열인 스타일과 나이대를 처리해주기 위한 for문 
+	    //style=모던시크&style=심플베이직 형태로 만들기 위해서 두 번째 배열 값부터 &를 직접 넣어준다
 		if (((SpmFilterVO) cri).getStyle()!=null) {
 			for (int i = 0; i < ((SpmFilterVO) cri).getStyle().length; i++) {
-				if (i == 0) {
+				if (i == 0) { //첫 번째 배열 값은 &style을 해주지 않아도 style=모던시크 형태로 들어감
 					styleParam =((SpmFilterVO) cri).getStyle()[i];
 				} else {
 					styleParam = styleParam + "&style=" + ((SpmFilterVO) cri).getStyle()[i];
 				}
 			}
 		}
-		
+		//age 처리 부분
 		if (((SpmFilterVO) cri).getAge()!=null) {
 			for (int i = 0; i < ((SpmFilterVO) cri).getAge().length; i++) {
 				if (i == 0) {
@@ -122,7 +126,9 @@ public class PageMaker {
 		
 		UriComponents uriComponents=null;
 		
+		//style이나 age필터 조건이 없을 경우 에러가 발생하므로 각 상황에 맞는 if문 처리
 		if(styleParam=="" || ageParam=="") {
+			//style과 age필터 조건 모두 없을 경우
 			if(styleParam=="" && ageParam=="") {
 			    uriComponents=
 		                UriComponentsBuilder.newInstance()
@@ -130,6 +136,7 @@ public class PageMaker {
 		                .queryParam("perPageNum", cri.getPerPageNum())
 		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
 		                .build(); 
+			  //style필터 조건 없을 경우
 			} else if(styleParam=="") {
 	    		uriComponents=
 		                UriComponentsBuilder.newInstance()
@@ -138,6 +145,7 @@ public class PageMaker {
 		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
 		                .queryParam("age", ageParam)
 		                .build();
+	    	  //age필터 조건 없을 경우
 			} else if(ageParam=="") {
 				uriComponents=
 		                UriComponentsBuilder.newInstance()
@@ -147,6 +155,7 @@ public class PageMaker {
 		                .queryParam("style", styleParam)
 		                .build(); 
 			}
+		//필터 조건 모두 있을 경우
 		} else {
     		uriComponents=
 	                UriComponentsBuilder.newInstance()

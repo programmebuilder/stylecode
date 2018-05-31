@@ -16,10 +16,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import stylecode.kosta180.domain.PageMaker;
 import stylecode.kosta180.domain.ShoppingMallSearchVO;
-import stylecode.kosta180.domain.ShoppingmallVO;
+import stylecode.kosta180.domain.ShoppingMallVO;
 import stylecode.kosta180.domain.SpmFilterListVO;
 import stylecode.kosta180.domain.SpmFilterVO;
 import stylecode.kosta180.service.ShoppingmallService;
+
+/*	쇼핑몰 리스트 컨트롤러	*/
 
 @Controller
 @RequestMapping("/shoppingmall/*")
@@ -29,14 +31,17 @@ public class ShoppingmallController {
 	@Inject
 	private ShoppingmallService service;
 	
+	// 쇼핑몰 리스트(일반 리스트, 검색 리스트, 필터 리스트)	
 	@RequestMapping(value="/ShoppingMall", method=RequestMethod.GET)
 	public void listShoppingmall(@ModelAttribute("search") ShoppingMallSearchVO search, Model model, SpmFilterVO filter) throws Exception {
 		
 		logger.info(search.toString());
+		//쇼핑몰 일반, 검색 리스트 출력
 		model.addAttribute("list", service.listShoppingMall(search));
 		
 		PageMaker pageMaker=new PageMaker();
 		
+		//필터링 시 페이징 처리
 		if(filter.getCategory()!=null) {
 			
 			//필터링된 쇼핑몰 번호 받아오기
@@ -44,7 +49,7 @@ public class ShoppingmallController {
 			
 			//번호 가지고 쇼핑몰 리스트 뿌려주기
 			//SpmFilterList는 디비 쿼리문 사용 시 편의를 위해 만든 객체
-			List<ShoppingmallVO>filterList=new ArrayList<ShoppingmallVO>();
+			List<ShoppingMallVO>filterList=new ArrayList<ShoppingMallVO>();
 			SpmFilterListVO ffList=new SpmFilterListVO();
 
 			//필터링된 리스트를 SpmFilterList객체에 담기 	
@@ -53,16 +58,16 @@ public class ShoppingmallController {
 			
 			model.addAttribute("filterList", filterList);
 			
+			//필터링일 경우 페이징 처리, 출력
 			pageMaker.setCri(filter);
 			pageMaker.setTotalCount(service.getFilterListCount(filter));
-			
-			System.out.println(filter+"  qqq "+ffList+ "  ee  "+ filterList);
 			
 			model.addAttribute("pageMaker", pageMaker);
 			
 			return;
 		}
 		
+		//필터링이 아닐 경우에 페이징 처리, 출력
 		pageMaker.setCri(search);
 		pageMaker.setTotalCount(service.getListCount(search));
 		

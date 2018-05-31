@@ -62,7 +62,7 @@
  				<button>
 					<img alt="filterImg" src="../resources/YJH/shoppingmall/filter.png"  class="btn" data-target = "#modal" data-toggle = "modal">
 				</button>	 
-				<a  href="../bookmark/bookmarklist.do" style="font-weight:bold; font-size:13px; color:black;">즐겨찾기</a>
+				<a  href='/bookmark/bookmarklist' style="font-weight:bold; font-size:13px; color:black;">즐겨찾기</a>
 		</div>	
 		
 		<!-- 모달로 필터 적용 -->
@@ -91,9 +91,13 @@
 											<input name="category" type="radio" id="shoese" value="슈즈">슈즈
 										</label>
 										<label class="btn btn-secondary">
-											<input name="category" type="radio" id="bag" value="쥬얼리">쥬얼리
+											<input name="category" type="radio" id="jew" value="쥬얼리">쥬얼리
 										</label>
-									</div><br>
+										<label class="btn btn-secondary">
+											<input name="category" type="radio" id="bag" value="가방">가방
+										</label>
+									</div><br> <!-- 분류 end -->
+									
 									<div class="row">
 										<div class="col-md-1"><b>age</b></div>
 									</div>
@@ -107,7 +111,8 @@
 										<label class="btn btn-secondary">
 											<input class="age-check" name="age" type="checkbox" id="30" value="30대">30대
 										</label>
-									</div><br>
+									</div><br> <!-- 나이 end -->
+									
 									<div class="row">
 										<div class="col-md-1"><b>style</b></div>
 									</div>
@@ -135,18 +140,22 @@
 										</label>
 										<label class="btn btn-secondary">
 											<input class="style-check" name="style" type="checkbox" id="schoollook" value="스쿨룩">스쿨룩
-										</label>
+										</label><br>
 										<label class="btn btn-secondary">
 											<input class="style-check" name="style" type="checkbox" id="big_size" value="빅사이즈">빅사이즈
 										</label>
 										<label class="btn btn-secondary">
 											<input class="style-check" name="style" type="checkbox" id="teen" value="십대쇼핑몰">십대쇼핑몰
 										</label>
-									</div><br><br>
+										<label class="btn btn-secondary">
+											<input class="style-check" name="style" type="checkbox" id="couple" value="커플룩">커플룩
+										</label>
+										<label class="btn btn-secondary">
+											<input class="style-check" name="style" type="checkbox" id="underwear" value="언더웨어">언더웨어
+										</label>
+									</div><br><br> <!-- 스타일 end -->
 									<input type="submit" value="선택완료" class="btn" id="filterBtn">
-								</div> 
-								<!-- 필터 div end -->
-								<!-- 전체선택 해제 생각하기 -->
+								</div> <!-- 필터 div end -->
 							</form>
 							
 						</div>
@@ -155,8 +164,7 @@
 				</div>
 			
 			</div>
-		</div>
-		<!-- 모달 end -->
+		</div> <!-- 모달 end -->
 		
 		<!-- 필터 설정 시 필터 결과값 출력 -->
 		<c:if test="${filterList!=null}">
@@ -164,7 +172,7 @@
 				<c:forEach var="SPM" items="${filterList}">
 					<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
 						<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="${SPM.spmTn}">
-							<a class="btn spmNm" href="../spmDetail/Spmdetail.do?spmEnrollNo=${SPM.spmEnrollNo}"> 
+							<a class="btn spmNm" href='/spmDetail/${SPM.spmEnrollNo}'> 
 							<span>&emsp;</span><b style="color: black;">${SPM.spmNm}</b></a>
 							<span class="spmInfo">&emsp;${SPM.spmInfo}</span>
 					</p>
@@ -178,7 +186,7 @@
 				<c:forEach var="SPM" items="${list}">
 					<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
 						<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="${SPM.spmTn}">
-							<a class="btn spmNm" href="../spmDetail/Spmdetail.do?spmEnrollNo=${SPM.spmEnrollNo}"> 
+							<a class="btn spmNm" href='/spmDetail/${SPM.spmEnrollNo}'> 
 							<span>&emsp;</span><b style="color: black;">${SPM.spmNm}</b></a>
 							<span class="spmInfo">&emsp;${SPM.spmInfo}</span>
 					</p>
@@ -188,6 +196,8 @@
 
 		<!-- 페이징 처리 -->
 		<div class="box-footer text-center">
+		
+			<!-- 필터링 시 페이징 처리 -->
  			<c:if test="${filterList!=null}">
 						<ul class="pagination">
 							<!-- 이전 -->
@@ -213,6 +223,8 @@
 
 						</ul>
 			</c:if>
+			
+			<!-- 필터링이 아닐 경우 페이징 처리 -->
 			<c:if test="${searchKey !=null || filterList==null}">
 						<ul class="pagination">
 							<!-- 이전 -->
@@ -237,13 +249,11 @@
 							</c:if>
 
 						</ul>
-			</c:if>
-			<br>			
+			</c:if><br>			
 		</div>
 	</div>
 
 <script>
-
 $(document).ready(function() {
 		$('.searchBtn').on("click", function(event) { //검색 버튼 클릭 시 처리 메소드
 			self.location = "ShoppingMall"

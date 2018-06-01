@@ -12,10 +12,10 @@ public interface AdminDAO {
 	public List<Manager_spmVO> spmList()throws Exception;
 	public void spmAccept(HashMap spmEnrollNo)throws Exception;
 	
-	public void deleteSpm(int spmEnrollNo)throws Exception;
-	public void deleteSpmManager(int spmEnrollNo)throws Exception;
+	public void deleteSpm(HashMap spmEnrollNo)throws Exception;
+	public void deleteSpmManager(HashMap spmEnrollNo)throws Exception;
 	
-	//¿Ã∏ﬁ¿œ ¡÷º“
+	//email Î≥¥ÎÇ¥Îäî Î∂ÄÎ∂Ñ
 	public List<String> emailAdd(HashMap spmEnrollNo)throws Exception;
 	
 }

@@ -17,8 +17,6 @@ public interface ShoppingmallDAO {
 	public List<Integer> SPMfiter(SpmFilterVO filter) throws Exception;
 	//필터링 시 쇼핑몰 리스트
 	public List<ShoppingMallVO> listShoppingMallFilter (SpmFilterListVO filterList) throws Exception;
-	// 조회수
-	public void hitCount(int SpmEnrollNo) throws Exception;
 	//쇼핑몰 객체 가져오기
 	public ShoppingMallVO selectedSPM(int spmEnrollNo) throws Exception;	
 	//페이징 처리
@@ -27,7 +25,7 @@ public interface ShoppingmallDAO {
 	public int getFilterListCount(SpmFilterVO filter) throws Exception;
 	//입점신청 생성
 	public void requestSPM(SpmRequestVO spmRequest) throws Exception;
+	public void requestSPM2(SpmRequestVO spmRequest) throws Exception;
 	//입점신청 편의를 위한 리스트
-	public List<ShoppingMallVO> listShoppingMallR() throws Exception;
-
+	public int listShoppingMallR() throws Exception;
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import stylecode.kosta180.domain.Criteria;
 import stylecode.kosta180.domain.ProductVO;
 import stylecode.kosta180.domain.ShoppingMallVO;
 import stylecode.kosta180.domain.SpmBmVO;

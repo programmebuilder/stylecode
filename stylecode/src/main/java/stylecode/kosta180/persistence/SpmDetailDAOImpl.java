@@ -5,9 +5,11 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import stylecode.kosta180.domain.Criteria;
 import stylecode.kosta180.domain.ProductVO;
 import stylecode.kosta180.domain.ShoppingMallVO;
 import stylecode.kosta180.domain.SpmBmVO;
@@ -17,7 +19,7 @@ public class SpmDetailDAOImpl implements SpmDetailDAO {
 
 	@Inject
 	private SqlSession session;
-
+	
 	private static String namespace = "stylecode.kosta180.mapper.spmDetailMapper";
 
 	@Override
@@ -35,7 +37,7 @@ public class SpmDetailDAOImpl implements SpmDetailDAO {
 	@Override
 	public List<ProductVO> selectedProduct(int spmEnrollNo) throws Exception {
 		// 쇼핑몰에 대한 상품 리스트
-		return session.selectList(namespace + ".selectedProduct", spmEnrollNo);
+		return session.selectList(namespace + ".selectedProduct", spmEnrollNo, new RowBounds(1, 15));
 	}
 
 	// SpmBM 부분
@@ -58,6 +60,12 @@ public class SpmDetailDAOImpl implements SpmDetailDAO {
 
 		System.out.println("DAO : " + session.selectOne(namespace + ".checkBm", map));
 		return session.selectOne(namespace + ".checkBm", map);
+	}
+	
+	@Override
+	public void hitCount(int SpmEnrollNo) throws Exception { 
+		//조회수 처리
+		session.update(namespace+".hitCount", SpmEnrollNo);
 	}
 
 }

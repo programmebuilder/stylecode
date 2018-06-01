@@ -14,10 +14,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import stylecode.kosta180.domain.Criteria;
 import stylecode.kosta180.domain.ProductVO;
 import stylecode.kosta180.service.SpmDetailService;
 
@@ -30,7 +32,7 @@ public class SpmDetailController {
 	private SpmDetailService spmService;
 	
 	@RequestMapping(value="/spmDetail/{spmEnrollNo}")
-	public String spmDetail(@PathVariable int spmEnrollNo,Model model,HttpSession session)throws Exception{	
+	public String spmDetail(@PathVariable int spmEnrollNo, Model model,HttpSession session)throws Exception{	
 		
 		//즐겨찾기 여부 확인을 위해서 id와 enrollNo을 넘겨준다
 		String mId = (String)session.getAttribute("mId");
@@ -43,12 +45,13 @@ public class SpmDetailController {
 		
 		
 		model.addAttribute("spm", spmService.selectedSPM(spmEnrollNo));
-		model.addAttribute("spmStyle", spmService.SpmStyle(spmEnrollNo));
+		
 		model.addAttribute("product", spmService.selectedProduct(spmEnrollNo));
 		//model.addAttribute("smbm", 0);
 		int  spmBmNo = 0;
 		try {
 			spmBmNo = spmService.checkBm(map);
+			
 			model.addAttribute("smbm",spmBmNo);
 			
 		} catch (Exception e) {

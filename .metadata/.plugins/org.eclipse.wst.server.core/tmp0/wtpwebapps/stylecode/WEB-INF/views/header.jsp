@@ -17,8 +17,8 @@
 <body>
 <div class="container-fluid">
 
-	<div class="row">
-		<div id="hTitle"><a href="../index.jsp" style="color:black;">Middle Project</a></div>
+	<div class="row" style="margin-left: 5px;">
+		<div id="hTitle"><a href="../index.jsp" style="color:black;">Style Code</a></div>
 	</div>
 	
 	<div class="row">
@@ -33,7 +33,7 @@
 		<div id="hRMn" class="col-1">
 			<ul>
 				<!-- fontello 아이콘 사용을 위한 부분  -->
-				<li class="nav-item"><a href="../bookmark/bookmarklist.do">&#xe800</a></li>
+				<li class="nav-item"><a href='/bookmark/bookmarklist'>&#xe800</a></li>
 				<li class="nav-item"><a href="../LoginProduct/login.jsp">&#xe802</a></li>				
 				<li class="nav-item" hidden >&#xe803</li>
 				

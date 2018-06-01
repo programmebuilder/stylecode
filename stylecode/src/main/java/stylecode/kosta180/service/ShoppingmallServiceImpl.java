@@ -53,9 +53,15 @@ public class ShoppingmallServiceImpl implements ShoppingmallService {
 		//입점신청 생성
 		dao.requestSPM(spmRequest);
 	}
+	
+	@Override
+	public void requestSPM2(SpmRequestVO spmRequest) throws Exception {
+		// TODO Auto-generated method stub
+		dao.requestSPM2(spmRequest);
+	}
 
 	@Override
-	public List<ShoppingMallVO> listShoppingMallR() throws Exception {
+	public int listShoppingMallR() throws Exception {
 		//입점신청 편의를 위한 리스트
 		return dao.listShoppingMallR();
 	}

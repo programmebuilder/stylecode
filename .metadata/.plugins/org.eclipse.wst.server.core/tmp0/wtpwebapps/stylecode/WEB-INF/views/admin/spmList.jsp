@@ -42,20 +42,7 @@
 		<!--           쇼핑몰 리스트                      -->
 		<div id="spmList">
 		
-		
-		
-			<c:forEach var="SPM" items="${list}">
-				<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
-					<input type="checkbox"  name="checkRow" value="${spmEnrollNo}"> 
-					<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="${style.tm }"> 
-					<span>&emsp;</span><b style="color: black;">스타일난다</b> 					
-					<span class="spmInfo">&emsp;관리자 이름</span>
-					<span class="spmInfo">&emsp;스타일난다 입니다.</span>
-				</p>
-			</c:forEach>
-			
-			
-			
+					
 			
 		</div>
 		
@@ -83,7 +70,7 @@
 	{{#each .}}
 	<p class="list-group-item list-group-item-action list-group-item-light" style="background-color: #FFFFFF;">
 			<input type="checkbox" id="checkRow" name="checkRow" value="{{spmEnrollNo}}">
-			<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="{{shoppingmallVO.smpTn}}"> 
+			<img width="100px" height="100px" alt="사진이 없음" class="img-circle" src="{{shoppingMallVO.spmTn}}"> 
 			<span>&emsp;</span>
 			<a class="btn spmNm" href={{spmURL}}><b style="color: black;">{{shoppingMallVO.spmNm}}</b></a>		
 			<span class="spmInfo">&emsp;{{shoppingMallVO.spmClassifcn}}</span>
@@ -100,23 +87,63 @@
 var template = Handlebars.compile($("#template").html());
 
 function spmList() {
+	
 	$.getJSON("/admin/all",function(data){
 		console.log(data.length);
 		$("#spmList").html(template(data));
 	});
+	
 };
 
 spmList();
 
 //체크박스 속에 val를 받을 배열 선언
-//var array = new Array();
-	var array = [];
+
+
 /*                 승인                                   */
- $("#accept").on("click", function(){
+ $("#accept").on("click", function(){	   
+	 
+	 var array = [];
+	 $('#checkRow:checked').each(function() { 
+		   
+		   array.push($(this).val());	    
+		   
+	   });
+	 	alert(array);
+	   if(array.length == 0){
+		  alert("체크해주세요");
+	   }else{
+		   
+		   $.ajax({
+			   url :'/admin/accept',
+			   type : 'post',
+			   dataType: 'json',
+			   data:{array : array},
+			   success : function(result) {
+					alert("승인 되었습니다.");
+					spmList();	
+					if(result == "SUCCESS"){
+						alert("SUCCESS");
+					};	
+					}	   
+		   });
+			alert("승인 되었습니다.");
+			spmList();
+			
+			
+	   }
+	  
 	   
-	 $('#checkRow:checked').each(function() { 	      
+ });
+
+ /*                  거절                                */
+  $("#refuse").on("click", function(){
+	  var array = [];
+	 $('#checkRow:checked').each(function() { 
+		 	
 		   array.push($(this).val());	       
 	   });
+	 
 	   if(array.length == 0){
 		  alert("체크해주세요");
 	   }else{
@@ -136,15 +163,8 @@ spmList();
 			alert("승인 되었습니다.");
 			spmList();	
 	   }
-
-	   
-	   
-	   
-	   
-	   
 	   
  });
-
 
 /* $("#accept").on("click", function(){
 		//체크박스에 체크된 val를 받아온다.
@@ -180,7 +200,7 @@ spmList();
 
 			   
 
-/*                  거절                                */
+
  
 	
 </script>

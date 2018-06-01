@@ -1,0 +1,62 @@
+package stylecode.kosta180.domain;
+
+import java.io.Serializable;
+
+public class SpmRequestVO extends ShoppingMallVO implements Serializable {
+	private String mId; //쇼핑몰 담당자 아이디
+	private String mPasswd; //쇼핑몰 담당자 비밀번호
+	private String mName; //쇼핑몰 담당자 이름
+	private String mPhone; //쇼핑몰 담당자 휴대폰
+	private String mCall; //쇼핑몰 담당자 유선전화
+	
+	public SpmRequestVO() {}
+	
+	public SpmRequestVO(String mId, String mPasswd, String mName, String mPhone, String mCall) {
+		super();
+		this.mId = mId;
+		this.mPasswd = mPasswd;
+		this.mName = mName;
+		this.mPhone = mPhone;
+		this.mCall = mCall;
+	}
+
+	public String getmId() {
+		return mId;
+	}
+
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
+
+	public String getmPasswd() {
+		return mPasswd;
+	}
+
+	public void setmPasswd(String mPasswd) {
+		this.mPasswd = mPasswd;
+	}
+
+	public String getmName() {
+		return mName;
+	}
+
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
+
+	public String getmPhone() {
+		return mPhone;
+	}
+
+	public void setmPhone(String mPhone) {
+		this.mPhone = mPhone;
+	}
+
+	public String getmCall() {
+		return mCall;
+	}
+
+	public void setmCall(String mCall) {
+		this.mCall = mCall;
+	}
+}

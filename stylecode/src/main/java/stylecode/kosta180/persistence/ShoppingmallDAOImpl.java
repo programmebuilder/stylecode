@@ -27,7 +27,7 @@ public class ShoppingmallDAOImpl implements ShoppingmallDAO {
 	@Override
 	public List<ShoppingMallVO> listShoppingMall(ShoppingMallSearchVO search) throws Exception { 
 		// 처음/검색 시 리스트
-		return session.selectList(namespace+".listShoppingMall", search, new RowBounds(search.getPageStart(), search.getPerPageNum()));
+		return session.selectList(namespace+".listShoppingMall", search, new RowBounds(search.getPageStart(), 10));
 	}
 
 	@Override
@@ -40,12 +40,6 @@ public class ShoppingmallDAOImpl implements ShoppingmallDAO {
 	public List<ShoppingMallVO> listShoppingMallFilter(SpmFilterListVO filterList) throws Exception {
 		//필터 사용 시 출력 메소드
 		return session.selectList(namespace+".listShoppingMallFilter", filterList);
-	}
-	
-	@Override
-	public void hitCount(int SpmEnrollNo) throws Exception { 
-		//조회수 처리
-		session.update(namespace+".hitCount", SpmEnrollNo);
 	}
 
 	@Override
@@ -70,11 +64,17 @@ public class ShoppingmallDAOImpl implements ShoppingmallDAO {
 	public void requestSPM(SpmRequestVO spmRequest) throws Exception {
 		//입점신청 생성
 		session.insert(namespace+".requestSPM", spmRequest);
+	}	
+
+	@Override
+	public void requestSPM2(SpmRequestVO spmRequest) throws Exception {
+		// 입점신청 생성
+		session.insert(namespace+".requestSPM2", spmRequest);
 	}
 
 	@Override
-	public List<ShoppingMallVO> listShoppingMallR() throws Exception {
+	public int listShoppingMallR() throws Exception {
 		//입점신청 편의를 위한 리스트
-		return session.selectList(namespace+".listShoppingMallR");
+		return session.selectOne(namespace+".listShoppingMallR");
 	}
 }

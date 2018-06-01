@@ -195,60 +195,66 @@
 		</c:if>
 
 		<!-- 페이징 처리 -->
-		<div class="box-footer text-center">
+		<div class="box-footer text-center" style="margin-top: 20px;">
 		
 			<!-- 필터링 시 페이징 처리 -->
  			<c:if test="${filterList!=null}">
-						<ul class="pagination">
+ 				<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center">
 							<!-- 이전 -->
 							<c:if test="${pageMaker.prev}">
-								<li><a
+								<li class="page-item"><a class="page-link"
 									href="ShoppingMall${pageMaker.makeFilter(pageMaker.startPage - 1) }">&laquo;</a></li>
 							</c:if>
 
 							<!-- 페이지 목록 -->
 							<c:forEach begin="${pageMaker.startPage }" 
 								end="${pageMaker.endPage }" var="idx">
-								<li
+								<li class="page-item"
 									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-									<a href="ShoppingMall${pageMaker.makeFilter(idx)}">${idx}</a>
+									<a class="page-link"
+									 href="ShoppingMall${pageMaker.makeFilter(idx)}">${idx}</a>
 								</li>
 							</c:forEach>
 
 							<!-- 다음 -->
 							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-								<li><a
+								<li class="page-item"><a class="page-link"
 									href="ShoppingMall${pageMaker.makeFilter(pageMaker.endPage +1) }">&raquo;</a></li>
 							</c:if>
 
 						</ul>
+				</nav>
 			</c:if>
 			
 			<!-- 필터링이 아닐 경우 페이징 처리 -->
 			<c:if test="${searchKey !=null || filterList==null}">
-						<ul class="pagination">
+				<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center">
 							<!-- 이전 -->
 							<c:if test="${pageMaker.prev}">
-								<li><a
+								<li class="page-item"><a class="page-link"
 									href="ShoppingMall${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 							</c:if>
 
 							<!-- 페이지 목록 -->
 							<c:forEach begin="${pageMaker.startPage }"
 								end="${pageMaker.endPage }" var="idx">
-								<li
+								<li class="page-item"
 									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-									<a href="ShoppingMall${pageMaker.makeSearch(idx)}">${idx}</a>
+									<a class="page-link" 
+									href="ShoppingMall${pageMaker.makeSearch(idx)}">${idx}</a>
 								</li>
 							</c:forEach>
 
 							<!-- 다음 -->
 							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-								<li><a
+								<li class="page-item"><a class="page-link"
 									href="ShoppingMall${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 							</c:if>
 
 						</ul>
+				</nav>
 			</c:if><br>			
 		</div>
 	</div>

@@ -11,9 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-
-
-
 </head>
 <body>
 <script>
@@ -71,11 +68,11 @@ session(mId);
 					</div>
 				</div>
 				<div class="row">
-					<c:forEach var="style" items="${spmStyle}">
+
 						<div class="col" style="padding-right: 5px;">
-							<span class="badge badge-dark">${style}</span>
+							<span class="badge badge-dark">${spm.spmClassifcn}</span>
 						</div>
-					</c:forEach>
+
 				</div>
 				<div class="row">
 					<!-- 쇼핑몰 정보 출력 -->
@@ -95,11 +92,11 @@ session(mId);
 				<div class="col-sm-4">
 					<div class="card">
 						<img class="card-img-top rounded mx-auto d-block"
-							src="../logo/lip.png${product.pimg }" alt="pImg"
+							src="${product.pimg }" alt="pImg"
 							style="width: 20rem;">
 						<div class="card-body mx-auto d-block">
 							<h5 class="card-title">${product.pnm }</h5>
-							<p class="card-text mx-auto d-block">${product.mPrice}</p>
+							<p class="card-text mx-auto d-block">${product.mPrice} 원</p>
 							<a href="${product.prodURL}"><p class="card-text mx-auto d-block">상품 페이지로 이동</p></a>
 						</div>
 					</div>

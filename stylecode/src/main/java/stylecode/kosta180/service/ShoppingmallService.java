@@ -15,5 +15,6 @@ public interface ShoppingmallService {
 	public int getListCount(ShoppingMallSearchVO search) throws Exception;
 	public int getFilterListCount(SpmFilterVO filter) throws Exception;
 	public void requestSPM(SpmRequestVO spmRequest) throws Exception;
-	public List<ShoppingMallVO> listShoppingMallR() throws Exception;
+	public void requestSPM2(SpmRequestVO spmRequest) throws Exception;
+	public int listShoppingMallR() throws Exception;
 }

@@ -17,13 +17,6 @@
 		WHERE SPMENROLLNO =#{SPMENROLLNO}
 	</select>
 
-	<!-- 쇼핑몰 EnrollNum에 해당하는 쇼핑몰스타일 -->
-	<select id="SpmStyle" parameterType="int" resultType="String">
-		Select
-		STYLE from SPMStyle
-		WHERE SPMENROLLNO = #{SPMENROLLNO}
-	</select>
-
 	<!-- 쇼핑몰에 대한 상품 리스트 -->
 	<select id="selectedProduct" parameterType="int" resultType="ProductVO">
 		SELECT * FROM PRODUCT
@@ -68,7 +61,12 @@
 		WHERE spmEnrollNo = #{spmEnrollNo}
 	</delete>
 
-
+	<!-- 쇼핑몰 조회수 처리 -->
+	<update id="hitCount" parameterType="int">
+        UPDATE   SPM
+        SET      SPMVIEWS=SPMVIEWS+1 
+        WHERE   SPMENROLLNO=#{SPMENROLLNO}
+    </update> 
 
 
 

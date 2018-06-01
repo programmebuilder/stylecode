@@ -20,14 +20,14 @@ public class AdminDAOImpl implements AdminDAO {
 		
 		private static String namespace = "stylecode.kosta180.mapper.admin";
 		
-		/*       입점신청 대기중인 쇼핑몰 리스트 뽑기                */
+		/*     쇼핑몰 목록 뿌리기             */
 	@Override
 	public List<Manager_spmVO> spmList() throws Exception {
 		
 		return session.selectList(namespace+".selectedSPM");
 	}
 
-	/*       승인 시               */
+	/*       승인             */
 	@Override
 	public void spmAccept(HashMap spmEnrollNo) throws Exception {
 		
@@ -37,25 +37,27 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	
-	/*       거절 시                */
+	/*      거절               */
 	@Override
-	public void deleteSpm(int spmEnrollNo) throws Exception {
+	public void deleteSpm(HashMap spmEnrollNo) throws Exception {
 		session.delete(namespace+".deleteSpm");
 		
 	}
 
 	@Override
-	public void deleteSpmManager(int spmEnrollNo) throws Exception {
+	public void deleteSpmManager(HashMap spmEnrollNo) throws Exception {
 		session.delete(namespace+".deleteSpmManager");
 		
 	}
 
 	
-	//메일 주소 받아오기
+	//이메일 뽑기
 	@Override
 	public List<String> emailAdd(HashMap spmEnrollNo) throws Exception {
 		
-		return session.selectList(namespace+".ㄸ");
+		System.out.println("DAO 리스트 리턴값" + session.selectList(namespace+".emailadd", spmEnrollNo));
+		
+		return session.selectList(namespace+".emailadd", spmEnrollNo);
 	}
 
 }

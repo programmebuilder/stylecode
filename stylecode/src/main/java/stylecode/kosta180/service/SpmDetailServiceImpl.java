@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import stylecode.kosta180.domain.Criteria;
 import stylecode.kosta180.domain.ProductVO;
 import stylecode.kosta180.domain.ShoppingMallVO;
 import stylecode.kosta180.domain.SpmBmVO;
@@ -21,6 +22,7 @@ public class SpmDetailServiceImpl implements SpmDetailService {
 	@Override
 	public ShoppingMallVO selectedSPM(int spmEnrollNo) throws Exception {
 		//EnrollNo를 파라미터로 받아 쇼핑몰 객체를 return 해준다.
+		spmDao.hitCount(spmEnrollNo);
 		return spmDao.selectedSPM(spmEnrollNo);
 	}
 

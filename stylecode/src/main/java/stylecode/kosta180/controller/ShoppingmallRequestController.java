@@ -13,7 +13,7 @@ import stylecode.kosta180.service.ShoppingmallService;
 /*		입점신청 컨트롤러		*/
 
 @Controller
-@RequestMapping("/shoppingmall/*")
+@RequestMapping("/request/*")
 public class ShoppingmallRequestController {
 	static int idx=1;
 	
@@ -27,14 +27,14 @@ public class ShoppingmallRequestController {
 	
 	@RequestMapping(value="/shoppingmallRequest", method=RequestMethod.POST)
 	public String shoppingmallRequestPOST(Model model, SpmRequestVO spmRequest) throws Exception {
+		System.out.println("idx: "+idx);
 		ShoppingMallVO vo;
 		
-		idx=service.listShoppingMallR().size()+1;
+		idx=service.listShoppingMallR()+1;
 		
-		vo=service.listShoppingMallR().get(idx);
-		vo.getSpmEnrollNo();
-		spmRequest.setmSpmEnrollNo(vo.getSpmEnrollNo());
+		spmRequest.setSpmEnrollNo(idx);
 
+		service.requestSPM2(spmRequest);
 		service.requestSPM(spmRequest);
 		
 		idx+=1;

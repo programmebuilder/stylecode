@@ -1,0 +1,129 @@
+package stylecode.kosta180.domain;
+
+public class PageMakerVO {
+	private int totalCount; //전체 게시물 갯수
+	private int pageNum; //현재 페이지 번호
+	private int contentNum; //한 페이지에 몇개 표시할지
+	private int startPage; //현재 페이지 블록의 시작페이지
+	private int endPage; //현재 페이지 블록의 마지막 페이지
+	private boolean prev; //이전 페이지로 가는 화살표
+	private boolean next; //다음 페이지로 가는 화살표
+	private int currentBlock; //현재 페이지 블록
+	private int lastBlock; //마지막 페이지 블록
+	
+	//전체 페이지 수를 계산하는 함수
+	public int calcPage(int totalCount, int contentNum){ //전체 게시물 갯수, 한 페이지에 몇개 표시할지
+		int totalPage = totalCount / contentNum; //페이지 갯수
+		if(totalCount%contentNum>0){ //나머지가 있으면 그페이지도 체크해줘야하기때문에 if문 생성.
+			totalPage++; //나머지 페이지가 있으면 페이지1개 추가.
+		}
+		return totalPage;
+	}
+	
+	
+	//getter, setter
+	public int getTotalCount() {
+		return totalCount;
+	}
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+	public int getPageNum() {
+		return pageNum;
+	}
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
+	}
+	public int getContentNum() {
+		return contentNum;
+	}
+	public void setContentNum(int contentNum) {
+		this.contentNum = contentNum;
+	}
+	public int getStartPage() {
+		return startPage;
+	}
+	public void setStartPage(int currentBlock) { //현재 페이지 블록
+		this.startPage = (currentBlock*5)-4; 
+		
+		//시작페이지 = (현재 페이지 블록 * 한 페이지 블록에 보여지는 페이지 갯수) - (한 페이지 블록에 보여지는 페이지 갯수 - 1);
+		// 한 페이지 블록에 5개 페이지씩 보이는 것이라 하면. 
+		
+		//만약 페이지 블록이 1일경우 1*5-4 = 1 //첫번째 블록의 첫페이지
+		//만약 페이지 블록이 2일경우 2*5-4 = 6 //두번째 블록의 첫페이지
+		//만약 페이지 블록이 3일경우 3*5-4 = 11 //두번째 블록의 첫페이지		
+		
+		//1 pageBlock// 1   2   3   4   5
+		//2 pageBlock// 6   7   8   9  10
+		//3 pageBlock// 11 12 13
+		
+	}
+	public int getEndPage() {
+		return endPage;
+	}
+	public void setEndPage(int getLastBlock, int getCurrentBlock) {
+		if(getLastBlock == getCurrentBlock){ //페이지 블록이 마지막 블록이면
+			this.endPage = calcPage(getTotalCount(),getContentNum()); //전체페이지 갯수가 마지막페이지 갯수
+		}
+		else {
+			this.endPage = getStartPage()+4; //그외에는 첫페이지에 +4를 하면 해당 블록의 마지막페이지가 된다.
+		}
+	}
+	public boolean isPrev() {
+		return prev;
+	}
+	public void setPrev(boolean prev) {
+		this.prev = prev;
+	}
+	public boolean isNext() {
+		return next;
+	}
+	public void setNext(boolean next) {
+		this.next = next;
+	}
+	public int getCurrentBlock() {
+		return currentBlock;
+	}
+	public void setCurrentBlock(int pageNum) {
+		//현재 페이지 블록 번호는 페이지 번호를 통해서 구할 수 있다.
+		//현재 페이지 번호가 1페이지라면, page/5 => 1/5 (한페이지당 5개 페이지씩 보여져서 5로나눈것) 
+		//1/5 = 0.2 int형은 0으로 설정, 0은 페이지 블록 번호가 안되므로 +1을 해줘야한다 그걸 코드로 풀이
+		this.currentBlock = pageNum/5;
+		if(pageNum%5>0){
+			this.currentBlock++;
+		}
+		
+	}
+	public int getLastBlock() {
+		return lastBlock;
+	}
+	public void setLastBlock(int lastBlock) {
+		//한페이지블록당 10개씩 5개페이지로 50개의 게시물이 있다.
+		//그러므로 전체 갯수를 50으로 나누면 몫과 나머지가 나오는데 나머지가 나오는경우 +1을 해주면 마지막 블록이 설정된다.
+		
+		this.lastBlock = totalCount/(5*this.contentNum);
+		if(totalCount % (5*this.contentNum)>0){
+			this.lastBlock++;
+		}
+	}
+	
+	//생성자
+	public PageMakerVO(){}
+	public PageMakerVO(int totalCount, int pageNum, int contentNum, int startPage, int endPage, boolean prev,
+			boolean next, int currentBlock, int lastBlock) {
+		super();
+		this.totalCount = totalCount;
+		this.pageNum = pageNum;
+		this.contentNum = contentNum;
+		this.startPage = startPage;
+		this.endPage = endPage;
+		this.prev = prev;
+		this.next = next;
+		this.currentBlock = currentBlock;
+		this.lastBlock = lastBlock;
+	}
+	
+	
+	
+	
+}

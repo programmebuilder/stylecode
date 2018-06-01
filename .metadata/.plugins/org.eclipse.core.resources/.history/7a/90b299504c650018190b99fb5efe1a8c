@@ -1,0 +1,7 @@
+package stylecode.kosta180.util;
+
+public class RecommendTest {	
+	public static void main(String[] args) {
+		
+	}
+}

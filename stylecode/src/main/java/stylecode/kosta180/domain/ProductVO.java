@@ -1,6 +1,8 @@
 package stylecode.kosta180.domain;
 
-public class ProductVO {
+import java.io.Serializable;
+
+public class ProductVO implements Serializable{
 	private long pEnrollNo;
 	private String pNm; 
 	private String pImg; 

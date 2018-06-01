@@ -199,3 +199,96 @@
 5월 28, 2018 16:57:10.59 [12736:8624:0528/165710.598:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 5월 28, 2018 17:00:51.55 Unable to read VR Path Registry from C:\Users\JUNHEE\AppData\Local\openvr\openvrpaths.vrpath
 5월 28, 2018 17:00:51.55 [12736:644:0528/170051.557:ERROR:CONSOLE(506)] "Uncaught TypeError: Cannot read property 'nodeType' of null", source: chrome-devtools://devtools/bundled/elements/elements_module.js (506)
+
+5월 31, 2018 16:41:38.80 NEW SESSION
+5월 31, 2018 16:41:38.80 [9112:13760:0531/164138.796:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.481:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.481:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.481:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.481:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.481:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.49 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.482:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+5월 31, 2018 16:41:39.50 [9112:11768:0531/164139.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+
+6월 01, 2018 10:06:16.30 NEW SESSION
+6월 01, 2018 10:06:16.30 [10516:12040:0601/100616.290:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+6월 01, 2018 10:13:58.93 
+6월 01, 2018 10:13:58.93 KLIB_SelfTest return : KLR_OK
+6월 01, 2018 10:27:08.57 [10984:10696:0601/102708.573:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+6월 01, 2018 10:54:20.26 
+6월 01, 2018 10:54:20.26 KLIB_SelfTest return : KLR_OK
+6월 01, 2018 10:54:53.60 [11156:11740:0601/105453.606:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.483:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.48 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.49 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.49 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.49 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:54:57.49 [11156:8656:0601/105457.484:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 10:56:28.37 
+6월 01, 2018 10:56:28.37 KLIB_SelfTest return : KLR_OK
+6월 01, 2018 11:07:00.12 [3276:11084:0601/110700.121:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.098:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.11 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.14 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.15 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.15 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.15 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.15 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:07:01.15 [3276:10712:0601/110701.099:ERROR:in_progress_cache_impl.cc(189)] Cache is not initialized, cannot RetrieveEntry.
+6월 01, 2018 11:56:18.55 [6688:1416:0601/115618.553:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+6월 01, 2018 11:56:29.78 
+6월 01, 2018 11:56:29.78 KLIB_SelfTest return : KLR_OK
+6월 01, 2018 11:57:42.18 [13060:13196:0601/115742.186:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+6월 01, 2018 11:58:17.63 
+6월 01, 2018 11:58:17.63 KLIB_SelfTest return : KLR_OK

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PageMaker.java&apos; to &apos;stylecode/src/main/java/stylecode.kosta180.domain&apos;&#x0D;&#x0A;- Original project: &apos;controller&apos;&#x0D;&#x0A;- Destination element: &apos;stylecode/src/main/java/stylecode.kosta180.domain&apos;&#x0D;&#x0A;- Original element: &apos;stylecode.kosta180.domain.PageMaker.java&apos;" description="Copy compilation unit" destination="=stylecode/src\/main\/java&lt;stylecode.kosta180.domain" element1="/src\/main\/java&lt;stylecode.kosta180.domain{PageMaker.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1527748816952" units="1" version="1.0"/>
+</session>

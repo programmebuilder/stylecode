@@ -1,5 +1,0 @@
-package stylecode.kosta180.persistence;
-
-public interface CrollDAO {
-	public ShoppingmallVO selectedSPM(int spmEnrollNo) throws Exception;   
-}

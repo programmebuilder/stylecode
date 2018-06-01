@@ -1,0 +1,30 @@
+package stylecode.kosta180.util;
+
+public class RecommendTest {	
+	public static void main(String[] args) throws Exception {
+	    /*DataModel model = new FileDataModel(new File("C:/Users/JUNHEE/Desktop/prac/mahoutexam/src/testdt.csv"));
+		
+	    UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
+	    UserNeighborhood neighborhood =
+	      new NearestNUserNeighborhood(2, similarity, model);
+
+	    Recommender recommender = new GenericUserBasedRecommender(
+	        model, neighborhood, similarity);
+
+	    List<RecommendedItem> recommendations =
+	        recommender.recommend(1, 2);
+
+	    for (RecommendedItem recommendation : recommendations) {
+	      System.out.println(recommendation);
+	    }*/
+		
+		DataModel model = new FileDataModel (new File("movie.csv"));
+		ItemSimilarity itemSimilarity = new EuclideanDistanceSimilarity (model);
+		Recommender itemRecommender = new GenericItemBasedRecommender(model,itemSimilarity);
+		List<RecommendedItem> itemRecommendations = itemRecommender.recommend(3, 2);
+		for (RecommendedItem itemRecommendation : itemRecommendations) {
+		System.out.println("Item: " + itemRecommendation);
+		}
+		
+	}
+}

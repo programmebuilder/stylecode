@@ -5,13 +5,34 @@
 
 <mapper namespace="stylecode.kosta180.mapper.RcMapper">
 
-
-<select id="selectProductData" resultType="ProductVO">
+<select id="selectProductData" parameterType="CategoryVO" resultType="ProductVO">
 	SELECT * FROM PRODUCT
+	<choose>
+		<when test="cgNo == 0">
+			
+		</when>
+		<when test="cgNo == null">
+
+		</when>
+		<otherwise>
+			WHERE CGNO = #{cgNo}
+		</otherwise>
+	</choose>
 </select>
 
-<select id="productList" parameterType="int" resultType="ProductVO">
-	SELECT * FROM PRODUCT WHERE CGNO = #{cgNo}
+<select id="countingPaging" parameterType="CategoryVO" resultType="int">
+	SELECT COUNT(*) FROM PRODUCT
+	<choose>
+		<when test="cgNo == 0">
+
+		</when>
+		<when test="cgNo == null">
+
+		</when>
+		<otherwise>
+			WHERE CGNO = #{cgNo}
+		</otherwise>
+	</choose>
 </select>
 
 </mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stylecode.kosta180.mapper.RcMapper">
+
+
+<select id="selectProductData" resultType="ProductVO">
+	SELECT * FROM PRODUCT
+</select>
+
+<select id="productList" parameterType="int" resultType="ProductVO">
+	SELECT * FROM PRODUCT WHERE CGNO = #{cgNo}
+</select>
+
+<select id="productPagingList" resultType="ProductVO">
+	SELECT * FROM PRODUCT
+</select>
+
+<select id="productCount" resultType="int">
+	SELECT * FROM PRODUCT WHERE CGNO = #{cgNo}
+</select>
+
+</mapper>

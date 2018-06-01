@@ -1,0 +1,27 @@
+package stylecode;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.junit.Test;
+import org.springframework.stereotype.Component;
+
+import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.persistence.RcDAO;
+
+@Component
+public class testListPage {
+	
+	@Inject
+	RcDAO dao;
+	
+	@Test
+	public void test() throws Exception{
+		int page =3;
+		List<ProductVO> list = dao.selectProductData(page);
+		System.out.println(list.size());
+
+	}
+
+}

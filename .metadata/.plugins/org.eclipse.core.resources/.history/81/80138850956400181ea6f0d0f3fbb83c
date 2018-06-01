@@ -1,0 +1,14 @@
+package stylecode;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testListPage {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

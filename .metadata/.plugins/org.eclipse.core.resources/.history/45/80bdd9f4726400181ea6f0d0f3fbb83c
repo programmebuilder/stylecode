@@ -1,0 +1,70 @@
+package stylecode.kosta180.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import stylecode.kosta180.domain.PageMakerVO;
+import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.persistence.RcDAOImpl;
+
+@Service
+public class RcServiceImpl implements RcService {
+	
+	@Inject
+	private RcDAOImpl dao;
+	
+	@Override
+	public List<ProductVO> selectProductDataService() throws Exception {
+		return dao.selectProductData();
+	}
+
+	@Override
+	public List<ProductVO> productListService(int cgno) throws Exception {
+		return dao.productList(cgno);
+	}
+
+	@Override
+	public List<ProductVO> productPagingListService(int pageNum, int contentNum) throws Exception {
+		PageMakerVO pageMaker = new PageMakerVO();
+		int cPageNum = pageNum;
+		int cContentNum = contentNum;
+		
+		pageMaker.setTotalCount(dao.productCount()); //전체 게시글 개수 지정.
+		pageMaker.setPageNum(cPageNum-1); //현재 페이지를 페이지 객체에 지정.
+		pageMaker.setContentNum(cContentNum); //한 페이지에 몇개씩 게시글을 보여줄지 지정.
+		pageMaker.setCurrentBlock(cPageNum); //현재 페이지 블록이 몇번인지 현재 페이지 번호를 통해서 지정.
+		pageMaker.setLastBlock(pageMaker.getTotalCount()); //마지막 블록 번호를 전체 게시글 수를 통해서 지정. 
+		
+		pageMaker.prevNext(cPageNum); //현재 페이지 번호로 화살표를 나타낼지 지정한다.
+		pageMaker.setStartPage(pageMaker.getCurrentBlock()); //시작 페이지를 페이지 블록 번호로 정한다.
+		pageMaker.setEndPage(pageMaker.getLastBlock(), pageMaker.getCurrentBlock()); 
+		//마지막 페이지를 마지막 페이지 블록과 현재 페이지 블록 번호로 정한다.
+		
+		List<ProductVO> productList = new ArrayList<>();
+		Map<> lsitMap = new HashMap<>();
+		
+		productList = dao.productPagingList(pageMaker.getPageNum()*10, pageMaker.getContentNum());
+		return productList;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

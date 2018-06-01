@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    //카테고리 이미지클릭시 정렬.
+	
+ /*//카테고리 이미지클릭시 정렬.
 	$(document).on('click', '#cgImgMn a', function(){
 		var index = $('#cgImgMn a').index(this);
 		
@@ -60,9 +61,20 @@ $(document).ready(function(){
 		});
 	});
 	
+	//카테고리.
+	$(document).on('click', '#cgImgMn a', function(){
+		var index = $('#cgImgMn a').index(this) +101;
+		alert("categoryNm : " + index);
+		self.location= "/recommend/?cgNo="+cgNo;
+	});*/
+	
+	$("#cgImgMn a").on("click", function(event) {
+		 self.location = "";
+	});
+	
 });
 
-$(window).scroll(function() {
+/*$(window).scroll(function() {
     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
      alert("스크롤 닿음");
       

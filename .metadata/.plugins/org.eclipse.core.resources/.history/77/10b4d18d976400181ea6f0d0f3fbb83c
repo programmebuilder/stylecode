@@ -1,0 +1,19 @@
+package stylecode;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import stylecode.kosta180.persistence.RcDAOImpl;
+
+public class BoardDAOTest {
+
+	@Test
+	public void testListPage() throws Exception{
+		int page = 3;
+		RcDAOImpl dao = new RcDAOImpl();
+		
+		List<ProductVO> list = dao.
+	}
+
+}

@@ -1,0 +1,15 @@
+package stylecode.kosta180.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
+
+import stylecode.kosta180.domain.PageMakerVO;
+import stylecode.kosta180.domain.ProductVO;
+
+public interface RcService {
+	public List<ProductVO> selectProductDataService() throws Exception;
+	public List<ProductVO> productListService(int cgno) throws Exception;
+	public Map<PageMakerVO, List<ProductVO>> productPagingListService(@Param("pageNum") int pageNum, @Param("contentNum") int contentNum) throws Exception;
+}

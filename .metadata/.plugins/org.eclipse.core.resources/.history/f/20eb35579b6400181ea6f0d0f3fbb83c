@@ -1,0 +1,25 @@
+package stylecode;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.persistence.RcDAOImpl;
+
+public class BoardDAOTest {
+
+	@Test
+	public void testListPage() throws Exception{
+		int pageNum = 3;
+		RcDAOImpl dao = new RcDAOImpl();
+		
+		List<ProductVO> list = dao.selectProductData(pageNum);
+		for (ProductVO productVO : list) {
+			System.out.println(productVO.toString());
+		}
+	}
+
+}

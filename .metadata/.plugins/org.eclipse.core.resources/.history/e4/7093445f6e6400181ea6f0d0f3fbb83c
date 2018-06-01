@@ -1,0 +1,14 @@
+package stylecode.kosta180.persistence;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import stylecode.kosta180.domain.ProductVO;
+
+public interface RcDAO {
+	public List<ProductVO> selectProductData() throws Exception; 
+	public List<ProductVO> productList(int cgno) throws Exception; 
+	public List<ProductVO> productPagingList(@Param("pageNum") int pageNum, @Param("contentNum") int contentNum) throws Exception;
+	public int productCount();
+}

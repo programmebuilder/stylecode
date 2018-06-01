@@ -27,7 +27,6 @@
 <fullyQualifiedTypeName name="stylecode.kosta180.service.SpmDetailService"/>
 <fullyQualifiedTypeName name="stylecode.kosta180.domain.SpmBmVO"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.SessionAttribute"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
@@ -41,8 +40,9 @@
 <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
 <fullyQualifiedTypeName name="org.aspectj.org.eclipse.jdt.internal.compiler.parser.ParserBasicInformation"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

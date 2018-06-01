@@ -1,0 +1,7 @@
+package stylecode.kosta180.util;
+
+import javax.mail.Authenticator;
+
+public class MyAuthentication extends Authenticator {
+
+}

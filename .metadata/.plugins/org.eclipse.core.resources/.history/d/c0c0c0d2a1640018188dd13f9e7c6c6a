@@ -1,0 +1,69 @@
+package stylecode.kosta180.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import stylecode.kosta180.domain.Manager_spmVO;
+import stylecode.kosta180.persistence.AdminDAO;
+
+
+@Service
+public class AdminServiceImpl implements AdminService {
+
+	@Inject 
+	private AdminDAO dao;
+
+
+	@Override
+	public List<Manager_spmVO> spmList() throws Exception {
+		
+		return dao.spmList();
+	}
+
+	@Override
+	public void spmAccept(HashMap spmEnrollNo) throws Exception {
+		// 
+		
+		dao.spmAccept(spmEnrollNo);
+	}
+
+	@Override
+	public void spmRefuse(HashMap spmEnrollNo) throws Exception {
+		
+		dao.deleteSpmManager(spmEnrollNo);
+		dao.deleteSpm(spmEnrollNo);
+	}
+
+	@Override
+	public void sendEmail(HashMap spmEnrollNo, boolean bool) throws Exception {
+
+		//dao수행 해서 email 받아오기
+		
+		
+		List<String> emailList = dao.emailAdd(spmEnrollNo);
+		for(int i=0; i<=emailList.size(); i++){
+			
+			if(bool){
+				//승인 했을 때에 보내는 메세지
+				//bool값이 true 일 때 메세지
+				
+
+				
+			}else{
+				//거절 했을 때에 보내는 이메일
+				//bool값이 false 일 때 메세지
+			}
+		}
+
+		
+		
+	}
+
+
+	
+	
+}

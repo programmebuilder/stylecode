@@ -20,14 +20,14 @@ public class AdminDAOImpl implements AdminDAO {
 		
 		private static String namespace = "stylecode.kosta180.mapper.admin";
 		
-		/*       ÀÔÁ¡½ÅÃ» ´ë±âÁßÀÎ ¼îÇÎ¸ô ¸®½ºÆ® »Ì±â                */
+		/*     ì‡¼í•‘ëª° ëª©ë¡ ë¿Œë¦¬ê¸°             */
 	@Override
 	public List<Manager_spmVO> spmList() throws Exception {
 		
 		return session.selectList(namespace+".selectedSPM");
 	}
 
-	/*       ½ÂÀÎ ½Ã               */
+	/*       ìŠ¹ì¸             */
 	@Override
 	public void spmAccept(HashMap spmEnrollNo) throws Exception {
 		
@@ -37,25 +37,27 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	
-	/*       °ÅÀı½Ã                */
+	/*      ê±°ì ˆ               */
 	@Override
-	public void deleteSpm(int spmEnrollNo) throws Exception {
+	public void deleteSpm(HashMap spmEnrollNo) throws Exception {
 		session.delete(namespace+".deleteSpm");
 		
 	}
 
 	@Override
-	public void deleteSpmManager(int spmEnrollNo) throws Exception {
+	public void deleteSpmManager(HashMap spmEnrollNo) throws Exception {
 		session.delete(namespace+".deleteSpmManager");
 		
 	}
 
 	
-	//¸ŞÀÏ ÁÖ¼Ò ¹Ş¾Æ¿À±â
+	//ì´ë©”ì¼ ë½‘ê¸°
 	@Override
 	public List<String> emailAdd(HashMap spmEnrollNo) throws Exception {
 		
-		return session.selectList(namespace+".¤¨");
+		System.out.println("DAO ë¦¬ìŠ¤íŠ¸ ë¦¬í„´ê°’" + session.selectList(namespace+".emailadd", spmEnrollNo));
+		
+		return session.selectList(namespace+".emailadd", spmEnrollNo);
 	}
 
 }

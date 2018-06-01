@@ -22,26 +22,27 @@ import org.springframework.web.bind.annotation.RestController;
 import stylecode.kosta180.domain.Manager_spmVO;
 import stylecode.kosta180.service.AdminService;
 
-/*                          ADMIN PAGE ºÎºĞ restController                          */
+/*                          ADMIN PAGE restController                          */
+
 
 @Controller
-@RestController
 @RequestMapping("/admin")
 public class AdminController {
 
 
 	@Inject
 	private AdminService adminService;
+	
    
 	
-	/*   ÀÔÁ¡½ÅÃ» µé¾î¿Í ÀÖ´Â ¼îÇÎ¸ô ¸®½ºÆ®      */
+	/*   ì…ì ì‹ ì²­ ë“¤ì–´ì™€ ìˆëŠ” ì‡¼í•‘ëª° ë¦¬ìŠ¤íŠ¸      */
 	@RequestMapping(value="/all", method=RequestMethod.GET)
 	public ResponseEntity<List<Manager_spmVO>> list(){
 		
 		ResponseEntity<List<Manager_spmVO>> entity =null;
 		try {
 			entity = new ResponseEntity<>(adminService.spmList(), HttpStatus.OK);
-			System.out.println("all ½ÇÇàÇÔ");
+			System.out.println("all ì‹¤í–‰(ì»¨íŠ¸ë¡¤ëŸ¬)");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -50,7 +51,7 @@ public class AdminController {
 		return entity;
 		
 	}
-	/*    ÀÔÁ¡ ½ÂÀÎ         */
+	/*    ìŠ¹ì¸        */
 	//@RequestMapping(value="/accept", method=RequestMethod.PUT)
 	@RequestMapping(value="/accept", method=RequestMethod.POST)
 	/*public ResponseEntity<String> accept(@RequestBody String[] array){*/
@@ -59,13 +60,24 @@ public class AdminController {
 		
 		HashMap hm = new HashMap<>();
 		hm.put("Num", array);
+		System.out.println(hm.get("Num"));
+		
+		
+		//List<String> eA = (List<String>) hm.get("Num");
 
 		ResponseEntity<String> entity = null;
-		System.out.println("admin »£»£»£»£ ÄÁÆ®·Ñ·¯");
-		
+		System.out.println("admin ì»¨íŠ¸ë¡¤ëŸ¬");
+		Boolean bool = true;
 		try {
-			adminService.spmAccept(hm);
+			//ìŠ¹ì¸ì²˜ë¦¬(spmdate nullê°’ ì±„ì›Œì¤Œ)
 			
+			System.out.println(hm);
+			//ë©”ì¼ë³´ë‚´ê¸° ìˆ˜í–‰(boolê°’ true)
+			
+			adminService.sendEmail(hm, bool);
+			
+			adminService.spmAccept(hm);
+			System.out.println(hm);
 			entity = new ResponseEntity<>("SUCCESS",HttpStatus.OK);
 			
 		} catch (Exception e) {
@@ -74,8 +86,30 @@ public class AdminController {
 		}
 		return entity;
 	}
-	/*     ÀÔÁ¡ °ÅÀı        */
+	
+	/*     ê±°ì ˆ        */
+	@RequestMapping(value="/refuse", method=RequestMethod.DELETE)
+	public ResponseEntity<String> refuse(@RequestParam(value="array[]")
+			List<String> array)throws Exception{
 		
+		HashMap hm = new HashMap<>();
+		hm.put("Num", array);
+
+		ResponseEntity<String> entity = null;
+		Boolean bool = false;
+		try {
+			//ì‚­ì œí•˜ê¸° ìˆ˜ì •
+			 adminService.spmRefuse(hm);
+			//ë©”ì¼ë³´ë‚´ê¸° ì„œë¹„ìŠ¤ ìˆ˜í–‰(boolê°’ false)
+			 adminService.sendEmail(hm, bool);
+			entity = new ResponseEntity<>("SUCCESS",HttpStatus.OK);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}
 	}
 	
 	

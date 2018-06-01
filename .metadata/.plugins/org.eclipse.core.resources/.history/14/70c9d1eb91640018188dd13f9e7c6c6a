@@ -1,0 +1,57 @@
+package stylecode.kosta180.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import stylecode.kosta180.domain.Manager_spmVO;
+import stylecode.kosta180.persistence.AdminDAO;
+
+
+@Service
+public class AdminServiceImpl implements AdminService {
+
+	@Inject 
+	private AdminDAO dao;
+
+
+	@Override
+	public List<Manager_spmVO> spmList() throws Exception {
+		
+		return dao.spmList();
+	}
+
+	@Override
+	public void spmAccept(HashMap spmEnrollNo) throws Exception {
+		// �̸��� ������
+		
+		dao.spmAccept(spmEnrollNo);
+	}
+
+	@Override
+	public void spmDecline(int spmEnrollNo) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sendEmail(HashMap spmEnrollNo, boolean bool) throws Exception {
+
+		//dao�� �̸��� �� ����Ʈ �޾ƿ���
+		//���� ������ ���� ���� �߼� �޼����� �ٸ��� ���ش�.
+		if(bool){
+			//������ ��
+		}else{
+		 //���� �� ��
+		}
+		
+		
+	}
+
+
+	
+	
+}

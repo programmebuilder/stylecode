@@ -1,0 +1,11 @@
+127.0.0.1 - - [02/Jun/2018:10:56:49 +0900] "GET / HTTP/1.1" 200 173
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:10:56:50 +0900] "GET / HTTP/1.1" 200 173
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:10:56:50 +0900] "GET /favicon.ico HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:10:57:02 +0900] "GET /shoppingmall/ShoppingMall HTTP/1.1" 200 19293
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:10:57:07 +0900] "GET /shoppingmall/ShoppingMall?category=%EC%9D%98%EB%A5%98&style=%EC%8B%AC%ED%94%8C%EB%B2%A0%EC%9D%B4%EC%A7%81 HTTP/1.1" 200 19518
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:11:00:08 +0900] "GET /shoppingmall/ShoppingMall HTTP/1.1" 200 19192
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:11:00:12 +0900] "GET /shoppingmall/ShoppingMall?page=5&perPageNum=10&searchKey HTTP/1.1" 200 19265
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:11:00:14 +0900] "GET /shoppingmall/ShoppingMall?page=6&perPageNum=10&searchKey= HTTP/1.1" 200 19379
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:11:00:20 +0900] "GET /shoppingmall/ShoppingMall?category=%EC%9D%98%EB%A5%98&style=%EC%8B%AC%ED%94%8C%EB%B2%A0%EC%9D%B4%EC%A7%81 HTTP/1.1" 200 19417
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:11:00:23 +0900] "GET /shoppingmall/ShoppingMall?category=%EC%9D%98%EB%A5%98&age=20%EB%8C%80 HTTP/1.1" 200 19408
+0:0:0:0:0:0:0:1 - - [02/Jun/2018:11:00:28 +0900] "GET /shoppingmall/ShoppingMall?category=%EC%A5%AC%EC%96%BC%EB%A6%AC&age=30%EB%8C%80 HTTP/1.1" 200 18765

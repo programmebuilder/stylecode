@@ -4,7 +4,7 @@
 <html>
 <head>
 <!-- 부트스트랩  프레임워크 -->
-<link rel="stylesheet" href="../resources/YJH/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css" />
 <!-- CUSTOM  CSS -->
 <link rel="stylesheet" href="../resources/YJH/bootstrap/css/rcCustom.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -93,10 +93,10 @@
 </footer>
 	
 <!-- JQuery JavaScript 추가  -->
-<script type="text/javascript" src="../resources/YJH/bootstrap/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../resources/bootstrap/js/jquery-3.3.1.min.js"></script>
 <!-- Popper JavaScript 추가 -->
-<script type="text/javascript" src="../resources/YJH/bootstrap/js/popper.js"></script>
+<script type="text/javascript" src="../resources/bootstrap/js/popper.js"></script>
 <!-- Bootstrap JavaScript 추가 -->
-<script type="text/javascript" src="../resources/YJH/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

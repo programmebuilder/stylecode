@@ -78,14 +78,15 @@
 		FROM 	SPM
 		WHERE 	SPMDATE is not null AND spmEnrollNo in
 		<choose>
-		<when test="filterList.size ==0">
-		(99999999999)
-		</when>
-		<otherwise>
-		<foreach collection="filterList" item="item" separator="," open="(" close=")"> 
-				#{item}
-		</foreach>	
-		</otherwise>
+			<!-- filterList가 리스트 형태이므로 값이 없으면 []형태로 출력되어 오류 발생 => 사이즈가 0일 때 조건을 통해 해결 -->
+			<when test="filterList.size ==0">
+				(99999999999)
+			</when>
+			<otherwise>
+				<foreach collection="filterList" item="item" separator="," open="(" close=")"> 
+					#{item}
+				</foreach>	
+			</otherwise>
 		</choose>
 	</select> 
 	

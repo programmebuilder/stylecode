@@ -266,11 +266,7 @@ $(document).ready(function() {
  			+ '${pageMaker.makeQuery(1)}'
 			+ $("select option:selected").val() 
 			+ "&searchKey=" + $('#searchKeyInput').val();
-		});
-		
-		$("#filterBtn").on("click", function(event) {
-			 self.location = "ShoppingMall" 
-		});
+		});		
 });
 	
 </script>

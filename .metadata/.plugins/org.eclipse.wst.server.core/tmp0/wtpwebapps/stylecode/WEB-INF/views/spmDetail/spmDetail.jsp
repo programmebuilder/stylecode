@@ -87,7 +87,7 @@ session(mId);
 
 	<!-- 해당 쇼핑몰에 대해 DB에 있는 상품목록을 forEach문을 이용해 출력 -->
 	<div id="pdRcList" class="container-fluid">
-		<div class="row">
+		<div class="row" style="margin: 0px 150px;">
 			<c:forEach var="product" items="${product}">
 				<div class="col-sm-4">
 					<div class="card">

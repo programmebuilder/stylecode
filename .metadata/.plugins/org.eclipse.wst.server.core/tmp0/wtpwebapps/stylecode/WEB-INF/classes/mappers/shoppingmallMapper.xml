@@ -148,8 +148,8 @@
 	
 	<!-- 쇼핑몰 담당자 신청서 작성(쇼핑몰 테이블) -->
 	<insert id="requestSPM2" parameterType="SpmRequestVO">
-		Insert Into SPM(SPMENROLLNO, SPMNM, SPMURL, SPMCLASSIFCN, SPMAGES, SPMINFO, SPMTN) 
-			Values (#{spmEnrollNo}, #{spmNm}, #{spmURL}, #{spmClassifcn}, #{spmAges}, #{spmInfo}, #{spmTn})
+		Insert Into SPM(SPMENROLLNO, SPMNM, SPMURL, SPMCLASSIFCN, SPMAGES, SPMINFO, SPMTN, SPMVIEWS) 
+			Values (#{spmEnrollNo}, #{spmNm}, #{spmURL}, #{spmClassifcn}, #{spmAges}, #{spmInfo}, #{spmTn}, 0)
 	</insert>
 	
 	<!-- 입점신청 편의를 위해 사용하는  쇼핑몰 리스트 -->

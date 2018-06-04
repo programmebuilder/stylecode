@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../resources/YJH/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="../resources/YJH/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<!-- JQuery JavaScript 추가  -->
+<script type="text/javascript" src="../resources/YJH/bootstrap/js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap JavaScript 추가 -->
+<script type="text/javascript" src="../resources/YJH/bootstrap/js/bootstrap.min.js"></script>
+
+	<table class="table table-bordered">
+  		<tr>아이디</tr>
+  			<td>ㄷㄷ</td>
+  		<tr>내용</tr>
+  			<td>ddd</td>
+	</table>
+</body>
+</html>

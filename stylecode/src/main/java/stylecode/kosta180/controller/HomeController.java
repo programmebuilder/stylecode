@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,11 +13,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import stylecode.kosta180.domain.ShoppingMallSearchVO;
+import stylecode.kosta180.service.ShoppingmallService;
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
+	
+	@Inject
+	private ShoppingmallService service;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -43,4 +51,10 @@ public class HomeController {
 		return "/admin/spmList";
 	}
 	
+	@RequestMapping(value="/chatbot", method = RequestMethod.GET)
+	public String test(Model model, ShoppingMallSearchVO vo) throws Exception {
+		model.addAttribute("list", service.listShoppingMall(vo));
+		
+		return "NewFile";
+	}
 }

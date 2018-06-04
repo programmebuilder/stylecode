@@ -34,6 +34,10 @@
 h2 {
 	margin: 30px 0;
 }
+
+.img-circle {
+ 	border-radius: 50%;
+}
 </style>
 </head>
 <%
@@ -57,9 +61,9 @@ h2 {
 				<c:forEach var="i" items="${list}">
 					<p
 						class="list-group-item list-group-item-action list-group-item-white">
-						<img width="100px" height="100px" alt="사진이 없음" src="${i.spmTn}">
+						<img width="100px" height="100px" alt="사진이 없음" src="${i.spmTn}" class="img-circle" >
 						<a id="spmbm" href="../spmDetail/Spmdetail.do?spmEnrollNo=${i.spmEnrollNo}">
-							<span>&emsp;</span>${i.spmNm}</a><span>&emsp;/스타일태그/</span><span>&emsp;&emsp;&emsp;</span>
+							<span>&emsp;</span>${i.spmNm}</a><span>&emsp;${i.spmInfo}</span><span>&emsp;&emsp;&emsp;</span>
 						<a href="/bookmark/deletebookmark?spmEnrollNo=${i.spmEnrollNo}">
 							<button
 								style="position: absolute; right: 2%; border: none; background: none;">

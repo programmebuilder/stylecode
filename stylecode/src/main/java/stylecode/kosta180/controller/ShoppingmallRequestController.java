@@ -28,7 +28,6 @@ public class ShoppingmallRequestController {
 	@RequestMapping(value="/shoppingmallRequest", method=RequestMethod.POST)
 	public String shoppingmallRequestPOST(Model model, SpmRequestVO spmRequest) throws Exception {
 		System.out.println("idx: "+idx);
-		ShoppingMallVO vo;
 		
 		idx=service.listShoppingMallR()+1;
 		

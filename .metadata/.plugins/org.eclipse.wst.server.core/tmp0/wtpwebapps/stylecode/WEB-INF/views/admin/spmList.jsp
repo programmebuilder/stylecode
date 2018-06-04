@@ -10,28 +10,32 @@
 <link rel="stylesheet" type="text/css" href="../resources/bootstrap/css/bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<style type="text/css">
+	.img-circle {
+ 		border-radius: 50%;
+ 		margin-left: 30px;
+	}
+</style>
 </head>
 <body>
-
-	<h3>관리자 페이지</h3>
-	<div>
-
+	<%@include file="../header.jsp"%>
+	<div style="margin: 3% 10%;">
+		<h3>관리자 페이지</h3>
 	
 	
 		<div>
 		<form action="admin/accept">
 		<!--  버튼 -->
 
-			<div class="container" style="margin: 10px;">
-					  <div class="row">
+			<div class="container">
+					  <div class="row" style="margin-bottom: 10px;">
 					    <div class="col-sm">
 					      <input style="margin-top: 15px;" type="checkbox" name="checkAll" id="th_checkAll" />&emsp;전체 선택
 					    </div>
 					  <div class="col-sm">
 					      
 				</div>
-				 <div class="col-sm">
+				 <div class="col-sm" style="padding-left: 50%">
 					<button type="button" class="btn btn-outline-dark" id="accept">승인</button>
 					<button type="button" class="btn btn-outline-dark" id="refuse">거절</button>
 				</div>
@@ -47,7 +51,11 @@
 		</div>
 		
 		</form>
+		</div>
 	</div>
+	
+	<%@include file="../footer.jsp"%>
+	
 </body>
 
 <script type="text/javascript">

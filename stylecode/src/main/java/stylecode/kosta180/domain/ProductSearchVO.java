@@ -1,6 +1,6 @@
 package stylecode.kosta180.domain;
 
-public class ProductSearchVO {
+public class ProductSearchVO extends ProductCriteria {
 	
 	private String searchKey;
 	

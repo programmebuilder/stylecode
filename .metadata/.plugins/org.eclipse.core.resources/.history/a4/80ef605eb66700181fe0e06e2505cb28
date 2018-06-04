@@ -1,0 +1,97 @@
+/*!
+ * Start Bootstrap - 4 Col Portfolio (https://startbootstrap.com/template-overviews/4-col-portfolio)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-4-col-portfolio/blob/master/LICENSE)
+ */
+body {
+	margin:0;
+	background-color:;
+}
+.container{
+	font-size:1.5rem;
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+.description::-webkit-scrollbar {
+  width: 2px;
+}
+
+.description::-webkit-scrollbar-track {
+  background-color:#edeadf;
+  border-radius: 15px;
+}
+ 
+.description::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color:#E09A25;
+}
+
+
+
+.description a{
+	padding:10px;
+	font-size:1.8rem;
+	font-family: 'Nanum Pen Script', cursive;
+	text-decoration:none !important;
+	color:midnightblue !important;
+	
+}
+
+.description a:hover{
+	font-weight:bold;
+}
+
+
+@media ( min-width : 992px) {
+	body {
+	
+	}
+}
+
+.portfolio-item {
+	margin-bottom: 30px;
+}
+
+.pagination {
+	margin-bottom: 30px;
+}
+
+
+
+form.form-search{
+	float:right;
+}
+
+
+
+input.search-query{
+	height:38px;
+	padding-left:10px;
+	border-radius: 5px;
+	border:1px solid gray;
+	}
+
+.card img {
+	margin: 0px;
+	padding: 0px;
+}
+
+.card-body{
+	background-color: gainsboro;
+}
+
+.description{
+	overflow:auto;
+	height:50px;
+
+}
+
+.price{
+	text-align: right;
+	margin-top:10px;
+}
+
+
+.price p::after{
+	content:'원';
+}

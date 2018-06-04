@@ -1,7 +1,0 @@
-package stylecode.kosta180.domain;
-
-public class SecurityMemberVO {
-
-	private String id;
-	private String pw;
-}

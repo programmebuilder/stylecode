@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -30,68 +31,80 @@ import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import stylecode.kosta180.domain.MemberVO;
+import stylecode.kosta180.domain.ProductPageMaker;
+import stylecode.kosta180.domain.ProductSearchVO;
+import stylecode.kosta180.domain.ProductVO;
 import stylecode.kosta180.service.ProductService;
 
 @Controller
 public class ProductListController {
-	/*
-	 * private static final Logger logger =
-	 * LoggerFactory.getLogger(SecurityController.class);
-	 */
+
 	@Inject
 	private ProductService service;
 
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
-	public String productlist(Model model) throws Exception {
-		model.addAttribute("list", service.listAll());
+	public String productlist(Model model, @ModelAttribute("searchKey") ProductSearchVO searchKey) throws Exception {
+		ProductPageMaker pageMaker = new ProductPageMaker();
+
+		model.addAttribute("list", service.listAll(searchKey));
+		model.addAttribute("recommendList", service.listRandom());
+		pageMaker.setCri(searchKey);
+		pageMaker.setTotalCount(service.productListCount(searchKey));
+		model.addAttribute("pageMaker", pageMaker);
 		return "product/productlist";
 	}
 
 	@RequestMapping(value = "/productlistLow", method = RequestMethod.GET)
-	public String productlistLow(Model model) throws Exception {
-		model.addAttribute("list", service.listAllLow());
-
+	public String productlistLow(Model model, @ModelAttribute("searchKey") ProductSearchVO searchKey) throws Exception {
+		ProductPageMaker pageMaker = new ProductPageMaker();
+		pageMaker.setCri(searchKey);
+		pageMaker.setTotalCount(service.productListCount(searchKey));
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("list", service.listAllLow(searchKey));
+		model.addAttribute("recommendList", service.listRandom());
+		System.out.println("낮은가격순");
 		return "product/productlist";
 	}
 
 	@RequestMapping(value = "/productlistHigh", method = RequestMethod.GET)
-	public String productlistHigh(Model model) throws Exception {
-		model.addAttribute("list", service.listAllHigh());
+	public String productlistHigh(Model model, @ModelAttribute("searchKey") ProductSearchVO searchKey)
+			throws Exception {
+		ProductPageMaker pageMaker = new ProductPageMaker();
+		pageMaker.setCri(searchKey);
+		pageMaker.setTotalCount(service.productListCount(searchKey));
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("recommendList", service.listRandom());
+		model.addAttribute("list", service.listAllHigh(searchKey));
+		System.out.println("높은가격순");
 		return "product/productlist";
 	}
 
-
-
 	@RequestMapping(value = "/recommendCheakBox")
-	public String testitems(@RequestParam(name = "chk") ArrayList<Integer> penrollno,Model model) throws Exception {
+	public String testitems(@RequestParam(name = "chk") ArrayList<Integer> penrollno, Model model) throws Exception {
 		try {
-			DataModel dm = new FileDataModel(new File("C:\\data\\rate.csv"));
+			DataModel dm = new FileDataModel(new File("C:\\data\\itemcsv.csv"));
 			TanimotoCoefficientSimilarity sim = new TanimotoCoefficientSimilarity(dm);
 			GenericItemBasedRecommender recommender = new GenericItemBasedRecommender(dm, sim);
 			List<Integer> recommendList = new ArrayList<Integer>();
-			HashMap<Integer, Object> recommendMap= new HashMap<Integer,Object>();
-			// 체크스를 4개를 선택하게 한다음 4개를 mostSimailarItems에 넣어야겠다.
-			// 넘어온 값을 각각 int값으로 넘긴다음에 그것에 맞춰 if문을 써줌 체크박스가 1일떈 if==변수 한개 써주고
-			// 이렇게해야겠다
-			// for (LongPrimitiveArrayIterator items =
-			// (LongPrimitiveArrayIterator) dm.getItemIDs(); items.hasNext();) {
-			// long itemId = items.nextLong();
+			ProductPageMaker pageMaker = new ProductPageMaker();
 
 			for (int i = 0; i < penrollno.size(); i++) {
-				List<RecommendedItem> recommendations = recommender.mostSimilarItems(penrollno.get(i), 10);
+				List<RecommendedItem> recommendations = recommender.mostSimilarItems(penrollno.get(i), 5);
 				for (RecommendedItem recommendation : recommendations) {
 					System.out.println(
 							penrollno.get(i) + "," + recommendation.getItemID() + "," + recommendation.getValue());
-					recommendList.add((int)recommendation.getItemID());
+					recommendList.add((int) recommendation.getItemID());
 				}
 
 			}
@@ -99,8 +112,12 @@ public class ProductListController {
 				System.out.println("추천상품이들어갓는지 확인하기" + recommendList.get(i));
 				System.out.println(recommendList.size() + "갯수:" + i);
 			}
-			
-			model.addAttribute("list",service.recommendList(recommendList));
+
+			// 체크박스를 클릭한 상품과 현재 상품 penrollNo를 비교해서 갖고옴
+			model.addAttribute("list", service.recommendList(recommendList));
+			// productlist.jsp 에 있는 모달창을 랜덤으로뿌려주기위한 함수
+			model.addAttribute("recommendList", service.listRandom());
+
 		}
 
 		catch (IOException e) {
@@ -110,7 +127,7 @@ public class ProductListController {
 			e.printStackTrace();
 		}
 
-			return "product/productlist";
+		return "product/productlist";
 	}
 
 }

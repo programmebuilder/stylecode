@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+#searchBar button{
+	text-decoration: none;
+	font-family: fontello;
+	font-size: 1rem;	
+}
+
+#searchBar label{
+	margin-right: 10px;
+	margin-bottom: 0px;
+}
+
+form a{
+	margin-left: 5px;
+	text-decoration: none;
+	font-family: fontello;
+	font-size: 1.5rem;
+	color: black;
+}
+
+form p{
+	text-decoration: none;
+	font-family: fontello;
+	font-size: 0.5rem;
+	color: black;
+}

@@ -32,7 +32,7 @@
 <property name="dataSource" ref="dataSource"></property>
 </bean>
 
-	<!--DAO,Service 매핑 -->
+	
 	
 	
 </beans>

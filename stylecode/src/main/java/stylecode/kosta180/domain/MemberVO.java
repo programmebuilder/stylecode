@@ -7,6 +7,7 @@ public class MemberVO {
 	private String mNm;// 사용자 이름?
 	private String mImg;//사용자 썸네일
 	private String mPhone;//사용자 번호
+	
 	public String getmId() {
 		return mId;
 	}

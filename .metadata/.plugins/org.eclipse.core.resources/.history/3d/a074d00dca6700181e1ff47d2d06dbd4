@@ -1,0 +1,38 @@
+package stylecode.sns.persistence;
+
+import java.util.HashMap;
+import java.util.List;
+
+import stylecode.sns.domain.MemberVO;
+import stylecode.sns.domain.SocialMediaListVO;
+import stylecode.sns.domain.SocialMediaVO;
+
+public interface SocialMediaDAO {
+
+	// 게시물 작성
+	public void create(SocialMediaVO vo) throws Exception;
+	
+	// 게시물 파일 업로드
+	public void addAttach(String imgid) throws Exception;
+	
+	// 게시물 전체 출력(최신순)
+	public List<SocialMediaListVO> list() throws Exception;
+	
+	// 게시물 이미지 전체 출력
+	public List<SocialMediaListVO> listAttach() throws Exception;
+	
+	// 게시물 삭제
+	public void delete(Integer bdno) throws Exception;
+	
+	// 게시물 수정
+	public void update(SocialMediaVO vo) throws Exception;
+	
+	// 게시물 세부 출력(게시물 수정 관련)
+	public SocialMediaVO read(Integer bdno) throws Exception;
+	
+	// 회원 정보
+	public MemberVO memberInformation(String mid) throws Exception;
+	
+	//게시물 페이징 처리
+	List<SocialMediaListVO> listPagination(HashMap<String, String> map);
+}

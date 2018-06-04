@@ -1,0 +1,109 @@
+$(function() {
+	// 텍스트에어리어 확장
+	var comfyText = (function() {
+		var tag = document.querySelectorAll('textarea')
+		for (var i = 0; i < tag.length; i++) {
+			tag[i].addEventListener('paste', autoExpand)
+			tag[i].addEventListener('input', autoExpand)
+			tag[i].addEventListener('keyup', autoExpand)
+		}
+		function autoExpand(e, el) {
+			var el = el || e.target
+			el.style.height = 'inherit'
+			el.style.height = el.scrollHeight + 'px'
+		}
+		window.addEventListener('load', expandAll)
+		window.addEventListener('resize', expandAll)
+		function expandAll() {
+			var tag = document.querySelectorAll('textarea')
+			for (var i = 0; i < tag.length; i++) {
+				autoExpand(e, tag[i])
+			}
+		}
+	})()
+	
+	// 업다운 스크롤 바
+	$(window).scroll(function() {
+		if ($(this).scrollTop() != 0) {
+			$('footer').fadeIn();
+
+		} else {
+			$('footer').fadeOut();
+		}
+	});
+
+	$('footer').click(function() {
+		$('body,html').animate({
+			scrollTop : 0
+		}, 800);
+	});
+});
+
+// Post 버튼 효과
+$("button").on("click", function() {
+	$(this).html('<i class="fa fa-check"></i>');
+	$(this).css('background-color', '#4CD698');
+
+	setTimeout(function() {
+		$("button").html('Send');
+		$("button").css('background-color', '#40B4DE');
+	}, 1500)
+});
+
+var template = Handlebars.compile($("#template").html());
+
+$(".fileDrop").on("dragenter dragover", function(event) {
+	event.preventDefault();
+});
+
+$(".fileDrop").on("drop", function(event) {
+	event.preventDefault();
+	
+	var files = event.originalEvent.dataTransfer.files;
+	
+	var file = files[0];
+	
+	var formData = new FormData();
+	
+	formData.append("file", file);
+	
+	$.ajax({
+		url: "/sns/uploadAjax",
+		data: formData,
+		dataType: "text",
+		processData: false,
+		contentType: false,
+		type: "POST",
+		success: function(data) {
+			var fileInfo = getFileInfo(data);
+			
+			var html = template(fileInfo);
+			
+			$(".uploadedList").append(html);
+		}
+	});
+});
+
+function checkImageType(fileName) {
+	var pattern = /jpg|gif|png|jpeg/i;
+	
+	return fileName.match(pattern);
+}
+
+function getFileInfo(fullName) {
+	var fileName, imgsrc, getLink;
+	
+	var fileLink;
+	
+	if (checkImageType(fullName)) {
+		imgsrc = "/sns/displayFile?fileName="+fullName;
+		fileLink = fullName.substr(14);
+		
+		var front = fullName.substr(0, 12);
+		var end = fullName.substr(14);
+		
+		getLink = "/sns/displayFile?fileName=" + front + end;
+		
+		return {fileName:fileName, imgsrc:imgsrc, getLink:getLink, fullName:fullName};
+	}
+}

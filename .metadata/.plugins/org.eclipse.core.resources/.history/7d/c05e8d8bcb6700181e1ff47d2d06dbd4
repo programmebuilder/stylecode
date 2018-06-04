@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="stylecode.sns.mapper.socialmediaMapper">
+	
+	<!-- 사용자 정보 -->
+	<select id="memberInfomation" resultType="stylecode.sns.domain.MemberVO">
+		SELECT *
+		  FROM member
+		 WHERE mid = #{mid}
+	</select>
+	
+	<!-- 게시물 작성  -->
+	<insert id="create">
+		INSERT
+		  INTO board (bdno, bdcontent, mid)
+		VALUES (board_seq.nextval, #{bdcontent}, #{mid})
+	</insert>
+	
+	<!-- 게시물 파일 업로드 -->
+	<insert id="addAttach">
+		INSERT
+		  INTO bdimg (imgid, bdno)
+		VALUES (#{imgid}, board_seq.currval) 
+	</insert>
+	
+	<!-- 게시물 전체 출력(최신순) -->
+	<select id="list" resultType="stylecode.sns.domain.SocialMediaListVO">
+	<![CDATA[
+		SELECT bd.bdno, bd.bdcontent, bd.mid, bd.bdrgdate, bd.bdupdate, bd.likehits, bd.rplyhits, mm.mnm
+  		  FROM board bd, member mm
+ 		 WHERE bd.mid = mm.mid
+   		   AND bd.bdno > 0
+	  ORDER BY bd.bdno DESC,
+	  		   bd.bdrgdate DESC
+	]]>
+	</select>
+	
+	<!-- 게시물 전체 출력(최신순) -->
+	<select id="listPagination" resultType="stylecode.sns.domain.SocialMediaListVO">
+	<![CDATA[
+		SELECT rnum, T.*
+		  FROM (SELECT S.*, ROW_NUMBER()
+		  		  OVER (ORDER BY bdno DESC, bdrgdate DESC)
+		  		    AS rnum
+		  		  FROM board S) T
+		 WHERE rnum BETWEEN #{startPageNum} AND #{endPageNum};
+	]]>
+	</select>
+	
+	<!-- 게시물 이미지 전체 출력 -->
+	<select id="listAttach" resultType="stylecode.sns.domain.SocialMediaListVO">
+		SELECT bdno, imgid
+  		  FROM bdimg
+	</select>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="delete">
+		DELETE
+		  FROM board
+		 WHERE bdno = #{bdno}
+	</delete>
+	
+	<!-- 게시물 수정 -->
+	<update id="update">
+		UPDATE
+		  FROM board
+		   SET bdcontent = #{bdcontent},
+		       bdupdate = SYSDATE
+		 WHERE bdno = #{bdno}
+	</update>
+	
+	<!-- 게시물 세부 출력(게시물 수정 관련) -->
+	<select id="read" resultType="stylecode.sns.domain.SocialMediaVO">
+		SELECT *
+		  FROM board
+		 WHERE bdno = #{bdno} 
+	</select>
+	
+	
+</mapper>

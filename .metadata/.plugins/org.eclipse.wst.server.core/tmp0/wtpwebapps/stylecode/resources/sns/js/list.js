@@ -1,15 +1,24 @@
-$(function(){
-    $(window).scroll(function(){
-       if($(this).scrollTop()!=0){
-           $('footer').fadeIn();
-           
-       } else{
-           $('footer').fadeOut();
-       }
-    });
-    
-    $('footer').click(function(){
-        $('body,html').animate({scrollTop:0},800);
-    });
-    
+$(function() {
+	// 텍스트에어리어 확장
+	var comfyText = (function() {
+		var tag = document.querySelectorAll('textarea')
+		for (var i = 0; i < tag.length; i++) {
+			tag[i].addEventListener('paste', autoExpand)
+			tag[i].addEventListener('input', autoExpand)
+			tag[i].addEventListener('keyup', autoExpand)
+		}
+		function autoExpand(event, el) {
+			var el = el || event.target
+			el.style.height = 'inherit'
+			el.style.height = el.scrollHeight + 'px'
+		}
+		window.addEventListener('load', expandAll)
+		window.addEventListener('resize', expandAll)
+		function expandAll() {
+			var tag = document.querySelectorAll('textarea')
+			for (var i = 0; i < tag.length; i++) {
+				autoExpand(event, tag[i])
+			}
+		}
+	})()
 });

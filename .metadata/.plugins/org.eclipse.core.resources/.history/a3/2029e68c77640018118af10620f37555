@@ -1,0 +1,9 @@
+package stylecode.sns.domain;
+
+public class SocialMediaListVO {
+	
+	private SocialMediaVO socialMediaVO;
+	private String mnm;
+	private String imgid;
+	
+}

@@ -1,0 +1,5 @@
+package stylecode.sns.controller;
+
+public class SecurityController {
+
+}

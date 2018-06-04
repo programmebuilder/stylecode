@@ -1,0 +1,61 @@
+package stylecode.sns.controller;
+
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import stylecode.sns.domain.SocialMediaVO;
+import stylecode.sns.service.SocialMediaService;
+
+@Controller
+@RequestMapping("/sns/*")
+public class SocialMediaController {
+
+	private static final Logger logger = LoggerFactory.getLogger(SocialMediaController.class);
+
+	@Inject
+	private SocialMediaService service;
+
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registerGET(SocialMediaVO vo, Model model) throws Exception {
+		logger.info("register GET ......");
+	}
+
+	// 게시물 작성
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerPOST(SocialMediaVO vo) throws Exception {
+		logger.info("register POST ......");
+		logger.info(vo.toString());
+
+		service.regist(vo);
+
+		return "redirect:/sns/list";
+	}
+
+	// 게시물 전체 출력(최신순)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String sns(Model model) throws Exception {
+		logger.info("list GET ......");
+
+		model.addAttribute("list", service.list());
+		model.addAttribute("listAttach", service.listAttach());
+
+		return "sns/list";
+	}
+	
+	@RequestMapping(value = "/listpagination", method = RequestMethod.GET)
+	public String sns(Model model) throws Exception {
+		logger.info("list GET ......");
+
+		model.addAttribute("list", service.list());
+		model.addAttribute("listAttach", service.listAttach());
+
+		return "sns/list";
+	}
+}

@@ -1,0 +1,62 @@
+package stylecode.sns.persistence;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import stylecode.sns.domain.MemberVO;
+import stylecode.sns.domain.SocialMediaListVO;
+import stylecode.sns.domain.SocialMediaVO;
+
+@Repository
+public class SocialMediaDAOImpl implements SocialMediaDAO {
+	
+	@Inject
+	private SqlSession session;
+	
+	private static String namespace = "stylecode.sns.mapper.socialmediaMapper";
+	
+	@Override
+	public void create(SocialMediaVO vo) throws Exception {
+		session.insert(namespace + ".create", vo);
+	}
+	
+	@Override
+	public void addAttach(String imgid) throws Exception {
+		session.insert(namespace + ".addAttach", imgid);
+	}
+	
+	@Override
+	public List<SocialMediaListVO> list() throws Exception {
+		return session.selectList(namespace + ".list");
+	}
+	
+	@Override
+	public List<SocialMediaListVO> listAttach() throws Exception {
+		return session.selectList(namespace + ".listAttach");
+	}
+
+	@Override
+	public void delete(Integer bdno) throws Exception {
+		session.delete(namespace + ".delete", bdno);
+	}
+
+	@Override
+	public void update(SocialMediaVO vo) throws Exception {
+		session.update(namespace + ".update", vo);
+	}
+
+	@Override
+	public SocialMediaVO read(Integer bdno) throws Exception {
+		return session.selectOne(namespace + ".read", bdno);
+	}
+
+	@Override
+	public MemberVO memberInformation(String mid) throws Exception {
+		return session.selectOne(namespace + ".memberInformation", mid);
+	}
+	
+}

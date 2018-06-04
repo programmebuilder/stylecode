@@ -46,20 +46,15 @@
 			<div class="card-post">
 				<div class="card-header">
 					<div class="card-profile-frame">
-
-
 						<img class="card-profile" src="/resources/dist/img/avatar2.png" alt="">
 					</div>
 					<div class="card-content">
-
-
-						<a href="#">My User</a><br> <i>2h</i>
+						<input class="user-input" type="text" name="user_input" placeholder="">
 					</div>
 
 				</div>
 				<div class="card-body">
-					<input class="user-input" type="text" name="user_input"
-						placeholder="">
+					<input class="user-input" type="text" name="user_input" placeholder="">
 				</div>
 			</div>
 
@@ -96,7 +91,7 @@
 			</div>
 		</article>
 		<aside>
-			<div class="card-post3">
+			<div class="card-post4">
 				<i class="aside-text">card posts</i> <img class="card-profile3"
 					src="/resources/dist/img/avatar2.png" alt="">
 
@@ -114,22 +109,16 @@
 							alt="">
 					</div>
 					<div class="grid-item">
-						<div class="grid-item">
 							<img class="popular-profile" src="/resources/dist/img/avatar2.png"
 								alt="">
-						</div>
 					</div>
 					<div class="grid-item">
-						<div class="grid-item">
 							<img class="popular-profile" src="/resources/dist/img/avatar2.png"
 								alt="">
-						</div>
 					</div>
 					<div class="grid-item">
-						<div class="grid-item">
 							<img class="popular-profile" src="/resources/dist/img/avatar2.png"
 								alt="">
-						</div>
 					</div>
 					<div class="grid-item">
 						<img class="popular-profile" src="/resources/dist/img/avatar2.png" alt="">
@@ -148,22 +137,16 @@
 							alt="">
 					</div>
 					<div class="grid-item">
-						<div class="grid-item">
 							<img class="popular-photos" src="/resources/dist/img/avatar2.png"
 								alt="">
-						</div>
 					</div>
 					<div class="grid-item">
-						<div class="grid-item">
 							<img class="popular-photos" src="/resources/dist/img/avatar2.png"
 								alt="">
-						</div>
 					</div>
 					<div class="grid-item">
-						<div class="grid-item">
 							<img class="popular-photos" src="/resources/dist/img/avatar2.png"
 								alt="">
-						</div>
 					</div>
 					<div class="grid-item">
 						<img class="popular-photos" src="/resources/dist/img/avatar2.png" alt="">

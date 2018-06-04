@@ -1,0 +1,97 @@
+var page = 1;
+
+$(function() {
+	// 페이지가 로드되면 데이터를 가져오고 page를 증가시킨다.
+	getList(page);
+	page++;
+});
+
+$(window).scroll(function() {
+	// 스크롤이 최하단으로 내려가면 리스트를 조회하고 page를 증가시킨다.
+	if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+		alert("포스트추가");
+		getList(page);
+		page++;
+	}
+});
+
+function getList(page) {
+
+	$.ajax({
+		type : "POST",
+		data : {
+			"page" : page
+		},
+		url : "listPagination",
+		success : function(data) {
+
+			var parsed = JSON.parse(data);
+			console.log(parsed);
+			var str = "";
+			for (var i = 0; i < parsed.length; i++) {
+				str = addPost(parsed[i].mnm, parsed[i].bdrgdate,
+						parsed[i].bdcontent, parsed[i].likehits,
+						parsed[i].rplyhits, str);
+			}
+
+			$("#posts-container").append(str);
+
+			str = "";
+
+			/*
+			 * var data = returnData.rows; var html = "";
+			 *  // 페이지가 1일 경우에만 id가 post-list인 html을 비운다. if (page == 1) {
+			 * $("#post-list").html(""); }
+			 * 
+			 * if (returnData.startNum <= returnData.totCnt) { if (data.length >
+			 * 0) { // for문을 돌면서 행을 그린다. } else { // 데이터가 없을 경우 } }
+			 * 
+			 * html = html.replace(/%20/gi, "");
+			 * 
+			 * if (page == 1) { // 페이지가 1이 아닐 경우 데이터를 붙인다.
+			 * $("#post-list").html(html); }
+			 */
+		},
+		error : function(e) {
+			if (e.status == 300) {
+				alert("데이터를 가져오는데 실패했습니다.")
+			}
+			;
+		}
+	});
+}
+
+function addPost(mnm, bdrgdate, bdcontent, likehits, rplyhits, str) {
+	str += "<div class='card-post' id='post-list'>"
+			+ "<div class='row'>"
+			+ "<div class='col-xs-3 col-sm-2'>"
+			+ "<a href='user-profile.html' title='User Profile'> <img src='/resources/sns/img/sample/user2.jpg' alt='User name' class='img-circle img-user'></a>"
+			+ "</div>" + "<div class='col-xs-9 col-sm-10 info-user'>" + "<h3>"
+			+ "<span><a href='user-profile.html' title='User Profile'>"
+			+ mnm
+			+ "</a></span>"
+			+ "<span><button id='follow-button'>+ Follow</button></span>"
+			+ "</h3><p><i>"
+			+ bdrgdate
+			+ "</i>"
+			+ "</p></div></div>"
+			+ "<div class='row'><div class=' col-sm-8 col-sm-offset-2 data-post'><p>"
+			+ bdcontent
+			+ "</p>"
+			+ "<!-- 첨부 이미지 -->"
+			+ "<!-- 첨부 이미지 끝 -->"
+			+ "<div class='reaction'>"
+			+ "<i class='far fa-heart'></i>"
+			+ likehits
+			+ "&emsp;<i class='far fa-comment'></i> "
+			+ rplyhits
+			+ "</div>"
+			+ "<div class='comments'>"
+			+ "<div class='more-comments'>View more comments</div><ul>"
+			+ "<li><b>User1</b> Lorem Ipsum Dolor si amet</li><li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>"
+			+ "</ul>"
+			+ "<form><input type='text' class='form-control' placeholder='Add a comment'></form></div></div></div></div>";
+
+	return str;
+
+}

@@ -1,0 +1,55 @@
+package stylecode.sns.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import stylecode.sns.domain.SocialMediaVO;
+import stylecode.sns.persistence.SocialMediaDAO;
+
+@Service
+public class SocialMediaServiceImpl implements SocialMediaService {
+
+	@Inject
+	private SocialMediaDAO dao;
+	
+	@Transactional
+	@Override
+	public void regist(SocialMediaVO vo) throws Exception {
+		dao.create(vo);
+		
+		String[] files = vo.getFiles();
+		
+		if (files == null) {
+			return;
+		}
+		
+		for (String imgid : files) {
+			dao.addAttach(imgid);
+		}
+	}
+
+	@Override
+	public List<SocialMediaVO> list() throws Exception {
+		return dao.list();
+	}
+
+	@Override
+	public void remove(Integer bdno) throws Exception {
+		dao.delete(bdno);
+	}
+
+	@Override
+	public void modify(SocialMediaVO vo) throws Exception {
+		dao.update(vo);
+	}
+
+	@Override
+	public SocialMediaVO read(Integer bdno) throws Exception {
+		return dao.read(bdno);
+	}
+
+}

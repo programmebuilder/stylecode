@@ -1,0 +1,11 @@
+package stylecode.sns.domain;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class SocialMediaListVO extends SocialMediaVO{
+	private String mnm;
+	private String imgid;
+}

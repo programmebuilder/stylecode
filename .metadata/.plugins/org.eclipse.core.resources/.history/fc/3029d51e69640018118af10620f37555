@@ -1,0 +1,23 @@
+package stylecode.sns.domain;
+
+import java.util.Date;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Getter @Setter
+public class SocialMediaVO {
+	
+	private int bdno;
+	private String bdcontent; 
+	private String mid;
+	private Date bdrgdate;
+	private Date bdupdate;
+	private int likehits;
+	private int rplyhits;
+	
+	private String[] files;
+	
+}

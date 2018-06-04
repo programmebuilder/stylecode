@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="stylecode.kosta180.controller">
+	<logger name="stylecode.sns.controller">
 		<level value="info" />
 	</logger>
 	

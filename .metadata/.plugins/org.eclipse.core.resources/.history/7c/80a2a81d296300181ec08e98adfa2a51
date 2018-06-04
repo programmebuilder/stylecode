@@ -1,0 +1,78 @@
+var template = Handlebars.compile($("#template").html());
+
+$(".fileDrop").on("dragenter dragover", function(event) {
+	event.preventDefault();
+});
+
+$(".fileDrop").on("drop", function(event) {
+	event.preventDefault();
+
+	var files = event.originalEvent.dataTransfer.files;
+
+	var file = files[0];
+
+	var formData = new FormData();
+
+	formData.append("file", file);
+
+	$.ajax({
+		url : "/sns/uploadAjax",
+		data : formData,
+		dataType : "text",
+		processData : false,
+		contentType : false,
+		type : "POST",
+		success : function(data) {
+			var fileInfo = getFileInfo(data);
+
+			var html = template(fileInfo);
+
+			$(".uploadedList").append(html);
+		}
+	});
+});
+
+function checkImageType(fileName) {
+	var pattern = /jpg|gif|png|jpeg/i;
+
+	return fileName.match(pattern);
+}
+
+function getFileInfo(fullName) {
+	var fileName, imgsrc, getLink;
+
+	var fileLink;
+
+	if (checkImageType(fullName)) {
+		imgsrc = "/sns/displayFile?fileName=" + fullName;
+		fileLink = fullName.substr(14);
+
+		var front = fullName.substr(0, 12);
+		var end = fullName.substr(14);
+
+		getLink = "/sns/displayFile?fileName=" + front + end;
+
+		return {
+			fileName : fileName,
+			imgsrc : imgsrc,
+			getLink : getLink,
+			fullName : fullName
+		};
+	}
+}
+
+/*$("#registerForm").submit(function(event) {
+	event.preventDefault();
+	
+	var that = $(this);
+	
+	var str = "";
+	
+	$(".uploadedList .delbtn").each(function(index) {
+		str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'>";
+	});
+	
+	that.append(str);
+	
+	that.get(0).submit();
+});*/

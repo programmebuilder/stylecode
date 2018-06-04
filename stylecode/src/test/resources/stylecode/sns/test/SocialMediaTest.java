@@ -1,0 +1,17 @@
+package stylecode.sns.test;
+
+import org.junit.Test;
+
+import stylecode.sns.domain.SocialMediaVO;
+
+public class SocialMediaTest {
+
+	@Test
+	public void testCreate() throws Exception{
+		SocialMediaVO vo = new SocialMediaVO();
+		vo.setBdno(1);
+		vo.setBdcontent("테스트 글");
+		
+	}
+
+}

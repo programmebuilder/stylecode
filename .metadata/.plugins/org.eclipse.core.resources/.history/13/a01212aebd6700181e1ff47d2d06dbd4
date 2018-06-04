@@ -1,0 +1,69 @@
+package stylecode.sns.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import stylecode.sns.domain.MemberVO;
+import stylecode.sns.domain.SocialMediaListVO;
+import stylecode.sns.domain.SocialMediaVO;
+import stylecode.sns.persistence.SocialMediaDAO;
+
+@Service
+public class SocialMediaServiceImpl implements SocialMediaService {
+
+	@Inject
+	private SocialMediaDAO dao;
+	
+	@Transactional
+	@Override
+	public void regist(SocialMediaVO vo) throws Exception {
+		// 포스트 작성
+		dao.create(vo);
+		
+		String[] files = vo.getFiles();
+		
+		if (files == null) {
+			return;
+		}
+		
+		for (String imgid : files) {
+			// 파일 업로드
+			dao.addAttach(imgid.replaceFirst("s_", ""));
+		}
+	}
+
+	@Override
+	public List<SocialMediaListVO> list() throws Exception {
+		return dao.list();
+	}
+
+	@Override
+	public List<SocialMediaListVO> listAttach() throws Exception {
+		return dao.listAttach();
+	}
+
+	@Override
+	public void remove(Integer bdno) throws Exception {
+		dao.delete(bdno);
+	}
+
+	@Override
+	public void modify(SocialMediaVO vo) throws Exception {
+		dao.update(vo);
+	}
+
+	@Override
+	public SocialMediaVO read(Integer bdno) throws Exception {
+		return dao.read(bdno);
+	}
+
+	@Override
+	public MemberVO memberInfomation(String mid) throws Exception {
+		return ;
+	}
+
+}

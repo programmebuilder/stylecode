@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.springframework.context.annotation.Bean;
 
-import stylecode.kosta180.domain.ProductSearchVO;
-import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.product.domain.ProductSearchVO;
+import stylecode.kosta180.product.domain.ProductVO;
 
 public interface ProductService {
 public List<ProductVO> listAll(ProductSearchVO searchKey) throws Exception;

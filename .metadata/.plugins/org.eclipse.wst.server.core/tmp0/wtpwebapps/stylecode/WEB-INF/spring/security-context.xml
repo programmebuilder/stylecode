@@ -5,22 +5,22 @@
            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
-
-	<!-- login-processing-url="/signin/login" always-use-default-target="true" --><!-- authentication-success-handler-ref="userLoginSuccessHandler" authentication-failure-handler-ref="userLoginFailureHandler" -->
-	<!-- 인터셉트 부분 첫시작을 항상 인터셉트함 /**로 모든 URL에 접속하기 위해선 ROLE_USER의 권한이있어야함 -->
-	<!-- <http auto-config="true" use-expressions="true"> <intercept-url pattern="/signin/**" 
-		access="permitAll"/> <intercept-url pattern="/resources/**" access="permitAll" 
-		/> <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/> -->
-	<!-- "/productlist" -->
+<!--
+	max-sessions=최대세션이 1개 
+	expired-url=중복세션이 생겨났을시 이동할주소
+	error-if-maximum-ecceded=첫번째 로그인 세션 유지, 두번쨰 세션을 막음
+	<intercept-url pattern="/resources/*" access="permitAll"/> = resources파일을 모두 접근할 수 있게함 ex)css,js 
+			 
+-->
 	<http auto-config="true" use-expressions="true">
 		<form-login login-page="/loginform"
-		default-target-url="/productlist" 
+		default-target-url="/loginsuccess" 
 		authentication-failure-url="/loginfail" />
 		<logout logout-success-url="/logoutform" />
 		 <intercept-url pattern="/resources/*" access="permitAll"/> 
-		
 	</http>
-	<!--Role_MANAGER , Role_ADMIN, Role_USER  -->
+	
+	<!-- DB연동 로그인 값 확인하기 -->
 	<authentication-manager>
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"

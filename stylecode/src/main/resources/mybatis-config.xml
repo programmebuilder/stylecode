@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
 	<package name="stylecode.kosta180.domain"/>
+	<package name="stylecode.kosta180.product.domain"/>
 	</typeAliases>
 
 </configuration>

@@ -6,7 +6,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Jua|Nanum+Pen+Script" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Jua|Nanum+Pen+Script"
+	rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,9 +48,9 @@
 	</div>
 	<!--검색바 생성  -->
 
-	
 
 
+	<!--상품추천 클릭시 모달창  -->
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
@@ -71,15 +73,16 @@
 										<a href="#"><img class="card-img-top" src=${a.pImg }
 											alt="" width="150px" height="150px"></a>
 										<div class="card-body">
-										<div class="description">
-											<h4 class="card-title">
-												<a href="#">${a.pNm }</a>
-											</h4>
+											<div class="description">
+												<h4 class="card-title">
+													<a href="#">${a.pNm }</a>
+												</h4>
 											</div>
 											<div class="price">
-											<p class="card-text">${a.mPrice }
-												<input type="checkbox" name="chk" value="${a.penRollNo }">
-											</p>
+												<p class="card-text">${a.mPrice }
+													<!--chk값 넘겨주기  -->
+													<input type="checkbox" name="chk" value="${a.penRollNo }">
+												</p>
 											</div>
 										</div>
 									</div>
@@ -89,8 +92,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
 								data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Save
-								changes</button>
+							<button type="submit" class="btn btn-primary">추천받기</button>
 						</div>
 					</form>
 				</div>
@@ -101,15 +103,16 @@
 
 	<!--상품 뿌려주기위한 부분  -->
 	<div class="container">
-	<div style=" margin-top: 3%">
-		<form class="form-search form-inline" action="productlist">
-			<div class="input-append">
-				<input type="text" class="search-query" name="searchKey"
-					placeholder="Search..." />
-				<button type="submit" class="btn btn-outline-dark" style="vertical-align: top;">Search</button>
-			</div>
-		</form>
-	</div>
+		<div style="margin-top: 3%">
+			<form class="form-search form-inline" action="productlist">
+				<div class="input-append">
+					<input type="text" class="search-query" name="searchKey"
+						placeholder="Search..." />
+					<button type="submit" class="btn btn-outline-dark"
+						style="vertical-align: top;">Search</button>
+				</div>
+			</form>
+		</div>
 		<h1 class="my-4">&ensp; &ensp;</h1>
 		<div class="row" style="margin-top: 5%;">
 			<c:forEach var="i" items="${list }">
@@ -119,13 +122,13 @@
 							class="card-img-top" src=${i.pImg } alt="" width="253px"
 							height="375px"></a>
 						<div class="card-body">
-						<div class="description">
-							<h4 class="card-title">
-								<a href="#">${i.pNm }</a>
-							</h4>
+							<div class="description">
+								<h4 class="card-title">
+									<a href="#">${i.pNm }</a>
+								</h4>
 							</div>
 							<div class="price">
-							<p class="card-text">${i.mPrice }</p>
+								<p class="card-text">${i.mPrice }</p>
 							</div>
 						</div>
 					</div>
@@ -163,8 +166,6 @@
 
 	<!-- Footer -->
 	<jsp:include page="../footer.jsp" flush="true" />
-
-	</footer>
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="../resources/dist/js/Hgjs/jquery.min.js"></script>

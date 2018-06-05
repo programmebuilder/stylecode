@@ -18,8 +18,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
 
-import stylecode.kosta180.domain.ProductSearchVO;
-import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.product.domain.ProductSearchVO;
+import stylecode.kosta180.product.domain.ProductVO;
 import stylecode.kosta180.persistence.ProductDAO;
 
 @Service

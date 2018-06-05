@@ -1,4 +1,6 @@
 package stylecode.kosta180.controller;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.security.Principal;
 import java.text.DateFormat;
 import java.util.Date;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,39 +44,35 @@ public class SecurityController {
 		// 로그인실패 페이지 요청
 		@RequestMapping(value = "/loginfail", method = RequestMethod.GET)
 		public String loginfail() {
-
+			System.out.println("실패 호출");
 			/* View 정보를 반환하는 부분 */
 			return "signin/loginfail"; // "/WEB-INF/views/loginfail.jsp"
 		}
 
 		// 로그아웃폼 페이지 요청
 		@RequestMapping(value = "/logoutform", method = RequestMethod.GET)
-		public String logoutform() {
-
+		public String logoutform(HttpServletRequest request) {
+				HttpSession session=request.getSession();
+				session.invalidate();
 			/* View 정보를 반환하는 부분 */
 			return "signin/logoutform"; // "/WEB-INF/views/logoutform.jsp"
 		}
 
 		// 계정별 로그인
+		@SuppressWarnings("null")
 		@RequestMapping(value = "/loginsuccess", method = RequestMethod.GET)
-		public String loginresult() {
-
-			return "signin/loginsuccess";// "/WEB-INF/views/loginsuccess.jsp"
+		public String loginresult(HttpServletRequest request) {
+			/*세션 mId저장*/
+			HttpSession session=request.getSession(true);
+			User user =(User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			session.setAttribute("mId", user.getUsername());
+			
+		/*	stylecode.kosta180.product.controller*/
+			
+			return "redirect:/productlist";// "/WEB-INF/views/product/productlist.jsp"
 		}
 		
-		//회원가입
-		/*@RequestMapping(value="/SignUpInsert")
-		public String SignUpInsert(@RequestParam("mId") String mId,@RequestParam("mPassword") String password ,@RequestParam("mNm") String mNm, @RequestParam("birth1") String bir1, @RequestParam("birth2") String bir2, @RequestParam("birth3") String bir3){
-			String birth=bir1+"."+bir2+"."+bir3;
-			MemberVO memberVo=new MemberVO();
-			memberVo.setmBirth(birth);
-			memberVo.setmId(mId);
-			memberVo.setmNm(mNm);
-			memberVo.setmPassword(password);
-			
-		 return signUpService.insertMember(memberVo);
-			
-		}*/
+	
 	}
 
 	

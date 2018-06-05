@@ -9,8 +9,8 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import stylecode.kosta180.domain.ProductSearchVO;
-import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.product.domain.ProductSearchVO;
+import stylecode.kosta180.product.domain.ProductVO;
 
 @Repository
 public class ProductDAOImpl implements ProductDAO {

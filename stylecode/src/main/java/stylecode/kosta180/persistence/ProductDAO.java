@@ -3,8 +3,8 @@ package stylecode.kosta180.persistence;
 import java.util.List;
 import java.util.Map;
 
-import stylecode.kosta180.domain.ProductSearchVO;
-import stylecode.kosta180.domain.ProductVO;
+import stylecode.kosta180.product.domain.ProductSearchVO;
+import stylecode.kosta180.product.domain.ProductVO;
 
 public interface ProductDAO {
 

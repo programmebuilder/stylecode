@@ -1,19 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-	<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-    <%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
-    <%@ page import="org.springframework.security.core.Authentication" %>
-    
-	 <%
-    session=request.getSession();
-    if(session==null){
-    	out.print("no session");
-    }else{
-    	out.print("session");
-    	session.getSessionContext();
-    	
-    }
-    %>
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ page
+	import="org.springframework.security.core.context.SecurityContextHolder"%>
+<%@ page import="org.springframework.security.core.Authentication"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,11 +39,11 @@
 					<span class="glyphicon glyphicon-lock"></span> 로그인
 				</h4>
 				<label>정상적인 서비스 사용을 위해서 로그인해야 합니다.
-				${pageContext.request.userPrincipal.name}
-				</label>
+			
+					<%=session.getAttribute("mId") %> </label>
 			</div>
-			
-			
+
+
 			<div class="modal-body" style="padding: 40px 50px;">
 				<form role="form" method="post" action="j_spring_security_check">
 					<div class="form-group">
@@ -63,7 +56,7 @@
 							class="form-control" id="pw" name="j_password"
 							placeholder="Enter Password" required="required">
 					</div>
-
+					
 					<button type="submit" class="btn btn-default btn-block">
 						Login</button>
 				</form>

@@ -23,7 +23,7 @@
 <title>header</title>
 </head>
 <body>
-	<div class="wrapper" style="background-color:#D3CBBD;">
+	<div class="wrapper" style="background-color: #D3CBBD;">
 		<div class="container" style="padding: 50px;">
 
 			<div class="row">
@@ -41,16 +41,46 @@
 						<li class="nav-item"><a
 							href="<c:url value='/shoppingmall/ShoppingMall'/>">쇼핑몰</a></li>
 						<li class="nav-item"><a href="../printBoard.do">모아보기</a></li>
+
+
+						<!--stylecode 관리자만 사용할 수 있음 -->
+						<sec:authorize ifAnyGranted="ROLE_ADMIN">
+							<li class="nav-item"><a href="......">쇼핑몰 입점관리</a></li>
+						</sec:authorize>
+
 					</ul>
 				</div>
 				<div id="hRMn" class="col-1">
 					<ul>
 						<!-- fontello 아이콘 사용을 위한 부분  -->
+						<!--회원별 권한별로 주기  -->
 
+						<!--로그인 하였을때 북마크리스트로 가는 아이콘 뽑아줌  -->
+						<!-- 로그인 되었을때 로그아웃창 -->
+						<!-- 로그인 되었을때 마이페이지창 -->
+						<%
+							if (session.getAttribute("mId") == null) {
+						%>
+
+						<li class="nav-item"><a href="/loginform">&#xe802</a></li>
+
+						<%
+							}
+						%>
+
+
+
+						<%
+							if (session.getAttribute("mId") != null) {
+						%>
+						<li class="nav-item"><a href="/logoutform">&#xe803</a></li>
 						<li class="nav-item"><a href="../bookmark/bookmarklist.do">&#xe800</a></li>
-						<li class="nav-item"><a href="../LoginProduct/login.jsp">&#xe802</a></li>
-						<li class="nav-item" hidden>&#xe803</li>
 						<li class="nav-item"><a href="#">&#xe801</a></li>
+						<%
+							}
+						%>
+
+
 					</ul>
 				</div>
 			</div>

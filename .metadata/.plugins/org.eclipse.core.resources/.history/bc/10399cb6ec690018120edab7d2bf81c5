@@ -1,0 +1,10 @@
+package stylecode.kosta180.userrecommend.persistence;
+
+import java.util.List;
+
+import recommend.item.domain.ProductVO;
+
+public interface UserProductDAO {
+	public List<ProductVO> getAllItems();
+
+}

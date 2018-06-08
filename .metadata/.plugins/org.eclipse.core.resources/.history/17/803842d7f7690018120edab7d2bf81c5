@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="recommend.item.mappers.recommendMapper">
+
+	<select id = "getAllRateList" resultType ="ProductRateVO">
+		SELECT *
+		FROM productrate
+	</select>
+	
+	<select id="getRateList" parameterType="Integer" resultType="ProductRateVO">
+		SELECT *
+		FROM productRate
+		WHERE MCODE = #{MCODE}
+	</select>
+	
+	<select id="getAllItems" resultType = "ProductVO">
+		SELECT *
+		FROM PRODUCT
+	</select>
+	
+	<select id="getMemberAll" resultType = "MemberVO">
+		SELECT *
+		FROM MEMBER
+	</select>
+	
+	<insert id="insertRate" parameterType="ProductRateVO">
+	insert into ProductRate
+	values(mcode_seq.nextval,${mCode},${pEnrollNo},${pRate},sysdate)
+	</insert>
+
+
+<select id="productListCount" resultType="int" parameterType="ProductSearchVO">
+		select count(*)
+		from product
+		<if test="searchKey!=null">
+			<where>
+				pNm LIKE '%'||#{searchKey}||'%'
+			</where>
+		</if>
+	</select>
+
+
+</mapper>

@@ -10,7 +10,7 @@ import stylecode.kosta180.domain.ShoppingMallVO;
 import stylecode.kosta180.domain.SpmRequestVO;
 import stylecode.kosta180.service.ShoppingmallService;
 
-/*		ì…ì ì‹ ì²­ ì»¨íŠ¸ë¡¤ëŸ¬		*/
+/*		?…? ?‹ ì²? ì»¨íŠ¸ë¡¤ëŸ¬		*/
 
 @Controller
 @RequestMapping("/request/*")

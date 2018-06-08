@@ -22,12 +22,15 @@ import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.common.LongPrimitiveArrayIterator;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.TanimotoCoefficientSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.Recommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,10 +51,12 @@ import stylecode.kosta180.domain.MemberVO;
 import stylecode.kosta180.product.domain.ProductPageMaker;
 import stylecode.kosta180.product.domain.ProductSearchVO;
 import stylecode.kosta180.product.domain.ProductVO;
-import stylecode.kosta180.service.ProductService;
+import stylecode.kosta180.product.service.ProductService;
 
 @Controller
 public class ProductListController {
+
+
 
 	@Inject
 	private ProductService service;
@@ -99,7 +104,6 @@ public class ProductListController {
 			TanimotoCoefficientSimilarity sim = new TanimotoCoefficientSimilarity(dm);
 			GenericItemBasedRecommender recommender = new GenericItemBasedRecommender(dm, sim);
 			List<Integer> recommendList = new ArrayList<Integer>();
-			
 
 			for (int i = 0; i < penrollno.size(); i++) {
 				List<RecommendedItem> recommendations = recommender.mostSimilarItems(penrollno.get(i), 5);

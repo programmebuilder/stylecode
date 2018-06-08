@@ -14,7 +14,7 @@ public class PageMaker {
   private boolean prev;
   private boolean next;
 
-  private int displayPageNum = 5; //í™”ë©´ì— ë³´ì—¬ì§€ëŠ” í˜ì´ì§€ ë²ˆí˜¸ì˜ ìˆ˜
+  private int displayPageNum = 5; //?™”ë©´ì— ë³´ì—¬ì§??Š” ?˜?´ì§? ë²ˆí˜¸?˜ ?ˆ˜
 
   private Criteria cri;
 
@@ -82,7 +82,7 @@ public class PageMaker {
     return uriComponents.toUriString();
   }
   
-  //ê²€ìƒ‰ í›„ í˜ì´ì§€ ë²ˆí˜¸ë¥¼ í´ë¦­í–ˆì„ ë•Œ URL
+  //ê²??ƒ‰ ?›„ ?˜?´ì§? ë²ˆí˜¸ë¥? ?´ë¦??–ˆ?„ ?•Œ URL
   public String makeSearch(int page){
     
     UriComponents uriComponents=
@@ -95,25 +95,25 @@ public class PageMaker {
     return uriComponents.toUriString();
   } 
   
-//í•„í„°ë§ í›„ í˜ì´ì§€ ë²ˆí˜¸ë¥¼ í´ë¦­í–ˆì„ ë•Œ URL
+//?•„?„°ë§? ?›„ ?˜?´ì§? ë²ˆí˜¸ë¥? ?´ë¦??–ˆ?„ ?•Œ URL
   public String makeFilter(int page) {
 	  	
-	  	//ìŠ¤íƒ€ì¼ê³¼ ë‚˜ì´ëŒ€ëŠ” ë¦¬ìŠ¤íŠ¸ í˜•íƒœë¡œ ê°€ì§€ê³  ìˆìœ¼ë¯€ë¡œ Stringìœ¼ë¡œ í’€ì–´ì„œ ì¨ì£¼ê¸° ìœ„í•´ ë§Œë“  ë³€ìˆ˜
+	  	//?Š¤???¼ê³? ?‚˜?´???Š” ë¦¬ìŠ¤?Š¸ ?˜•?ƒœë¡? ê°?ì§?ê³? ?ˆ?œ¼ë¯?ë¡? String?œ¼ë¡? ???–´?„œ ?¨ì£¼ê¸° ?œ„?•´ ë§Œë“  ë³??ˆ˜
 	    String styleParam="";
 	    String ageParam="";
 	    
-	    //ë°°ì—´ì¸ ìŠ¤íƒ€ì¼ê³¼ ë‚˜ì´ëŒ€ë¥¼ ì²˜ë¦¬í•´ì£¼ê¸° ìœ„í•œ forë¬¸ 
-	    //style=ëª¨ë˜ì‹œí¬&style=ì‹¬í”Œë² ì´ì§ í˜•íƒœë¡œ ë§Œë“¤ê¸° ìœ„í•´ì„œ ë‘ ë²ˆì§¸ ë°°ì—´ ê°’ë¶€í„° &ë¥¼ ì§ì ‘ ë„£ì–´ì¤€ë‹¤
+	    //ë°°ì—´?¸ ?Š¤???¼ê³? ?‚˜?´??ë¥? ì²˜ë¦¬?•´ì£¼ê¸° ?œ„?•œ forë¬? 
+	    //style=ëª¨ë˜?‹œ?¬&style=?‹¬?”Œë² ì´ì§? ?˜•?ƒœë¡? ë§Œë“¤ê¸? ?œ„?•´?„œ ?‘ ë²ˆì§¸ ë°°ì—´ ê°’ë??„° &ë¥? ì§ì ‘ ?„£?–´ì¤??‹¤
 		if (((SpmFilterVO) cri).getStyle()!=null) {
 			for (int i = 0; i < ((SpmFilterVO) cri).getStyle().length; i++) {
-				if (i == 0) { //ì²« ë²ˆì§¸ ë°°ì—´ ê°’ì€ &styleì„ í•´ì£¼ì§€ ì•Šì•„ë„ style=ëª¨ë˜ì‹œí¬ í˜•íƒœë¡œ ë“¤ì–´ê°
+				if (i == 0) { //ì²? ë²ˆì§¸ ë°°ì—´ ê°’ì? &style?„ ?•´ì£¼ì? ?•Š?•„?„ style=ëª¨ë˜?‹œ?¬ ?˜•?ƒœë¡? ?“¤?–´ê°?
 					styleParam =((SpmFilterVO) cri).getStyle()[i];
 				} else {
 					styleParam = styleParam + "&style=" + ((SpmFilterVO) cri).getStyle()[i];
 				}
 			}
 		}
-		//age ì²˜ë¦¬ ë¶€ë¶„
+		//age ì²˜ë¦¬ ë¶?ë¶?
 		if (((SpmFilterVO) cri).getAge()!=null) {
 			for (int i = 0; i < ((SpmFilterVO) cri).getAge().length; i++) {
 				if (i == 0) {
@@ -126,9 +126,9 @@ public class PageMaker {
 		
 		UriComponents uriComponents=null;
 		
-		//styleì´ë‚˜ ageí•„í„° ì¡°ê±´ì´ ì—†ì„ ê²½ìš° ì—ëŸ¬ê°€ ë°œìƒí•˜ë¯€ë¡œ ê° ìƒí™©ì— ë§ëŠ” ifë¬¸ ì²˜ë¦¬
+		//style?´?‚˜ age?•„?„° ì¡°ê±´?´ ?—†?„ ê²½ìš° ?—?Ÿ¬ê°? ë°œìƒ?•˜ë¯?ë¡? ê°? ?ƒ?™©?— ë§ëŠ” ifë¬? ì²˜ë¦¬
 		if(styleParam=="" || ageParam=="") {
-			//styleê³¼ ageí•„í„° ì¡°ê±´ ëª¨ë‘ ì—†ì„ ê²½ìš°
+			//styleê³? age?•„?„° ì¡°ê±´ ëª¨ë‘ ?—†?„ ê²½ìš°
 			if(styleParam=="" && ageParam=="") {
 			    uriComponents=
 		                UriComponentsBuilder.newInstance()
@@ -136,7 +136,7 @@ public class PageMaker {
 		                .queryParam("perPageNum", cri.getPerPageNum())
 		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
 		                .build(); 
-			  //styleí•„í„° ì¡°ê±´ ì—†ì„ ê²½ìš°
+			  //style?•„?„° ì¡°ê±´ ?—†?„ ê²½ìš°
 			} else if(styleParam=="") {
 	    		uriComponents=
 		                UriComponentsBuilder.newInstance()
@@ -145,7 +145,7 @@ public class PageMaker {
 		                .queryParam("category", ((SpmFilterVO)cri).getCategory())
 		                .queryParam("age", ageParam)
 		                .build();
-	    	  //ageí•„í„° ì¡°ê±´ ì—†ì„ ê²½ìš°
+	    	  //age?•„?„° ì¡°ê±´ ?—†?„ ê²½ìš°
 			} else if(ageParam=="") {
 				uriComponents=
 		                UriComponentsBuilder.newInstance()
@@ -155,7 +155,7 @@ public class PageMaker {
 		                .queryParam("style", styleParam)
 		                .build(); 
 			}
-		//í•„í„° ì¡°ê±´ ëª¨ë‘ ìˆì„ ê²½ìš°
+		//?•„?„° ì¡°ê±´ ëª¨ë‘ ?ˆ?„ ê²½ìš°
 		} else {
     		uriComponents=
 	                UriComponentsBuilder.newInstance()

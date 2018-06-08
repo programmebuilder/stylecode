@@ -50,7 +50,7 @@
 	<!--컨트롤러에서 받은 상품Id를 비교하는 쿼리 -->
 	<select id="recommendList" parameterType="java.util.ArrayList"
 		resultType="ProductVO">
-		select *from product where penrollno IN
+		select *from product where pEnrollno IN
 		<foreach collection="list" item="list" separator="," open="("
 			close=")">
 			#{list}

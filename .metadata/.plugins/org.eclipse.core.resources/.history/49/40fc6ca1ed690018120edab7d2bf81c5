@@ -1,0 +1,10 @@
+package recommend.item.service;
+
+import java.util.List;
+
+import recommend.item.domain.ProductRateVO;
+
+public interface RateService {
+	public List<ProductRateVO> getRateService(int mCode);
+	public int insertRateService(ProductRateVO rate);
+}

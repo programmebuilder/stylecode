@@ -1,0 +1,10 @@
+package stylecode.kosta180.userrecommend.service;
+
+import java.util.List;
+
+import recommend.item.domain.MemberVO;
+
+public interface MemberService {
+	public List<MemberVO> getMemberService();
+
+}

@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class ShoppingMallVO implements Serializable {
 	private int spmEnrollNo;
-	private String spmNm; //Ïù¥Î¶Ñ
+	private String spmNm; //?ù¥Î¶?
 	private String spmURL; //Ï£ºÏÜå
-	private String spmTn; //Ïç∏ÎÑ§Ïùº
+	private String spmTn; //?ç∏?Ñ§?ùº
 	private String spmInfo;
 	private int spmViews;
 	private String spmClassifcn;

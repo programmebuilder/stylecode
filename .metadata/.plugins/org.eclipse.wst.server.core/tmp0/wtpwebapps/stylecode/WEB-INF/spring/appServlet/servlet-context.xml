@@ -25,7 +25,21 @@
 	<context:component-scan base-package="stylecode.kosta180.domain"/>
 	<context:component-scan base-package="stylecode.kosta180.persistence"/>
 	<context:component-scan base-package="stylecode.kosta180.service"/>
+	
+	
 	<!--허건   -->
 	<context:component-scan base-package="stylecode.kosta180.product.controller"></context:component-scan>
+	<context:component-scan base-package="stylecode.kosta180.security.controller"></context:component-scan>
 	<context:component-scan base-package="stylecode.kosta180.product.domain"></context:component-scan>
+	<context:component-scan base-package="stylecode.kosta180.product.service"></context:component-scan>
+	<context:component-scan base-package="stylecode.kosta180.product.persistence"></context:component-scan>
+	
+	<!--가원  -->
+
+	<context:component-scan base-package="stylecode.kosta180.userrecommend.domain"/>
+	<context:component-scan base-package="stylecode.kosta180.userrecommend.persistence"/>
+	<context:component-scan base-package="stylecode.kosta180.userrecommend.service"/>
+	<context:component-scan base-package="stylecode.kosta180.userrecommend.controller"/>
+	
+	
 </beans:beans>

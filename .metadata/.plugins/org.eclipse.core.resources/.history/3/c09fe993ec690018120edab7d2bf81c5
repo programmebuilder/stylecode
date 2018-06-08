@@ -1,0 +1,10 @@
+package stylecode.kosta180.userrecommend.persistence;
+
+import java.util.List;
+
+import recommend.item.domain.MemberVO;
+
+public interface MemberDAO {
+	public List<MemberVO> getMember();
+
+}

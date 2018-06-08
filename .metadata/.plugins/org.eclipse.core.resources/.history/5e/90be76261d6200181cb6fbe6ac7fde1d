@@ -1,7 +1,0 @@
-package stylecode.kosta180.service;
-
-import java.util.List;
-
-public interface RecommenService {
-public List<Integer> recommendServiceItem(int m_no);
-}

@@ -1,7 +1,7 @@
 package stylecode.kosta180.domain;
 
 public class ShoppingMallSearchVO extends Criteria {
-	//ì‡¼í•‘ëª° ê²€ìƒ‰ì„ ìœ„í•´ ì‚¬ìš©ë˜ëŠ” í´ë˜ìŠ¤
+	//?‡¼?•‘ëª? ê²??ƒ‰?„ ?œ„?•´ ?‚¬?š©?˜?Š” ?´?˜?Š¤
 	private String searchKey;
 	
 	public String getSearchKey() {

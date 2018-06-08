@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,11 +19,11 @@
 <body>
 	<div class="modal-dialog">
 
-			<div>
-				<h1 style="font-size: x-large;">
-					Spring Security<small>v.인메모리</small>
-				</h1>
-			</div>
+		<div>
+			<h1 style="font-size: x-large;">
+				Spring Security<small>v.인메모리</small>
+			</h1>
+		</div>
 		<!-- Modal content-->
 		<div class="modal-content">
 
@@ -34,10 +34,8 @@
 				<label>로그아웃 되었습니다.</label>
 			</div>
 			<div class="modal-body" style="padding: 40px 50px;">
-					<div class="form-group">
-						
-					</div>
-					<a href="loginform.it" class="btn btn-default btn-block">Re Login</a>
+				<div class="form-group"></div>
+				<a href="/productlist" class="btn btn-default btn-block">HOME</a>
 			</div>
 			<div class="modal-footer"></div>
 		</div>

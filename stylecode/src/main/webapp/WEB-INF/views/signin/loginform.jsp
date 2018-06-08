@@ -38,9 +38,8 @@
 				<h4>
 					<span class="glyphicon glyphicon-lock"></span> 로그인
 				</h4>
-				<label>정상적인 서비스 사용을 위해서 로그인해야 합니다.
-			
-					<%=session.getAttribute("mId") %> </label>
+				<label>정상적인 서비스 사용을 위해서 로그인해야 합니다. <%=session.getAttribute("mId")%>
+				</label>
 			</div>
 
 
@@ -56,12 +55,14 @@
 							class="form-control" id="pw" name="j_password"
 							placeholder="Enter Password" required="required">
 					</div>
-					
+
 					<button type="submit" class="btn btn-default btn-block">
 						Login</button>
+
 				</form>
 
-			</div>
+				<a href="/productlist" class="btn btn-default btn-block">비회원으로 이용하기</a>
+			
 			<div class="modal-footer"></div>
 		</div>
 

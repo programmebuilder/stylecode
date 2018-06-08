@@ -1,0 +1,23 @@
+package recommend.item.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import recommend.item.domain.MemberVO;
+import recommend.item.persistence.MemberDAOImpl;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+	@Inject
+	MemberDAOImpl dao;
+
+	@Override
+	public List<MemberVO> getMemberService() {
+		// TODO Auto-generated method stub
+		return dao.getMember();
+	}
+
+}

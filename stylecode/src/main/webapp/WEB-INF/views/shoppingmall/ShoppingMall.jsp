@@ -14,6 +14,7 @@
 	#search-box {
 		float: left;
 		margin-left: 37%;
+		margin-top: 1%;
 	}
 	.search-form {
 		width: 300px;
@@ -34,6 +35,14 @@
 		float: left;
 		margin-left: 150px;
 		/* padding-top: 35px; */
+	}
+	.text-center {
+		font-size:1.5rem;
+		font-family: 'Nanum Pen Script', cursive;
+	}
+	.btn.spmNm{
+		font-size:1.5rem;
+		font-family: 'Nanum Pen Script', cursive;
 	}
 </style>
 </head>

@@ -28,7 +28,7 @@
 
 			<div class="row">
 				<div id="hTitle">
-					<a href="../index.jsp" style="color: black;">Middle Project</a>
+					<a href="../index.jsp" style="color: black;">The Style Code</a>
 				</div>
 			</div>
 
@@ -36,17 +36,28 @@
 				<div id="hLMn" class="col-11" style="padding: 0px">
 					<ul>
 						<li class="nav-item"><a href="../index.jsp">상품추천</a></li>
-						<li class="nav-item"><a
-							href="../LoginProduct/productlist.jsp">상품검색</a></li>
+						<li class="nav-item"><a href="<c:url value='/productlist'/>">상품검색</a></li>
 						<li class="nav-item"><a
 							href="<c:url value='/shoppingmall/ShoppingMall'/>">쇼핑몰</a></li>
 						<li class="nav-item"><a href="../printBoard.do">모아보기</a></li>
 
-
-						<!--stylecode 관리자만 사용할 수 있음 -->
-						<sec:authorize ifAnyGranted="ROLE_ADMIN">
-							<li class="nav-item"><a href="......">쇼핑몰 입점관리</a></li>
+						<!--stylecode 관리자는 입점신청을 클릭할 이유가 없음  -->
+						<%
+							if (session.getAttribute("mId") != null) {
+						%>
+						<sec:authorize ifNotGranted="ROLE_ADMIN">
+							<li class="nav-item"><a href="/request/shoppingmallRequest">입점신청</a></li>
 						</sec:authorize>
+						<%
+							}
+						%>
+						<!--stylecode 관리자만 보여짐-->
+						<sec:authorize ifAnyGranted="ROLE_ADMIN">
+							<li class="nav-item"><a href="/admin">쇼핑몰 입점관리</a></li>
+						</sec:authorize>
+
+
+
 
 					</ul>
 				</div>
@@ -68,8 +79,7 @@
 							}
 						%>
 
-
-
+						<!-- 로그인되지 않았을때 -->
 						<%
 							if (session.getAttribute("mId") != null) {
 						%>

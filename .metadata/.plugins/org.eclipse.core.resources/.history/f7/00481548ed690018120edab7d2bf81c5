@@ -1,0 +1,9 @@
+package recommend.item.service;
+
+import java.util.List;
+
+import recommend.item.domain.ProductVO;
+
+public interface ProductService {
+	public List<ProductVO> getAllItemService();
+}

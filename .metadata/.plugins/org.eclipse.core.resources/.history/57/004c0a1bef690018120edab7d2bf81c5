@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN">
+
+<mapper namespace="recommend.item.mappers.recommendMapper">
+
+<select resultType="ProductRateVO" id="getAllRateList"> SELECT * FROM productrate </select>
+
+<select resultType="ProductRateVO" id="getRateList" parameterType="Integer"> SELECT * FROM productRate WHERE MCODE = #{MCODE} </select>
+
+<select resultType="ProductVO" id="getAllItems"> SELECT * FROM PRODUCT </select>
+
+<select resultType="MemberVO" id="getMemberAll"> SELECT * FROM MEMBER </select>
+
+<insert id="insertRate" parameterType="ProductRateVO"> insert into ProductRate values(mcode_seq.nextval,${mCode},${pEnrollNo},${pRate},sysdate) </insert>
+
+</mapper>

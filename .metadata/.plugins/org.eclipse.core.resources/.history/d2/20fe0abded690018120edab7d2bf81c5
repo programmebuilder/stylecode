@@ -1,0 +1,10 @@
+package recommend.item.service;
+
+import java.util.List;
+
+import recommend.item.domain.MemberVO;
+
+public interface MemberService {
+	public List<MemberVO> getMemberService();
+
+}

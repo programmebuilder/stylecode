@@ -1,0 +1,9 @@
+package stylecode.kosta180.userrecommend.service;
+
+import java.util.List;
+
+import recommend.item.domain.ProductVO;
+
+public interface UserProductService {
+	public List<ProductVO> getAllItemService();
+}

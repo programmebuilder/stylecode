@@ -17,7 +17,8 @@
 		default-target-url="/loginsuccess" 
 		authentication-failure-url="/loginfail" />
 		<logout logout-success-url="/logoutform" />
-		 <intercept-url pattern="/resources/*" access="permitAll"/> 
+		 <intercept-url pattern="/resources/*" access="permitAll"/>
+		 <intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')"/>  
 	</http>
 	
 	<!-- DB연동 로그인 값 확인하기 -->

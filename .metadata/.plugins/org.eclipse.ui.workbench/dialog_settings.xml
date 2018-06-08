@@ -6,7 +6,7 @@
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="250" key="dialogHeight"/>
-		<item value="350" key="dialogWidth"/>
+		<item value="1217" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -38,6 +38,11 @@
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\user\Desktop\kosta final\HG_2.zip"/>
+			<item value="C:\Users\user\Desktop\kosta final\HG_1.zip"/>
+			<item value="C:\Users\user\Desktop\kosta final\HG_0.zip"/>
+			<item value="C:\Users\user\Documents\0608.zip"/>
+			<item value="C:\Users\user\Documents\0607.zip"/>
 			<item value="C:\Users\user\Documents\produwdqwd.zip"/>
 		</list>
 	</section>

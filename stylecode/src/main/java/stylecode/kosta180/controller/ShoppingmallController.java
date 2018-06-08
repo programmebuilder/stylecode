@@ -21,7 +21,7 @@ import stylecode.kosta180.domain.SpmFilterListVO;
 import stylecode.kosta180.domain.SpmFilterVO;
 import stylecode.kosta180.service.ShoppingmallService;
 
-/*	ì‡¼í•‘ëª° ë¦¬ìŠ¤íŠ¸ ì»¨íŠ¸ë¡¤ëŸ¬	*/
+/*	?‡¼?•‘ëª? ë¦¬ìŠ¤?Š¸ ì»¨íŠ¸ë¡¤ëŸ¬	*/
 
 @Controller
 @RequestMapping("/shoppingmall/*")
@@ -31,34 +31,34 @@ public class ShoppingmallController {
 	@Inject
 	private ShoppingmallService service;
 	
-	// ì‡¼í•‘ëª° ë¦¬ìŠ¤íŠ¸(ì¼ë°˜ ë¦¬ìŠ¤íŠ¸, ê²€ìƒ‰ ë¦¬ìŠ¤íŠ¸, í•„í„° ë¦¬ìŠ¤íŠ¸)	
+	// ?‡¼?•‘ëª? ë¦¬ìŠ¤?Š¸(?¼ë°? ë¦¬ìŠ¤?Š¸, ê²??ƒ‰ ë¦¬ìŠ¤?Š¸, ?•„?„° ë¦¬ìŠ¤?Š¸)	
 	@RequestMapping(value="/ShoppingMall", method=RequestMethod.GET)
 	public void listShoppingmall(@ModelAttribute("search") ShoppingMallSearchVO search, Model model, SpmFilterVO filter) throws Exception {
 		
 		logger.info(search.toString());
-		//ì‡¼í•‘ëª° ì¼ë°˜, ê²€ìƒ‰ ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
+		//?‡¼?•‘ëª? ?¼ë°?, ê²??ƒ‰ ë¦¬ìŠ¤?Š¸ ì¶œë ¥
 		model.addAttribute("list", service.listShoppingMall(search));
 		
 		PageMaker pageMaker=new PageMaker();
 		
-		//í•„í„°ë§ ì‹œ í˜ì´ì§• ì²˜ë¦¬
+		//?•„?„°ë§? ?‹œ ?˜?´ì§? ì²˜ë¦¬
 		if(filter.getCategory()!=null) {
 			
-			//í•„í„°ë§ëœ ì‡¼í•‘ëª° ë²ˆí˜¸ ë°›ì•„ì˜¤ê¸°
+			//?•„?„°ë§ëœ ?‡¼?•‘ëª? ë²ˆí˜¸ ë°›ì•„?˜¤ê¸?
 			List<Integer> num_list=service.SPMfiter(filter);
 			
-			//ë²ˆí˜¸ ê°€ì§€ê³  ì‡¼í•‘ëª° ë¦¬ìŠ¤íŠ¸ ë¿Œë ¤ì£¼ê¸°
-			//SpmFilterListëŠ” ë””ë¹„ ì¿¼ë¦¬ë¬¸ ì‚¬ìš© ì‹œ í¸ì˜ë¥¼ ìœ„í•´ ë§Œë“  ê°ì²´
+			//ë²ˆí˜¸ ê°?ì§?ê³? ?‡¼?•‘ëª? ë¦¬ìŠ¤?Š¸ ë¿Œë ¤ì£¼ê¸°
+			//SpmFilterList?Š” ?””ë¹? ì¿¼ë¦¬ë¬? ?‚¬?š© ?‹œ ?¸?˜ë¥? ?œ„?•´ ë§Œë“  ê°ì²´
 			List<ShoppingMallVO>filterList=new ArrayList<ShoppingMallVO>();
 			SpmFilterListVO ffList=new SpmFilterListVO();
 
-			//í•„í„°ë§ëœ ë¦¬ìŠ¤íŠ¸ë¥¼ SpmFilterListê°ì²´ì— ë‹´ê¸° 	
+			//?•„?„°ë§ëœ ë¦¬ìŠ¤?Š¸ë¥? SpmFilterListê°ì²´?— ?‹´ê¸? 	
 			ffList.setFilterList(num_list);
 			filterList=service.listShoppingMallFilter(ffList);
 			
 			model.addAttribute("filterList", filterList);
 			
-			//í•„í„°ë§ì¼ ê²½ìš° í˜ì´ì§• ì²˜ë¦¬, ì¶œë ¥
+			//?•„?„°ë§ì¼ ê²½ìš° ?˜?´ì§? ì²˜ë¦¬, ì¶œë ¥
 			pageMaker.setCri(filter);
 			pageMaker.setTotalCount(service.getFilterListCount(filter));
 			
@@ -67,7 +67,7 @@ public class ShoppingmallController {
 			return;
 		}
 		
-		//í•„í„°ë§ì´ ì•„ë‹ ê²½ìš°ì— í˜ì´ì§• ì²˜ë¦¬, ì¶œë ¥
+		//?•„?„°ë§ì´ ?•„?‹ ê²½ìš°?— ?˜?´ì§? ì²˜ë¦¬, ì¶œë ¥
 		pageMaker.setCri(search);
 		pageMaker.setTotalCount(service.getListCount(search));
 		

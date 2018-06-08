@@ -1,0 +1,11 @@
+package stylecode.kosta180.userrecommend.service;
+
+import java.util.List;
+
+import stylecode.kosta180.product.domain.ProductSearchVO;
+import stylecode.kosta180.product.domain.ProductVO;
+
+public interface UserProductService {
+	public List<ProductVO> getAllItemService();
+	public int getItemCount(ProductSearchVO search)throws Exception;
+}

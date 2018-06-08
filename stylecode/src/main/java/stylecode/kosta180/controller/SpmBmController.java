@@ -76,7 +76,7 @@ public class SpmBmController {
 		try {
 
 			entity = new ResponseEntity<>(service.checkBm(map), HttpStatus.OK);
-			System.out.println(entity);
+			System.out.println("엔티티: "+entity);
 
 		} catch (Exception e) {
 			e.printStackTrace();

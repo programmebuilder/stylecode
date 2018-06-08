@@ -1,0 +1,14 @@
+package stylecode.kosta180.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+
+import stylecode.kosta180.service.ShoppingmallService;
+
+@Controller
+public class ChatbotController {
+	
+	@Inject
+	private ShoppingmallService service;
+}

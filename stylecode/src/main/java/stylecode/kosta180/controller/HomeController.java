@@ -22,9 +22,6 @@ import stylecode.kosta180.service.ShoppingmallService;
 @Controller
 public class HomeController {
 	
-	@Inject
-	private ShoppingmallService service;
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -52,9 +49,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/chatbot", method = RequestMethod.GET)
-	public String test(Model model, ShoppingMallSearchVO vo) throws Exception {
-		model.addAttribute("list", service.listShoppingMall(vo));
-		
+	public String test( Model model, ShoppingMallSearchVO vo) throws Exception {
+
 		return "NewFile";
 	}
+
 }

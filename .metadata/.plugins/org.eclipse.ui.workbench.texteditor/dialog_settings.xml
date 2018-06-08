@@ -2,12 +2,15 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="style" key="selection"/>
+		<item value="resources" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="resources"/>
+			<item value="&#x09;{{#each .}}"/>
+			<item value="table-chat"/>
 			<item value="&lt;table class=&quot;table&quot;&gt;"/>
 			<item value="style"/>
 			<item value="age"/>

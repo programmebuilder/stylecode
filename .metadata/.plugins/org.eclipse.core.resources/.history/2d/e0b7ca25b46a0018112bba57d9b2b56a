@@ -24,7 +24,7 @@
 	<div class="row">
 		<div id="hLMn" class="col-11">
 			<ul>
-				<li class="nav-item"><a href="<c:url value='/chatbot'/>" onclick="window.open(this.href, '_blanck', 'width=400, height=645'); return false">상품추천</a></li>
+				<li class="nav-item"><a href="<c:url value='/chatbot'/>" onclick="window.open(this.href, '_blanck', 'width=400, height=600'); return false">상품추천</a></li>
 				<li class="nav-item"><a href="../LoginProduct/productlist.jsp">상품검색</a></li>
 				<li class="nav-item"><a href="<c:url value='/shoppingmall/ShoppingMall'/>">쇼핑몰</a></li>
 				<li class="nav-item"><a href="../printBoard.do">모아보기</a></li>

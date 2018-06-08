@@ -10,11 +10,6 @@
 <link rel="stylesheet" href="../resources/YJH/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../resources/MH/chat.css"> 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<style type="text/css">
-html {
-	overflow: hidden;
-}
-</style>
 </head>
 <body>
 <!-- JQuery JavaScript 추가  -->

@@ -10,6 +10,11 @@
 <link rel="stylesheet" href="../resources/YJH/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../resources/MH/chat.css"> 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+html {
+	overflow: hidden;
+}
+</style>
 </head>
 <body>
 <!-- JQuery JavaScript 추가  -->
@@ -20,7 +25,7 @@
   	
 <div class="row bootstrap snippets">
 
-    <div class="col-md-4" style="width:500px; overflow:hidden;">
+    <div class="col-md-4" style="width:500px;">
       <!-- DIRECT CHAT PRIMARY -->
       <div class="box box-primary direct-chat direct-chat-primary">
         <div class="box-header with-border">
